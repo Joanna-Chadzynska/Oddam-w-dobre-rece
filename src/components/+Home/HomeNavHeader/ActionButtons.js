@@ -6,12 +6,12 @@ const ActionButtons = () => {
     <div className='home__mainBox-btns'>
       <ul>
         <li>
-          <Link to='/oddaj-rzeczy'>
+          <Link to='/logowanie'>
             oddaj <br /> rzeczy
           </Link>
         </li>
         <li>
-          <Link to='/oddaj-rzeczy'>zorganizuj zbiórkę</Link>
+          <Link to='/logowanie'>zorganizuj zbiórkę</Link>
         </li>
       </ul>
     </div>

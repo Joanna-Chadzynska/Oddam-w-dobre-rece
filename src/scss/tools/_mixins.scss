@@ -5,6 +5,7 @@
   margin-bottom: 1rem;
 
   li {
+    text-align: center;
     a {
       border: 0.75px solid transparent;
       color: $color-gray-normal;
@@ -20,6 +21,10 @@
 
       @include media($xl) {
         padding: 10px;
+      }
+
+      @include media($lg) {
+        padding: 5px;
       }
     }
   }
