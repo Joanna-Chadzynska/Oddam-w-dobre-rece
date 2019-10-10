@@ -1,6 +1,9 @@
+@import "./fonts//open-sans";
+@import "./fonts/merriweather";
 @import "./reset/reset";
 @import "./settings/fonts";
-@import "./settings//colors";
+@import "./settings/colors";
+@import "./tools/mixins";
 @import "./components/homeNavHeader";
 
 body {

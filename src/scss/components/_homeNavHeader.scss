@@ -23,10 +23,6 @@
     justify-content: baseline;
     position: relative;
 
-    // .home__nav {
-    //   // text-align: right;
-    // }
-
     .home__mainBox {
       text-align: center;
       position: absolute;
@@ -39,27 +35,19 @@
 
 // userBar navigation
 .home__nav-userBar ul {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-bottom: 1rem;
+  @include navButtons();
+}
 
-  li {
-    &:first-child {
-      padding-right: 1.875rem;
-    }
+// Menu
+.home__nav-menu ul {
+  @include navButtons();
 
-    a {
-      border: 1px solid transparent;
-      color: $color-gray-normal;
-      font-size: 0.875rem;
-      text-decoration: none;
-      padding: 10px 20px;
-      transition: 0.3s;
+  li a {
+    color: $color-gray-dark;
+    font-size: 1.125rem;
 
-      &:hover {
-        border-color: $color-yellow;
-      }
+    &:hover {
+      border-color: $color-gray-dark;
     }
   }
 }

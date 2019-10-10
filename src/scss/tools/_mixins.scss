@@ -1,0 +1,22 @@
+@mixin navButtons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  li {
+    a {
+      border: 0.75px solid transparent;
+      color: $color-gray-normal;
+      cursor: pointer;
+      font-size: 0.875rem;
+      text-decoration: none;
+      padding: 10px 20px;
+      transition: 0.2s;
+
+      &:hover {
+        border-color: $color-yellow;
+      }
+    }
+  }
+}

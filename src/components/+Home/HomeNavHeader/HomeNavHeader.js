@@ -11,6 +11,7 @@ const HomeNavHeader = () => {
       <div className='home__navPanel'>
         <div className='home__nav'>
           <UserBar />
+          <br />
           <Menu />
         </div>
         <div className='home__mainBox'>
