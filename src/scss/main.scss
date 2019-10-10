@@ -5,7 +5,9 @@
 @import "./settings/colors";
 @import "./tools/variables";
 @import "./tools/mixins";
+@import "./components/wrapper";
 @import "./components/homeNavHeader";
+@import "./components/homeThreeColumns";
 
 body {
   font-family: $font-base;

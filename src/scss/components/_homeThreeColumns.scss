@@ -1,0 +1,41 @@
+.home__threeColumns {
+  height: 30vh;
+  background-color: $color-yellow;
+}
+
+.home__threeColumns-box {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 7rem;
+  text-align: center;
+
+  .home__column {
+    display: flex;
+    min-height: 30vh;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+      color: $color-gray-dark;
+      font-size: 5rem;
+      font-weight: 300;
+      padding-bottom: 2rem;
+    }
+
+    p {
+      color: $color-gray-dark;
+      font-size: 1rem;
+      letter-spacing: -0.36px;
+      padding-bottom: 2rem;
+      text-transform: uppercase;
+    }
+
+    span {
+      color: $color-gray-dark;
+      font-size: 0.938rem;
+      font-weight: 300;
+      letter-spacing: -0.36px;
+      text-align: center;
+    }
+  }
+}
