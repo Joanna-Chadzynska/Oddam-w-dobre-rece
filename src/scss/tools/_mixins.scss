@@ -17,6 +17,10 @@
       &:hover {
         border-color: $color-yellow;
       }
+
+      @include media($xl) {
+        padding: 10px;
+      }
     }
   }
 }

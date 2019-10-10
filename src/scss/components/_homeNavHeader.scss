@@ -87,6 +87,11 @@
     height: 7.5rem;
     position: relative;
 
+    @include media($xl) {
+      width: 15rem;
+      height: 7rem;
+    }
+
     a {
       color: $color-gray-dark;
       cursor: pointer;
