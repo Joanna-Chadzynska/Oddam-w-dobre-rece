@@ -6,6 +6,8 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 70vh;
+  margin-top: 2rem;
+  margin-right: 5rem;
 
   .home__hero {
     background: transparent url("../../assets/Home-Hero-Image.jpg") 0% 0%
@@ -40,13 +42,24 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  margin-bottom: 1rem;
 
   li {
-    padding-right: 1.875rem;
+    &:first-child {
+      padding-right: 1.875rem;
+    }
+
     a {
+      border: 1px solid transparent;
       color: $color-gray-normal;
       font-size: 0.875rem;
       text-decoration: none;
+      padding: 10px 20px;
+      transition: 0.3s;
+
+      &:hover {
+        border-color: $color-yellow;
+      }
     }
   }
 }
