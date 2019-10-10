@@ -1,0 +1,52 @@
+// .home {
+//   height: 50vh;
+// }
+
+.home__navHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 70vh;
+
+  .home__hero {
+    background: transparent url("../../assets/Home-Hero-Image.jpg") 0% 0%
+      no-repeat padding-box;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: cover;
+  }
+
+  .home__navPanel {
+    display: flex;
+    flex-direction: column;
+    justify-content: baseline;
+    position: relative;
+
+    // .home__nav {
+    //   // text-align: right;
+    // }
+
+    .home__mainBox {
+      text-align: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+// userBar navigation
+.home__nav-userBar ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  li {
+    padding-right: 1.875rem;
+    a {
+      color: $color-gray-normal;
+      font-size: 0.875rem;
+      text-decoration: none;
+    }
+  }
+}

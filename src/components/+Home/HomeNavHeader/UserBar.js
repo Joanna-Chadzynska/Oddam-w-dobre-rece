@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const UserBar = () => {
   return (
-    <div className='userbar'>
+    <div className='home__nav-userBar'>
       <ul>
         <li>
           <Link to='/logowanie'>Zaloguj</Link>

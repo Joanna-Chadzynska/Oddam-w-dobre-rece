@@ -1,6 +1,7 @@
-@import "./reset//reset";
+@import "./reset/reset";
 @import "./settings/fonts";
 @import "./settings//colors";
+@import "./components/homeNavHeader";
 
 body {
   font-family: $font-base;
