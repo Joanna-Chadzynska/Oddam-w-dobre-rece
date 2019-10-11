@@ -1,5 +1,5 @@
 import React from "react";
-import Wrapper from "../../Layouts/Wrapper";
+// import Wrapper from "../../Layouts/Wrapper";
 
 const HomeThreeColumns = () => {
   return (
