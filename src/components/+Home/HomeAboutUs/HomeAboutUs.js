@@ -2,7 +2,7 @@ import React from "react";
 
 const HomeAboutUs = () => {
   return (
-    <div className='home__aboutUs'>
+    <div className='home__aboutUs' id='about-us'>
       <div className='home__description-box'>
         <div className='home__mainBox-title'>
           <h1>O nas</h1>
