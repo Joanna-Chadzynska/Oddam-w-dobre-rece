@@ -12,4 +12,11 @@
 
 body {
   font-family: $font-base;
+
+  @include media($md) {
+    font-size: 80%;
+  }
+  @include media($sm) {
+    font-size: 50%;
+  }
 }

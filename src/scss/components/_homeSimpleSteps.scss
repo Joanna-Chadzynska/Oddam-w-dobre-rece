@@ -1,21 +1,24 @@
 .home__simpleSteps {
-  height: 45vh;
+  min-height: 55vh;
   margin-bottom: 5rem;
   margin-top: 3.5rem;
+  min-width: 100%;
 
   .home__steps {
     background-color: $color-gray-light;
-    height: 22vh;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    align-items: center;
-    justify-items: center;
-    text-align: center;
+    grid-gap: 5rem;
     margin-bottom: 2rem;
-    padding: 0 10rem;
+    min-height: 30vh;
+    padding: 2rem 8rem;
+    text-align: center;
 
     .home__step {
-      width: 10rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
       .home__icon {
         background-repeat: no-repeat;
         background-position: center;
@@ -49,7 +52,7 @@
 
       span {
         display: block;
-        font-size: 1.125rem;
+        font-size: 1.125em;
         margin: 1rem 0;
       }
 
@@ -58,7 +61,7 @@
       }
 
       p {
-        font-size: 1rem;
+        font-size: 1em;
       }
     }
   }
