@@ -1,0 +1,39 @@
+.home__aboutUs {
+  min-height: 65vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  .home__description-box {
+    background-color: $color-gray-light;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 7rem;
+    text-align: center;
+
+    .home__desc {
+      color: $color-gray-dark;
+      font-size: 1.5em;
+      line-height: 2em;
+      letter-spacing: -0.6px;
+      margin-bottom: 2.5rem;
+    }
+
+    .home__signature {
+      background-image: url("../../assets/Signature.svg");
+      background-repeat: no-repeat;
+      background-position: top right;
+      width: 100%;
+      padding-bottom: 8rem;
+    }
+  }
+
+  .home__banner {
+    background-image: url("../../assets/People.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    overflow: hidden;
+  }
+}
