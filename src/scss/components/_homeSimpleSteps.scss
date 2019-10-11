@@ -22,8 +22,10 @@
       .home__icon {
         background-repeat: no-repeat;
         background-position: center;
-        width: 5.188rem;
-        height: 5.188rem;
+        background-size: contain;
+        width: 40%;
+        height: 40%;
+        padding: 0;
         position: relative;
         left: 50%;
         transform: translateX(-50%);
@@ -53,7 +55,7 @@
       span {
         display: block;
         font-size: 1.125em;
-        margin: 1rem 0;
+        margin-bottom: 0.5rem;
       }
 
       hr {
@@ -62,6 +64,7 @@
 
       p {
         font-size: 1em;
+        margin-top: 0.5rem;
       }
     }
   }
