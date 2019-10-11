@@ -6,6 +6,7 @@
 
   li {
     text-align: center;
+
     a {
       border: 0.75px solid transparent;
       color: $color-gray-normal;
@@ -14,7 +15,6 @@
       text-decoration: none;
       padding: 10px 20px;
       transition: 0.2s;
-
       &:hover {
         border-color: $color-yellow;
       }

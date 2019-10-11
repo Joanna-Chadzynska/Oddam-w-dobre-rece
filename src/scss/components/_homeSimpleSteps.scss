@@ -1,0 +1,65 @@
+.home__simpleSteps {
+  height: 45vh;
+  margin-bottom: 5rem;
+  margin-top: 3.5rem;
+
+  .home__steps {
+    background-color: $color-gray-light;
+    height: 22vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
+    padding: 0 10rem;
+
+    .home__step {
+      width: 10rem;
+      .home__icon {
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 5.188rem;
+        height: 5.188rem;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .home__icon-stepOne {
+        background-image: url("../../assets/Icon-1.svg");
+      }
+
+      .home__icon-stepTwo {
+        background-image: url("../../assets/Icon-2.svg");
+      }
+
+      .home__icon-stepThree {
+        background-image: url("../../assets/Icon-3.svg");
+      }
+
+      .home__icon-stepFour {
+        background-image: url("../../assets/Icon-4.svg");
+      }
+
+      span,
+      p {
+        color: $color-gray-dark;
+      }
+
+      span {
+        display: block;
+        font-size: 1.125rem;
+        margin: 1rem 0;
+      }
+
+      hr {
+        width: 70px;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+}
