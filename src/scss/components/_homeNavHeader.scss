@@ -41,10 +41,10 @@
 
   li a {
     color: $color-gray-dark;
-    font-size: 1.125rem;
+    font-size: 1.125em;
 
     @include media($lg) {
-      font-size: 1rem;
+      font-size: 1em;
     }
 
     &:hover {
@@ -58,13 +58,13 @@
 .home__mainBox-title {
   h1 {
     color: $color-gray-dark;
-    font-size: 2rem;
+    font-size: 2em;
     letter-spacing: -0.76px;
     margin-bottom: 1rem;
     text-align: center;
 
     @include media($lg) {
-      font-size: 1.75rem;
+      font-size: 1.75em;
     }
   }
 }
@@ -96,7 +96,6 @@
     width: 17rem;
     height: 7.5rem;
     text-align: center;
-
     position: relative;
     transition: 0.2s;
 
@@ -120,7 +119,7 @@
     a {
       color: $color-gray-dark;
       cursor: pointer;
-      font-size: 2rem;
+      font-size: 2em;
       line-height: 2.5rem;
       text-decoration: none;
       text-transform: uppercase;
@@ -131,7 +130,7 @@
       transform: translate(-50%, -50%);
 
       @include media($lg) {
-        font-size: 1.5rem;
+        font-size: 1.5em;
       }
     }
   }
