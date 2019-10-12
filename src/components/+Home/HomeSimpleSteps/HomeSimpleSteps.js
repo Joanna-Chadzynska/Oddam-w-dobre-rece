@@ -1,13 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import CustomTitle from "../../Layouts/CustomTitle";
 
 const HomeSimpleSteps = () => {
   return (
     <div className='home__simpleSteps' id='simple-steps'>
-      <div className='home__mainBox-title'>
-        <h1>Wystarczą 4 proste kroki</h1>
-        <div className='decoration'></div>
-      </div>
+      <CustomTitle>Wystarczą 4 proste kroki</CustomTitle>
 
       <div className='home__steps'>
         <div className='home__step'>

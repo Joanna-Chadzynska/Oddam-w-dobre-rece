@@ -1,7 +1,7 @@
 import React from "react";
 import Menu from "./Menu";
 import UserBar from "./UserBar";
-import HeaderTitle from "./HeaderTitle";
+import CustomTitle from "../../Layouts/CustomTitle";
 import ActionButtons from "./ActionButtons";
 
 const HomeNavHeader = () => {
@@ -15,7 +15,11 @@ const HomeNavHeader = () => {
           <Menu />
         </div>
         <div className='home__mainBox'>
-          <HeaderTitle />
+          <CustomTitle>
+            Zacznij pomagać!
+            <br />
+            Oddaj niechciane rzeczy w zaufane ręce
+          </CustomTitle>
           <ActionButtons />
         </div>
       </div>
