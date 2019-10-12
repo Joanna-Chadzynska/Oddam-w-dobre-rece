@@ -29,12 +29,6 @@
       "name": "Organizacja Lorem Ipsum 5",
       "description": "Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.",
       "additional": "Ut, aliquam, purus, sit, amet"
-    },
-    {
-      "id": 6,
-      "name": "Organizacja Lorem Ipsum 6",
-      "description": "Scelerisque in dictum non consectetur a erat nam.",
-      "additional": "Mi, quis, hendrerit, dolor"
     }
   ],
 
@@ -68,12 +62,6 @@
       "name": "Zbiórka \"Lorem Ipsum 5\"",
       "description": "Hendrerit gravida rutrum quisque non tellus orci ac auctor augue.",
       "additional": "Ut, aliquam, purus, sit, amet"
-    },
-    {
-      "id": 6,
-      "name": "Zbiórka \"Lorem Ipsum 6\"",
-      "description": "Scelerisque in dictum non consectetur a erat nam.",
-      "additional": "Mi, quis, hendrerit, dolor"
     }
   ],
 
@@ -125,12 +113,6 @@
       "name": "Fundacja \"Dla dzieci\"",
       "description": "Cel i misja: Pomoc dzieciom z ubogich rodzin.",
       "additional": "ubrania, meble, zabawki"
-    },
-    {
-      "id": 9,
-      "name": "Fundacja \"Bez domu\"",
-      "description": "Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.",
-      "additional": "ubrania, jedzenie, ciepłe koce"
     }
   ]
 }

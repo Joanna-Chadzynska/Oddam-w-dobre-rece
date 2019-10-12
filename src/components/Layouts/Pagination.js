@@ -1,6 +1,6 @@
 import React from "react";
 
-const pagination = (array, page, setPageNumber) => {
+const pagination = (array, currentPage, setPageNumber) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(array.length / 3); i++) {
@@ -8,7 +8,7 @@ const pagination = (array, page, setPageNumber) => {
       <li
         key={i}
         onClick={() => setPageNumber(i)}
-        className={page === i ? "active" : null}>
+        className={currentPage === i ? "active" : null}>
         {i}
       </li>
     );

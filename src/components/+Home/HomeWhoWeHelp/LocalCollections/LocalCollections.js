@@ -28,7 +28,9 @@ const LocalCollections = () => {
             <Local key={local.id} local={local} />
           ))}
         </ul>
-        <ul>{pagination(locales, currentPage, setPageNumber)}</ul>
+        <ul className='home__orgList-pagination'>
+          {pagination(locales, currentPage, setPageNumber)}
+        </ul>
       </div>
     </div>
   );

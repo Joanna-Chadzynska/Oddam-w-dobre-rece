@@ -1,4 +1,57 @@
 .home__whoWeHelp {
   min-height: 55vh;
   margin-top: 4.375rem;
+  padding: 0 10rem;
+}
+
+.home__orgList-item {
+  border-bottom: 1px solid #707070;
+  color: $color-gray-dark;
+  font-family: $font-alt;
+  font-weight: 300;
+  padding-bottom: 1.875rem;
+  padding-top: 2.125rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:last-of-type {
+    border-bottom: none;
+  }
+
+  .home__orgList-details {
+    h2 {
+      font-size: 1.625rem;
+    }
+    p {
+      font-size: 1.125rem;
+      font-style: italic;
+    }
+  }
+
+  span {
+    font-size: 1.125rem;
+  }
+}
+
+.home__orgList-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  li {
+    border: none;
+    display: block;
+    font-size: 1.125rem;
+    line-height: 3rem;
+    margin: 0 0.5rem;
+    width: 2.5rem;
+    height: 3rem;
+    text-align: center;
+
+    &.active {
+      border: 1px solid #707070;
+      color: $color-gray-dark;
+    }
+  }
 }

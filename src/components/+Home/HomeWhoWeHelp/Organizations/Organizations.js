@@ -30,7 +30,9 @@ const Organizations = () => {
               <Organization key={organization.id} organization={organization} />
             ))}
         </ul>
-        <ul>{pagination(organizations, currentPage, setPageNumber)}</ul>
+        <ul className='home__orgList-pagination'>
+          {pagination(organizations, currentPage, setPageNumber)}
+        </ul>
       </div>
     </div>
   );

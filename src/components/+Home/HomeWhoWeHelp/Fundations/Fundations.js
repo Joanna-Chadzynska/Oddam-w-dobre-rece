@@ -22,13 +22,15 @@ const Fundations = () => {
         współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego
         potrzebują.
       </CustomDescription>
-      <div>
+      <div className='home__orgList'>
         <ul>
           {fundations.slice(indexOfFirst, indexOfLast).map((fundation) => (
             <Fundation key={fundation.id} fundation={fundation} />
           ))}
         </ul>
-        <ul>{pagination(fundations, currentPage, setPageNumber)}</ul>
+        <ul className='home__orgList-pagination'>
+          {pagination(fundations, currentPage, setPageNumber)}
+        </ul>
       </div>
     </div>
   );

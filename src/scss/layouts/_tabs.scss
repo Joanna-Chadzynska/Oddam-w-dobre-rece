@@ -5,6 +5,7 @@
 
 .tab-list-item {
   color: $color-gray-dark;
+  cursor: pointer;
   display: inline-block;
   font-size: 24px;
   list-style: none;
@@ -20,6 +21,6 @@
 }
 
 .tab-list-active {
-  border: 1px solid #ccc;
+  border: 0.75px solid $color-gray-dark;
   margin-bottom: 4.375rem;
 }
