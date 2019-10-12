@@ -1,6 +1,5 @@
 import React from "react";
-import CustomTitle from "../../Layouts/CustomTitle";
-import Tabs from "../../Layouts/Tabs";
+import { CustomTitle, Tabs } from "../../Layouts";
 import Fundations from "./Fundations";
 import Organizatins from "./Organizations";
 import LocalCollecions from "./LocalCollections";

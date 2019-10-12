@@ -5,12 +5,13 @@
 @import "./settings/colors";
 @import "./tools/variables";
 @import "./tools/mixins";
-@import "./components/wrapper";
+@import "./layouts/wrapper";
 @import "./components/homeNavHeader";
 @import "./components/homeThreeColumns";
 @import "./components/homeSimpleSteps";
 @import "./components/homeAboutUs";
-@import "./components/tabs";
+@import "./layouts/tabs";
+@import "./layouts//customDescription";
 @import "./components/homeWhoWeHelp";
 
 body {

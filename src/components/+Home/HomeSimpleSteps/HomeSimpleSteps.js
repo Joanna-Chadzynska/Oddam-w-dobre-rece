@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import CustomTitle from "../../Layouts/CustomTitle";
+import { CustomTitle } from "../../Layouts";
 
 const HomeSimpleSteps = () => {
   return (

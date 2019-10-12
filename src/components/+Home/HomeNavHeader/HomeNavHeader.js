@@ -1,7 +1,7 @@
 import React from "react";
 import Menu from "./Menu";
 import UserBar from "./UserBar";
-import CustomTitle from "../../Layouts/CustomTitle";
+import { CustomTitle } from "../../Layouts";
 import ActionButtons from "./ActionButtons";
 
 const HomeNavHeader = () => {
