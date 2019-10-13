@@ -22,7 +22,7 @@ const Organizations = () => {
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation.
       </CustomDescription>
-      <div>
+      <div className='home__orgList'>
         <ul>
           {organizations
             .slice(indexOfFirst, indexOfLast)

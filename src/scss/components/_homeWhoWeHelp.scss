@@ -2,6 +2,21 @@
   min-height: 55vh;
   margin-top: 4.375rem;
   padding: 0 10rem;
+
+  @include media($xl) {
+    padding: 0 5rem;
+  }
+}
+
+.home__orgList ul {
+  height: 25vh;
+
+  @include media($xxl) {
+    height: 30vh;
+  }
+  @include media($xl) {
+    height: 33vh;
+  }
 }
 
 .home__orgList-item {

@@ -22,7 +22,7 @@ const LocalCollections = () => {
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
         veniam, quis nostrud exercitation.
       </CustomDescription>
-      <div>
+      <div className='home__orgList'>
         <ul>
           {locales.slice(indexOfFirst, indexOfLast).map((local) => (
             <Local key={local.id} local={local} />

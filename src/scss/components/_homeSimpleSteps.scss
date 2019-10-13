@@ -23,12 +23,23 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: contain;
+        box-sizing: border-box;
         width: 40%;
         height: 40%;
         padding: 0;
         position: relative;
         left: 50%;
+        bottom: 2%;
         transform: translateX(-50%);
+
+        @include media($xxl) {
+          width: 43%;
+          height: 43%;
+        }
+        @include media($xl) {
+          width: 80%;
+          height: 80%;
+        }
       }
 
       .home__icon-stepOne {
@@ -37,6 +48,14 @@
 
       .home__icon-stepTwo {
         background-image: url("../../assets/Icon-2.svg");
+        margin-bottom: 10px;
+
+        @include media($xxl) {
+          margin-bottom: 11px;
+        }
+        @include media($xl) {
+          margin-bottom: 12px;
+        }
       }
 
       .home__icon-stepThree {

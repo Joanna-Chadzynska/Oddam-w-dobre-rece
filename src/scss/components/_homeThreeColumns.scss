@@ -1,8 +1,11 @@
 .home__threeColumns {
   min-height: 24vh;
   background-color: $color-yellow;
-  padding: 3rem 5rem;
-  // padding-top: 3rem;
+  padding: 3rem 25rem;
+
+  @include media($xxl) {
+    padding: 3rem 10rem;
+  }
 }
 
 .home__threeColumns-box {

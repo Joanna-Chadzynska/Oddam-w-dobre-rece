@@ -1,32 +1,33 @@
 .home__contact {
+  min-height: 70vh;
+  margin: 2rem 0;
   display: grid;
   grid-template-columns: 60% 40%;
-  min-height: 65vh;
-  margin: 2rem 0;
+}
 
-  .home__banner {
-    background-image: url("../../assets/Background-Contact-Form.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-    position: relative;
-    opacity: 0.3;
+.home__contact-banner {
+  background-image: url("../../assets/Background-Contact-Form.jpg");
+  background-repeat: no-repeat;
+  // background-size: cover;
+  background-position: 10px 20px;
+  opacity: 0.3;
+  height: 100%;
+  width: 100%;
 
-    .copyright {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      margin-bottom: 1rem;
-      margin-right: 1rem;
-    }
-  }
+  // .copyright {
+  //   position: absolute;
+  //   bottom: 0;
+  //   right: 0;
+  //   margin-bottom: 1rem;
+  //   margin-right: 1rem;
+  // }
 }
 
 .home__contactForm {
   display: flex;
   flex-flow: column;
-  height: 100%;
-  justify-content: center;
+  height: 80%;
+  margin-top: 10rem;
   position: relative;
 
   .home__socialMedia {
@@ -89,6 +90,7 @@
     textarea {
       border: none;
       border-bottom: 1px solid #707070;
+      background-color: transparent;
       font-family: $font-base;
       padding: 1em;
 

@@ -41,9 +41,13 @@
 
   li a {
     color: $color-gray-dark;
-    font-size: 1.125em;
+    font-size: 1.5em;
 
-    @include media($lg) {
+    @include media($xxl) {
+      font-size: 1.125em;
+    }
+
+    @include media($xl) {
       font-size: 1em;
     }
 
@@ -58,14 +62,22 @@
 .home__mainBox-title {
   h1 {
     color: $color-gray-dark;
-    font-size: 2em;
+    font-size: 2.375em;
     letter-spacing: -0.76px;
     margin-bottom: 1rem;
     text-align: center;
 
-    @include media($lg) {
-      font-size: 1.75em;
+    @include media($xxl) {
+      font-size: 2em;
     }
+
+    @include media($xl) {
+      font-size: 1.5em;
+    }
+
+    // @include media($lg) {
+    //   font-size: 1.75em;
+    // }
   }
 }
 
@@ -78,17 +90,12 @@
   height: 2.063rem;
   margin: 0 auto;
   margin-bottom: 2rem;
-
-  // @include media($lg) {
-  //   width: calc(85% * 15.813rem);
-  //   height: calc(50% * 2.063rem);
-  // }
 }
 
 // mainbox action buttons
 .home__mainBox-btns ul {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 
   li {
     border: 0.75px solid $color-gray-dark;
@@ -99,11 +106,13 @@
     position: relative;
     transition: 0.2s;
 
+    &:first-of-type {
+      margin-right: 2rem;
+    }
+
     &:hover {
-      // color: $color-white;
       border-color: $color-yellow;
       transform: scale(0.9);
-      // filter: invert(70%);
     }
 
     @include media($xl) {
@@ -119,7 +128,7 @@
     a {
       color: $color-gray-dark;
       cursor: pointer;
-      font-size: 2em;
+      font-size: 2.25em;
       line-height: 2.5rem;
       text-decoration: none;
       text-transform: uppercase;
@@ -128,6 +137,13 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+
+      @include media($xxl) {
+        font-size: 2em;
+      }
+      @include media($xl) {
+        font-size: 1.75em;
+      }
 
       @include media($lg) {
         font-size: 1.5em;

@@ -15,12 +15,17 @@
       text-decoration: none;
       padding: 10px 20px;
       transition: 0.2s;
+
       &:hover {
         border-color: $color-yellow;
       }
 
-      @include media($xl) {
+      @include media($xxl) {
         padding: 10px;
+      }
+
+      @include media($xl) {
+        padding: 5px;
       }
 
       @include media($lg) {
@@ -31,7 +36,7 @@
 }
 
 @mixin media($size) {
-  @media (max-width: $size) {
+  @media (max-width: $size - 1) {
     @content;
   }
 }
