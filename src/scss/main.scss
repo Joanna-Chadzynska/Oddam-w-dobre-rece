@@ -12,7 +12,9 @@
 @import "./components/homeAboutUs";
 @import "./layouts/tabs";
 @import "./layouts//customDescription";
+@import "./layouts/copyright";
 @import "./components/homeWhoWeHelp";
+@import "./components/homeContact";
 
 body {
   font-family: $font-base;
