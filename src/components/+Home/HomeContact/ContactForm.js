@@ -1,6 +1,6 @@
 import React from "react";
 import { CustomTitle } from "../../Layouts";
-import SocialMedia from "./SocialMedia";
+// import SocialMedia from "./SocialMedia";
 
 const ContactForm = () => {
   return (
@@ -29,7 +29,7 @@ const ContactForm = () => {
               id='message'
               cols='30'
               rows='5'
-              placeholder='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+              placeholder='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet'
             />
           </p>
           <br />
@@ -39,7 +39,7 @@ const ContactForm = () => {
         </form>
       </div>
 
-      <SocialMedia />
+      {/* <SocialMedia /> */}
     </div>
   );
 };

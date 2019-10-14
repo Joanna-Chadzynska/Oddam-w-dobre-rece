@@ -1,15 +1,17 @@
 import React from "react";
 import ContactForm from "./ContactForm";
 import { Copyright } from "../../Layouts";
+import SocialMedia from "./SocialMedia";
 
 const HomeContact = () => {
   return (
     <div className='home__contact' id='contact'>
-      <div className='home__contact-banner'>
-        {/* <img src='src/assets/Background-Contact-Form.jpg' alt='' /> */}
-      </div>
-      <div className='home__contact-box'>
-        <ContactForm />
+      <div className='home__bg'></div>
+      <br />
+      <ContactForm />
+      <div className='home__contact-footer'>
+        <Copyright />
+        <SocialMedia />
       </div>
     </div>
   );
