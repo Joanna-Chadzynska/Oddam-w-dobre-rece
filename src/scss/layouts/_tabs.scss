@@ -1,27 +1,33 @@
 .tab-list {
-  display: flex;
-  justify-content: center;
-  min-height: 10vh;
+	display: flex;
+	justify-content: center;
+	min-height: 10vh;
 }
 
 .tab-list-item {
-  color: $color-gray-dark;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 24px;
-  list-style: none;
-  padding: 1rem 2rem;
-  text-align: center;
-  height: 4rem;
-  width: 12rem;
-  word-break: normal;
+	color: $color-gray-dark;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 24px;
+	list-style: none;
+	padding: 1rem 2rem;
+	text-align: center;
+	height: 4rem;
+	width: 12rem;
+	word-break: normal;
 
-  &:first-child {
-    line-height: 4rem;
-  }
+	&:first-child {
+		line-height: 4rem;
+	}
 }
 
 .tab-list-active {
-  border: 0.75px solid $color-gray-dark;
-  margin-bottom: 4.375rem;
+	border: 0.75px solid $color-gray-dark;
+	cursor: pointer;
+	margin-bottom: 4.375rem;
+	transition: 0.3s;
+
+	&:hover {
+		border-color: $color-yellow;
+	}
 }
