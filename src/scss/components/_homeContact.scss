@@ -1,153 +1,183 @@
 .home__contact {
-  display: grid;
-  grid-template-columns: 60% 40%;
-  min-height: 100vh;
-  padding-right: 3rem;
-  position: relative;
-  z-index: 1;
+	display: grid;
+	grid-template-columns: 60% 40%;
+	min-height: 100vh;
+	padding-right: 3rem;
+	position: relative;
+	z-index: 1;
 
-  @include media($xl) {
-    padding-right: 0;
-  }
+	@include media($xl) {
+		padding-right: 0;
+	}
 
-  .home__bg {
-    background-image: url("../../assets/Background-Contact-Form.jpg");
-    background-repeat: no-repeat;
-    height: 100%;
-    width: 100%;
-    opacity: 0.3;
-    padding: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: -1;
+	.home__bg {
+		background-image: url("../../assets/Background-Contact-Form.jpg");
+		background-repeat: no-repeat;
+		height: 100%;
+		width: 100%;
+		opacity: 0.3;
+		padding: 0;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		z-index: -1;
 
-    @include media($xxl) {
-      background-size: cover;
-    }
+		@include media($xxl) {
+			background-size: cover;
+		}
 
-    @include media($xl) {
-      background-position: -50px;
-    }
-  }
+		@include media($xl) {
+			background-position: -50px;
+		}
+	}
 }
 
 .home__contactForm {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  height: 86%;
-  margin-top: 10rem;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	height: 86%;
+	margin-top: 10rem;
 
-  @include media($xxl) {
-    margin-top: 7rem;
-  }
+	@include media($xxl) {
+		margin-top: 7rem;
+	}
 }
 
 .home__contact-box {
-  margin: 4rem 3rem;
+	margin: 4rem 3rem;
 
-  @include media($xxl) {
-    margin: 2rem 3rem;
-  }
+	@include media($xxl) {
+		margin: 2rem 3rem;
+	}
 
-  form {
-    display: grid;
-    grid-gap: 2.5rem;
-    grid-template-columns: 1fr 1fr;
+	form {
+		display: grid;
+		grid-gap: 2.5rem;
+		grid-template-columns: 1fr 1fr;
 
-    label {
-      display: block;
-      font-weight: 600;
-    }
+		label {
+			display: block;
+			font-weight: 600;
+			margin-bottom: 0.3em;
+		}
 
-    p {
-      margin: 0;
-    }
+		p {
+			margin: 0;
+		}
 
-    p:last-child {
-      justify-self: end;
-    }
+		p:last-child {
+			justify-self: end;
+		}
 
-    .home__form-full {
-      grid-column: 1 / 3;
+		.home__form-full {
+			grid-column: 1 / 3;
 
-      textarea {
-        width: 95%;
-      }
-    }
+			textarea {
+				width: 95%;
+			}
+		}
 
-    input,
-    textarea {
-      border: none;
-      border-bottom: 1px solid #707070;
-      background-color: transparent;
-      font-family: $font-base;
-      padding: 1em;
-      width: 90%;
+		input,
+		textarea {
+			border: none;
+			border-bottom: 1px solid #707070;
+			background-color: transparent;
+			font-family: $font-base;
+			padding: 1em;
+			width: 90%;
 
-      &::placeholder {
-        font-size: 1.125em;
-        opacity: 0.3;
-        padding: 0;
-      }
-    }
+			&::placeholder {
+				font-size: 1.125em;
+				opacity: 0.3;
+				padding: 0;
+			}
 
-    input[type="email"] {
-      @include media($xl) {
-        height: 45%;
-      }
-    }
+			&:focus {
+				outline-width: 3px;
+				outline-offset: 2px;
+				border-color: #9ecaed;
+				box-shadow: 0 0 10px #9ecaed;
+			}
+		}
 
-    button {
-      background-color: transparent;
-      border: 1px solid #707070;
-      font-weight: 300;
-      font-size: 1.125em;
-      padding: 0.75rem 3.25rem;
+		input[type="email"] {
+			@include media($xl) {
+				height: 45%;
+			}
+		}
 
-      &:hover {
-        border-color: $color-yellow;
-      }
-    }
-  }
+		input.error,
+		textarea.error {
+			border-bottom: 1px solid red;
+			color: $color-gray-dark;
+			font-size: 0.875em;
+		}
+
+		button {
+			background-color: transparent;
+			border: 1px solid #707070;
+			font-weight: 300;
+			font-size: 1.125em;
+			padding: 0.75rem 3.25rem;
+
+			&:hover {
+				border-color: $color-yellow;
+			}
+		}
+	}
 }
 
 .home__contact-footer {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: flex-end;
-  grid-column: 1 / 3;
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: flex-end;
+	grid-column: 1 / 3;
 
-  .copyright {
-    color: $color-gray-dark;
-    display: block;
-    font-size: 1.125em;
-  }
+	.copyright {
+		color: $color-gray-dark;
+		display: block;
+		font-size: 1.125em;
+	}
 
-  .home__socialMedia {
-    align-self: flex-end;
-    display: flex;
-    margin-right: 5rem;
+	.home__socialMedia {
+		align-self: flex-end;
+		display: flex;
+		margin-right: 5rem;
 
-    .icon {
-      background-repeat: no-repeat;
-      background-size: contain;
-      width: 1.875rem;
-      height: 1.875rem;
-      padding-bottom: 1.375rem;
-    }
+		.icon {
+			background-repeat: no-repeat;
+			background-size: contain;
+			width: 1.875rem;
+			height: 1.875rem;
+			padding-bottom: 1.375rem;
+		}
 
-    .facebook {
-      background-image: url("../../assets/Facebook.svg");
-      margin-right: 1rem;
-    }
+		.facebook {
+			background-image: url("../../assets/Facebook.svg");
+			margin-right: 1rem;
+		}
 
-    .instagram {
-      background-image: url("../../assets/Instagram.svg");
-    }
-  }
+		.instagram {
+			background-image: url("../../assets/Instagram.svg");
+		}
+	}
+}
+
+// error message
+.error {
+	color: red;
+	font-size: 0.625em;
+	font-weight: 600;
+}
+
+.success {
+	color: green;
+	font-weight: 600;
+	font-size: 0.875em;
+	text-align: center;
+	margin: 0 auto;
 }

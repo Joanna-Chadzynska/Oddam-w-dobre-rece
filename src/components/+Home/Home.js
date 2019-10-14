@@ -7,16 +7,16 @@ import HomeWhoWeHelp from "./HomeWhoWeHelp";
 import HomeContact from "./HomeContact";
 
 const Home = () => {
-  return (
-    <div className='home'>
-      <HomeNavHeader />
-      <HomeThreeColumns />
-      <HomeSimpleSteps />
-      <HomeAboutUs />
-      <HomeWhoWeHelp />
-      <HomeContact />
-    </div>
-  );
+	return (
+		<div className='home'>
+			<HomeNavHeader />
+			<HomeThreeColumns />
+			<HomeSimpleSteps />
+			<HomeAboutUs />
+			<HomeWhoWeHelp />
+			<HomeContact />
+		</div>
+	);
 };
 
 export default Home;
