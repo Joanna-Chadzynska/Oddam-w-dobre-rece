@@ -30,6 +30,11 @@
 	}
 }
 
+.home__nav {
+	margin-top: 2.25rem;
+	padding-right: 7rem;
+}
+
 // userBar navigation
 .home__nav-userBar ul {
 	@include navButtons();
