@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { CustomTitle } from "../Layouts";
-import Menu from "../+Home/HomeNavHeader/Menu";
-import UserBar from "../+Home/HomeNavHeader/UserBar";
-import { signInWithGoogle } from "../../firebase/firebase.utils";
+import { CustomTitle, ErrorInfo } from "../Layouts";
 
-const Login = () => {
+import { auth, signInWithGoogle } from "../../firebase/firebase.utils";
+
+const Login = ({ history }) => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [errors, setErrors] = useState({
@@ -25,7 +24,7 @@ const Login = () => {
 
 		if (!emailRegex.test(email)) {
 			isValid = false;
-			errors.email = "Podany jest nieprawidłowy!";
+			errors.email = "Podany email jest nieprawidłowy!";
 		} else {
 			isValid = true;
 			errors.email = "";
@@ -44,13 +43,21 @@ const Login = () => {
 		return isValid;
 	};
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 		if (validate()) {
+			try {
+				await auth.signInWithEmailAndPassword(email, password);
+				setEmail("");
+				setPassword("");
+			} catch (error) {
+				console.log(error);
+			}
+
 			setEmail("");
 			setPassword("");
+			history.push("/");
 		} else {
-			console.log(errors);
 			return errors;
 		}
 	};
@@ -68,7 +75,9 @@ const Login = () => {
 							id='email'
 							value={email}
 							onChange={handleChange}
+							className={errors.email ? "error" : null}
 						/>
+						{errors.email && <ErrorInfo>{errors.email}</ErrorInfo>}
 						<br />
 						<br />
 						<label htmlFor='password'>Hasło</label>
@@ -79,13 +88,12 @@ const Login = () => {
 							value={password}
 							onChange={handleChange}
 						/>
+						{errors.password && <ErrorInfo>{errors.password}</ErrorInfo>}
 					</div>
 					<div className='buttons-box'>
 						<Link to='/rejestracja'>Załóż konto</Link>
 						<button type='submit'>Zaloguj się</button>
-						<button onClick={signInWithGoogle}>
-							Zaloguj się za pomocą konta Google
-						</button>
+						{/* <button onClick={signInWithGoogle}>login with google</button> */}
 					</div>
 				</form>
 			</div>

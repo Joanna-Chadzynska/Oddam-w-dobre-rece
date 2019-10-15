@@ -1,42 +1,44 @@
 @mixin navButtons {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-bottom: 1rem;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-bottom: 1rem;
 
-  li {
-    text-align: center;
+	li {
+		text-align: center;
+		padding-left: 1rem;
 
-    a {
-      border: 0.75px solid transparent;
-      color: $color-gray-normal;
-      cursor: pointer;
-      font-size: 0.875em;
-      text-decoration: none;
-      padding: 10px 20px;
-      transition: 0.2s;
+		a {
+			border: 0.75px solid transparent;
+			color: $color-gray-normal;
+			cursor: pointer;
+			font-size: 0.875em;
+			text-decoration: none;
+			padding: 10px 20px;
+			transition: 0.2s;
 
-      &:hover {
-        border-color: $color-yellow;
-      }
+			&:hover {
+				border-color: $color-yellow;
+				color: $color-black;
+			}
 
-      @include media($xxl) {
-        padding: 10px;
-      }
+			@include media($xxl) {
+				padding: 10px;
+			}
 
-      @include media($xl) {
-        padding: 5px;
-      }
+			@include media($xl) {
+				padding: 5px;
+			}
 
-      @include media($lg) {
-        padding: 5px;
-      }
-    }
-  }
+			@include media($lg) {
+				padding: 5px;
+			}
+		}
+	}
 }
 
 @mixin media($size) {
-  @media (max-width: $size - 1) {
-    @content;
-  }
+	@media (max-width: $size - 1) {
+		@content;
+	}
 }

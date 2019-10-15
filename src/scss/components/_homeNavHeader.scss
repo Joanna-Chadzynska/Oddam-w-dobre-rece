@@ -38,6 +38,10 @@
 // userBar navigation
 .home__nav-userBar ul {
 	@include navButtons();
+
+	.nav__userBar-hello {
+		font-size: 0.875em;
+	}
 }
 
 // Menu

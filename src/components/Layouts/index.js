@@ -5,13 +5,15 @@ import Tab from "./Tab";
 import Wrapper from "./Wrapper";
 import pagination from "./Pagination";
 import Copyright from "./Copyright";
+import ErrorInfo from "./ErrorInfo";
 
 export {
-  CustomDescription,
-  CustomTitle,
-  Tabs,
-  Tab,
-  Wrapper,
-  pagination,
-  Copyright
+	CustomDescription,
+	CustomTitle,
+	Tabs,
+	Tab,
+	Wrapper,
+	pagination,
+	Copyright,
+	ErrorInfo
 };

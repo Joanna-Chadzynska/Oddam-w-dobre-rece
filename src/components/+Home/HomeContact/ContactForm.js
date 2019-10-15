@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { CustomTitle } from "../../Layouts";
+import { CustomTitle, ErrorInfo } from "../../Layouts";
 
 const ContactForm = () => {
 	const [name, setName] = useState("");
@@ -114,7 +114,7 @@ const ContactForm = () => {
 							onChange={handleChange}
 							className={errors.name ? "error" : null}
 						/>
-						{errors.name && <span className='error'>{errors.name}</span>}
+						{errors.name && <ErrorInfo>{errors.name}</ErrorInfo>}
 					</p>
 
 					<p>
@@ -127,7 +127,7 @@ const ContactForm = () => {
 							onChange={handleChange}
 							className={errors.email ? "error" : null}
 						/>
-						{errors.email && <span className='error'>{errors.email}</span>}
+						{errors.email && <ErrorInfo>{errors.email}</ErrorInfo>}
 					</p>
 
 					<p className='home__form-full'>
@@ -141,7 +141,7 @@ const ContactForm = () => {
 							onChange={handleChange}
 							className={errors.message ? "error" : null}
 						/>
-						{errors.message && <span className='error'>{errors.message}</span>}
+						{errors.message && <ErrorInfo>{errors.message}</ErrorInfo>}
 					</p>
 					<br />
 					<p>
