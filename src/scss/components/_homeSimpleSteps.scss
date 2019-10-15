@@ -1,90 +1,71 @@
 .home__simpleSteps {
-  min-height: 55vh;
-  margin-bottom: 5rem;
-  margin-top: 3.5rem;
-  min-width: 100%;
+	min-height: 55vh;
+	margin-bottom: 5rem;
+	margin-top: 3.5rem;
+	min-width: 100%;
 
-  .home__steps {
-    background-color: $color-gray-light;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 5rem;
-    margin-bottom: 2rem;
-    min-height: 30vh;
-    padding: 2rem 8rem;
-    text-align: center;
+	.home__steps {
+		background-color: $color-gray-light;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 5rem;
+		margin-bottom: 2rem;
+		min-height: 30vh;
+		padding: 2rem 8rem;
+		text-align: center;
 
-    .home__step {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+		.home__step {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
 
-      .home__icon {
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: contain;
-        box-sizing: border-box;
-        width: 40%;
-        height: 40%;
-        padding: 0;
-        position: relative;
-        left: 50%;
-        bottom: 2%;
-        transform: translateX(-50%);
+			.home__icon {
+				width: 50%;
+				height: 50%;
+				padding: 0;
+				padding-bottom: 10px;
+				position: relative;
+				left: 50%;
+				margin: 15px 0;
+				transform: translateX(-50%);
 
-        @include media($xxl) {
-          width: 43%;
-          height: 43%;
-        }
-        @include media($xl) {
-          width: 80%;
-          height: 80%;
-        }
-      }
+				&:hover {
+					// transform: rotate(10deg);
+					// fill: $color-yellow;
 
-      .home__icon-stepOne {
-        background-image: url("../../assets/Icon-1.svg");
-      }
+					fill: red;
+				}
 
-      .home__icon-stepTwo {
-        background-image: url("../../assets/Icon-2.svg");
-        margin-bottom: 10px;
+				@include media($xxl) {
+					width: 65%;
+					height: 65%;
+				}
+				@include media($xl) {
+					width: 100%;
+					height: 100%;
+					padding-bottom: 12px;
+				}
+			}
 
-        @include media($xxl) {
-          margin-bottom: 11px;
-        }
-        @include media($xl) {
-          margin-bottom: 12px;
-        }
-      }
+			span,
+			p {
+				color: $color-gray-dark;
+			}
 
-      .home__icon-stepThree {
-        background-image: url("../../assets/Icon-3.svg");
-      }
+			span {
+				display: block;
+				font-size: 1.125em;
+				margin-bottom: 0.5rem;
+			}
 
-      .home__icon-stepFour {
-        background-image: url("../../assets/Icon-4.svg");
-      }
+			hr {
+				width: 70px;
+			}
 
-      span,
-      p {
-        color: $color-gray-dark;
-      }
-
-      span {
-        display: block;
-        font-size: 1.125em;
-        margin-bottom: 0.5rem;
-      }
-
-      hr {
-        width: 70px;
-      }
-
-      p {
-        font-size: 1em;
-        margin-top: 0.5rem;
-      }
-    }
-  }
+			p {
+				font-size: 1em;
+				margin-top: 0.5rem;
+			}
+		}
+	}
 }
