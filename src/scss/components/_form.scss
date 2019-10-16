@@ -1,0 +1,90 @@
+.form {
+}
+
+.form__header {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	height: 70vh;
+
+	.form__hero {
+		background-image: url("../../assets/Form-Hero-Image.jpg");
+		background-position: right;
+		background-repeat: no-repeat;
+		background-size: cover;
+		height: 88vh;
+		width: 50%;
+		position: absolute;
+		top: -4rem;
+		left: 0;
+		bottom: 0;
+		z-index: -1;
+	}
+
+	.form__mainPanel {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		z-index: 1;
+
+		.form__mainBox {
+			text-align: center;
+			span {
+				text-transform: uppercase;
+			}
+
+			.form__mainTitle {
+				font-size: 2.5em;
+				font-weight: 300;
+			}
+		}
+	}
+}
+
+.form__mainSteps {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 5rem;
+
+	.form__diamond {
+		width: 8rem;
+		height: 8rem;
+		border: 1px solid $color-gray-dark;
+		transform: rotate(45deg);
+
+		@include media($xl) {
+			width: 7.5rem;
+			height: 7.5rem;
+		}
+
+		.form__diamondItem {
+			transform: rotate(-45deg);
+			width: 101%;
+			height: 101%;
+			position: relative;
+
+			@include media($xl) {
+				width: 107%;
+				height: 107%;
+			}
+			h1,
+			span {
+				color: $color-gray-dark;
+				font-weight: 300;
+				text-align: center;
+			}
+			span {
+				font-size: 1em;
+				text-transform: none;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+
+			h1 {
+				font-size: 2em;
+			}
+		}
+	}
+}

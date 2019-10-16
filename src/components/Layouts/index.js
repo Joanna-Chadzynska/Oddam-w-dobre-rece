@@ -6,6 +6,7 @@ import Wrapper from "./Wrapper";
 import pagination from "./Pagination";
 import Copyright from "./Copyright";
 import ErrorInfo from "./ErrorInfo";
+import StepsDiamonds from "./StepsDiamons";
 
 export {
 	CustomDescription,
@@ -15,5 +16,6 @@ export {
 	Wrapper,
 	pagination,
 	Copyright,
-	ErrorInfo
+	ErrorInfo,
+	StepsDiamonds
 };
