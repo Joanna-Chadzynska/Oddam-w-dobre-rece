@@ -102,6 +102,46 @@
 			background-position: center center;
 			background-size: cover;
 			padding-left: 8.875rem;
+			padding-right: 10rem;
+
+			p {
+				padding-top: 2.25rem;
+			}
+		}
+	}
+}
+
+.form__group {
+	h1 {
+		font-size: 2.25em;
+		font-weight: 600;
+		margin: 0;
+		padding: 0;
+		margin: 2rem 0;
+	}
+}
+
+// StepOne
+.form__step-one {
+	&--input {
+		display: flex;
+		align-items: center;
+		margin-bottom: 1rem;
+		input[type="radio"] {
+			border: 0.75px solid $color-gray-dark;
+			width: 2.5rem;
+			height: 2.5rem;
+			margin-right: 1.875rem;
+			-webkit-appearance: none;
+
+			&:checked {
+				background-color: $color-yellow;
+			}
+		}
+
+		label {
+			font-size: 1.5em;
+			font-weight: 300;
 		}
 	}
 }
