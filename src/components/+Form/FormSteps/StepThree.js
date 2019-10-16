@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { FormInfoBanner } from "../../Layouts";
 
 const StepThree = ({ currentStep }) => {
+	const [isArrowUp, setArrowUp] = useState(false);
+
+	const changeArrow = () => {
+		setArrowUp(!isArrowUp);
+	};
 	return (
 		<div className='form__step form__wrapper'>
 			<FormInfoBanner>
@@ -15,7 +20,9 @@ const StepThree = ({ currentStep }) => {
 					<h1>Lokalizacja</h1>
 					<div className='form__step-three'>
 						<div className='form__location'>
-							<select>
+							<select
+								onClick={changeArrow}
+								className={isArrowUp ? "arrowUp" : null}>
 								<option value=''>--wybierz--</option>
 								<option value='poznan'>Poznań</option>
 								<option value='warszawa'>Warszawa</option>

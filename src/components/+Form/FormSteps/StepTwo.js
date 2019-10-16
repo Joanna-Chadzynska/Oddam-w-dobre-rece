@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { FormInfoBanner } from "../../Layouts";
 
 const StepTwo = ({ currentStep }) => {
+	const [isArrowUp, setArrowUp] = useState(false);
+
+	const changeArrow = () => {
+		setArrowUp(!isArrowUp);
+	};
+
 	return (
 		<div className='form__step form__wrapper'>
 			<FormInfoBanner>
@@ -13,17 +19,29 @@ const StepTwo = ({ currentStep }) => {
 				<div className='form__group'>
 					<h1>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h1>
 					<div className='form__step-two'>
-						<label>
-							Liczba 60l worków:
-							<select>
-								<option value=''>--wybierz--</option>
-								<option value='1'>1</option>
-								<option value='2'>2</option>
-								<option value='3'>3</option>
-								<option value='4'>4</option>
-								<option value='5'>5</option>
-							</select>
-						</label>
+						<label>Liczba 60l worków:</label>
+						<select
+							onClick={changeArrow}
+							className={isArrowUp ? "arrowUp" : null}>
+							<option className={isArrowUp ? "arrowUp" : null}>
+								— wybierz —
+							</option>
+							<option className={isArrowUp ? "arrowUp" : null} value='1'>
+								1
+							</option>
+							<option className={isArrowUp ? "arrowUp" : null} value='2'>
+								2
+							</option>
+							<option className={isArrowUp ? "arrowUp" : null} value='3'>
+								3
+							</option>
+							<option className={isArrowUp ? "arrowUp" : null} value='4'>
+								4
+							</option>
+							<option className={isArrowUp ? "arrowUp" : null} value='5'>
+								5
+							</option>
+						</select>
 					</div>
 				</div>
 			</div>

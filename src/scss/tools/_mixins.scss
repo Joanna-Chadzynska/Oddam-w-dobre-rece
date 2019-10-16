@@ -42,3 +42,24 @@
 		@content;
 	}
 }
+
+@mixin select {
+	select {
+		appearance: none;
+		border: 0.75px solid #000000;
+		cursor: pointer;
+		display: inline-block;
+		background: url("../../assets/Icon-Arrow-Down.svg") transparent no-repeat
+			98.5% !important;
+		user-select: none;
+		width: 18rem;
+		height: 3rem;
+		padding: 10px 15px;
+	}
+
+	select.arrowUp {
+		background: url("../../assets/Icon-Arrow-Up.svg") transparent no-repeat
+			98.5% !important;
+		// transform: rotate(-180deg);
+	}
+}
