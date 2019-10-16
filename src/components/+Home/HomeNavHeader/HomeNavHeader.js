@@ -6,6 +6,7 @@ const HomeNavHeader = () => {
 	return (
 		<div className='home__navHeader'>
 			<div className='home__hero'></div>
+			<br />
 			<div className='home__navPanel'>
 				<div className='home__mainBox'>
 					<CustomTitle>

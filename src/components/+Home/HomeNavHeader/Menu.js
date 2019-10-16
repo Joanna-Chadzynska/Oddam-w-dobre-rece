@@ -10,7 +10,7 @@ const options = {
 
 const Menu = () => {
 	return (
-		<div className='home__nav-menu container'>
+		<div className='nav-menu container'>
 			<ul>
 				<li>
 					<NavLink to='/'>Start</NavLink>

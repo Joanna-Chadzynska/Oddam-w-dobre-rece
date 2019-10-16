@@ -4,7 +4,7 @@ import { auth } from "../../../firebase/firebase.utils";
 
 const UserBar = ({ currentUser }) => {
 	return (
-		<div className='home__nav-userBar'>
+		<div className='nav-userBar'>
 			<ul>
 				{currentUser !== null ? (
 					<>
