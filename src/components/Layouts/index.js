@@ -7,6 +7,7 @@ import pagination from "./Pagination";
 import Copyright from "./Copyright";
 import ErrorInfo from "./ErrorInfo";
 import StepsDiamonds from "./StepsDiamons";
+import FormInfoBanner from "./FormInfoBanner";
 
 export {
 	CustomDescription,
@@ -17,5 +18,6 @@ export {
 	pagination,
 	Copyright,
 	ErrorInfo,
-	StepsDiamonds
+	StepsDiamonds,
+	FormInfoBanner
 };

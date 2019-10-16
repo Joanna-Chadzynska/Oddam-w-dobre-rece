@@ -5,6 +5,7 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	height: 70vh;
+	margin-bottom: 2rem;
 
 	.form__hero {
 		background-image: url("../../assets/Form-Hero-Image.jpg");
@@ -85,6 +86,22 @@
 			h1 {
 				font-size: 2em;
 			}
+		}
+	}
+}
+
+// form steps main
+.form__steps-main {
+	height: 100vh;
+	z-index: 1;
+	.form__step {
+		.form__form {
+			min-height: 80vh;
+			background-image: url("../../assets//Background-Form.jpg");
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: cover;
+			padding-left: 8.875rem;
 		}
 	}
 }
