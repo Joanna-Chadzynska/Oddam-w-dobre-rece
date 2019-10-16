@@ -1,6 +1,7 @@
 .home__navHeader {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr auto;
 	height: 70vh;
 	margin-top: 2rem;
 	margin-right: 5rem;
@@ -32,7 +33,10 @@
 
 .home__nav {
 	margin-top: 2.25rem;
-	padding-right: 7rem;
+	// padding-right: 7rem;
+	position: absolute;
+	top: 0;
+	right: 5rem;
 }
 
 // userBar navigation
