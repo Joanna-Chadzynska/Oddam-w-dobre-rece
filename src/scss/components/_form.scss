@@ -101,7 +101,7 @@
 			background-repeat: no-repeat;
 			background-position: center center;
 			background-size: cover;
-
+			position: relative;
 			padding-left: 8.875rem;
 			padding-right: 10rem;
 
@@ -171,6 +171,7 @@
 		font-weight: 600;
 		padding-bottom: 1.25rem;
 	}
+
 	.form__location {
 		@include select();
 	}
@@ -178,6 +179,10 @@
 	.form__help-groups {
 		label {
 			border: 0.75px solid $color-gray-dark;
+
+			&::selection {
+				background: inherit;
+			}
 		}
 
 		input[type="checkbox"] + label {
@@ -202,6 +207,8 @@
 
 	.form__localizaton-specific {
 		input {
+			background-color: transparent;
+			border: 0.75px solid $color-gray-dark;
 			padding: 10px;
 			width: 50%;
 		}
@@ -219,13 +226,14 @@
 	.container {
 		width: 60%;
 		display: grid;
+		grid-gap: 9rem;
 		grid-template-columns: 1fr 1fr;
 
 		.form__inputBox {
-			width: 60%;
-			display: flex;
-			justify-content: space-between;
-			margin: 0 3rem 1rem 0;
+			display: grid;
+			grid-gap: 1rem;
+			grid-template-columns: 30% 70%;
+			margin-bottom: 1rem;
 
 			input,
 			textarea {
@@ -233,9 +241,15 @@
 				border: 1px solid $color-gray-dark;
 				padding: 5px 10px;
 			}
-
-			textarea {
-			}
 		}
 	}
+}
+
+// ThankYou
+.form__thank-you {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
 }

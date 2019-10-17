@@ -62,6 +62,7 @@ const FormSteps = () => {
 					step4={step4}
 				/>
 				<Summary currentStep={currentStep} handleChange={handleChange} />
+
 				<ThankYou currentStep={currentStep} handleChange={handleChange} />
 			</form>
 		</div>

@@ -12,7 +12,7 @@ const StepFour = ({ currentStep }) => {
 					<div className='form__step-four'>
 						<div className='container'>
 							<div className='form__address'>
-								<p>Adres odbioru</p>
+								<p>Adres odbioru:</p>
 
 								<div className='form__inputBox'>
 									<label htmlFor='street'>Ulica</label>
@@ -36,7 +36,7 @@ const StepFour = ({ currentStep }) => {
 							</div>
 
 							<div className='form__collection-date'>
-								<p>Termin odbioru</p>
+								<p>Termin odbioru:</p>
 
 								<div className='form__inputBox'>
 									<label htmlFor='date'>Data</label>
@@ -53,7 +53,7 @@ const StepFour = ({ currentStep }) => {
 									<textarea
 										name='suggestions'
 										id='suggestions'
-										cols='22'
+										cols='30'
 										rows='5'></textarea>
 								</div>
 							</div>
