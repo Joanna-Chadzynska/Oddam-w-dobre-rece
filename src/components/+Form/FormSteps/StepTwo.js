@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FormInfoBanner } from "../../Layouts";
 
-const StepTwo = ({ currentStep }) => {
+const StepTwo = ({ currentStep, handleChange, bags }) => {
 	const [isArrowUp, setArrowUp] = useState(false);
 
 	const changeArrow = () => {
@@ -22,25 +22,15 @@ const StepTwo = ({ currentStep }) => {
 						<label>Liczba 60l worków:</label>
 						<select
 							onClick={changeArrow}
-							className={isArrowUp ? "arrowUp" : null}>
-							<option className={isArrowUp ? "arrowUp" : null}>
-								— wybierz —
-							</option>
-							<option className={isArrowUp ? "arrowUp" : null} value='1'>
-								1
-							</option>
-							<option className={isArrowUp ? "arrowUp" : null} value='2'>
-								2
-							</option>
-							<option className={isArrowUp ? "arrowUp" : null} value='3'>
-								3
-							</option>
-							<option className={isArrowUp ? "arrowUp" : null} value='4'>
-								4
-							</option>
-							<option className={isArrowUp ? "arrowUp" : null} value='5'>
-								5
-							</option>
+							className={isArrowUp ? "arrowUp" : null}
+							onChange={handleChange}
+							name='step-two'>
+							<option style={{ display: "none" }}>— wybierz —</option>
+							<option value='1'>1</option>
+							<option value='2'>2</option>
+							<option value='3'>3</option>
+							<option value='4'>4</option>
+							<option value='5'>5</option>
 						</select>
 					</div>
 				</div>

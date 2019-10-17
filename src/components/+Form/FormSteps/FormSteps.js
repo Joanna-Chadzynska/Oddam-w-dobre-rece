@@ -9,19 +9,43 @@ import ThankYou from "./ThankYou";
 
 const FormSteps = () => {
 	const [currentStep, setCurrentStep] = useState(1);
-	const [step1, setStepOne] = useState("");
-	const [step2, setStepTwo] = useState("");
-	const [step3, setStepThree] = useState("");
+	const [type, setType] = useState("");
+	const [bags, setBags] = useState("");
+	const [localization, setLocalization] = useState("");
+	const [helpGroups, setHelpGroups] = useState([]);
+	const [localizationSpecific, setLocalSpecific] = useState("");
 	const [step4, setStepFour] = useState("");
+	const [form, setForm] = useState({
+		type: "",
+		bags: "",
+		localization: "",
+		helpGroups: [],
+		localizationSpecific: ""
+	});
 
 	const handleChange = (e) => {
-		console.log(e.target.name, e.target.value);
+		if (e.target.name === "step-one") {
+			setType(e.target.value);
+		} else if (e.target.name === "step-two") {
+			setBags(e.target.value);
+		} else if (e.target.name === "localization") {
+			setLocalization(e.target.value);
+		} else if (e.target.name === "helpGroups") {
+			if (!helpGroups.includes(e.target.value)) {
+				setHelpGroups([...helpGroups, e.target.value]);
+			} else {
+				const filtered = helpGroups.filter((value) => value !== e.target.value);
+				setHelpGroups([...filtered]);
+			}
+		} else if (e.target.name === "localizationSpecific") {
+			setLocalSpecific(e.target.value);
+		}
 	};
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log(
-			`szczegóły formularza krok1: ${step1} \n krok2: ${step2} \n krok3: ${step3} \n krok4: ${step4}`
+			`szczegóły formularza krok1: ${type} \n krok2: ${bags} \n krok3: ${localization} ${helpGroups} ${localizationSpecific} \n krok4: ${step4}`
 		);
 	};
 
@@ -44,17 +68,19 @@ const FormSteps = () => {
 				<StepOne
 					currentStep={currentStep}
 					handleChange={handleChange}
-					step1={step1}
+					type={type}
 				/>
 				<StepTwo
 					currentStep={currentStep}
 					handleChange={handleChange}
-					step2={step2}
+					bags={bags}
 				/>
 				<StepThree
 					currentStep={currentStep}
 					handleChange={handleChange}
-					step3={step3}
+					localization={localization}
+					helpGroups={helpGroups}
+					localizationSpecific={localizationSpecific}
 				/>
 				<StepFour
 					currentStep={currentStep}
