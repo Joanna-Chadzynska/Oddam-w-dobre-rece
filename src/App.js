@@ -1,4 +1,6 @@
 import React from "react";
+import { connect } from "react-redux";
+import { selectOrganizationsForPreview } from "./redux/organizations/organizations.selectors";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./components/+Home";
 import Login from "./components/+Login";
@@ -7,7 +9,11 @@ import Register from "./components/+Register";
 import Form from "./components/+Form";
 import NotFound from "./components/+NotFound";
 import MainMenu from "./components/MainMenu";
-import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
+import {
+	auth,
+	createUserProfileDocument
+	// addCollectionsAndDocuments
+} from "./firebase/firebase.utils";
 
 class App extends React.Component {
 	constructor() {
@@ -38,6 +44,7 @@ class App extends React.Component {
 			}
 
 			this.setState({ currentUser: userAuth });
+			// addCollectionsAndDocuments("organizations", this.props.organizations);
 		});
 	}
 
@@ -64,4 +71,13 @@ class App extends React.Component {
 	}
 }
 
-export default App;
+const mapState = (state) => {
+	return {
+		collectionArray: selectOrganizationsForPreview,
+		organizations: state.organizations
+	};
+};
+export default connect(
+	mapState,
+	null
+)(App);

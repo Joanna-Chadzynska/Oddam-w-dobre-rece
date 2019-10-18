@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
+import { addForm } from "../../../redux/forms/actions";
 import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
 import StepThree from "./StepThree";
@@ -6,7 +8,7 @@ import StepFour from "./StepFour";
 import Summary from "./Summary";
 import ThankYou from "./ThankYou";
 
-const FormSteps = () => {
+const FormSteps = ({ addForm }) => {
 	const [currentStep, setCurrentStep] = useState(1);
 	const [type, setType] = useState("");
 	const [bags, setBags] = useState("");
@@ -215,6 +217,7 @@ const FormSteps = () => {
 		e.preventDefault();
 		if (validate()) {
 			console.log(form);
+			addForm(form);
 		} else {
 			console.log(errors);
 		}
@@ -302,4 +305,12 @@ const FormSteps = () => {
 	);
 };
 
-export default FormSteps;
+const mapDispatch = (dispatch) => {
+	return {
+		addForm: (item) => dispatch(addForm(item))
+	};
+};
+export default connect(
+	null,
+	mapDispatch
+)(FormSteps);
