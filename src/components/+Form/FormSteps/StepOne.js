@@ -25,9 +25,9 @@ const StepOne = ({ currentStep, handleChange, nextButton, type }) => {
 								type='radio'
 								name='step-one'
 								id='clothes-ok'
-								value='good clothes'
+								value='ubrania w dobrym stanie'
 								onChange={handleChange}
-								checked={type === "good clothes" ? true : false}
+								checked={type === "ubrania w dobrym stanie" ? true : false}
 							/>
 							<label htmlFor='clothes-ok'>
 								ubrania, które nadają się do ponownego użycia
@@ -38,9 +38,9 @@ const StepOne = ({ currentStep, handleChange, nextButton, type }) => {
 								type='radio'
 								name='step-one'
 								id='clothes-trash'
-								value='bad clothes'
+								value='ubrania w złym stanie'
 								onChange={handleChange}
-								checked={type === "bad clothes" ? true : false}
+								checked={type === "ubrania w złym stanie" ? true : false}
 							/>
 							<label htmlFor='clothes-trash'>ubrania do wyrzucenia</label>
 						</div>
@@ -49,9 +49,9 @@ const StepOne = ({ currentStep, handleChange, nextButton, type }) => {
 								type='radio'
 								name='step-one'
 								id='toys'
-								value='toys'
+								value='zabawki'
 								onChange={handleChange}
-								checked={type === "toys" ? true : false}
+								checked={type === "zabawki" ? true : false}
 							/>
 							<label htmlFor='toys'>zabawki</label>
 						</div>
@@ -60,9 +60,9 @@ const StepOne = ({ currentStep, handleChange, nextButton, type }) => {
 								type='radio'
 								name='step-one'
 								id='books'
-								value='books'
+								value='książki'
 								onChange={handleChange}
-								checked={type === "books" ? true : false}
+								checked={type === "książki" ? true : false}
 							/>
 							<label htmlFor='books'>książki</label>
 						</div>
@@ -71,9 +71,9 @@ const StepOne = ({ currentStep, handleChange, nextButton, type }) => {
 								type='radio'
 								name='step-one'
 								id='other'
-								value='other'
+								value='inne'
 								onChange={handleChange}
-								checked={type === "other" ? true : false}
+								checked={type === "inne" ? true : false}
 							/>
 							<label htmlFor='other'>inne</label>
 						</div>

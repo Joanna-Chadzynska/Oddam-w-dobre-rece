@@ -77,15 +77,6 @@ const FormSteps = () => {
 		}
 	};
 
-	// console.log(
-	// 	type,
-	// 	bags,
-	// 	localization,
-	// 	helpGroups,
-	// 	localizationSpecific,
-	// 	address
-	// );
-
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log(
@@ -145,20 +136,31 @@ const FormSteps = () => {
 					handleChange={handleChange}
 					nextButton={nextButton}
 					previousButton={previousButton}
+					localization={localization}
+					localizationSpecific={localizationSpecific}
+					helpGroups={helpGroups}
 				/>
 				<StepFour
 					currentStep={currentStep}
 					handleChange={handleChange}
 					nextButton={nextButton}
 					previousButton={previousButton}
+					address={address}
+					collectionDate={collectionDate}
 				/>
 				<Summary
 					currentStep={currentStep}
-					form={form}
 					previousButton={previousButton}
+					type={type}
+					bags={bags}
+					localization={localization}
+					localizationSpecific={localizationSpecific}
+					helpGroups={helpGroups}
+					address={address}
+					collectionDate={collectionDate}
 				/>
 
-				<ThankYou currentStep={currentStep} handleChange={handleChange} />
+				<ThankYou currentStep={currentStep} />
 			</form>
 		</div>
 	);

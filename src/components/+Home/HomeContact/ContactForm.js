@@ -31,7 +31,7 @@ const ContactForm = () => {
 	const validate = () => {
 		let isValid = true;
 		let nameRegex = /^[a-zA-Z]{1,50}$/;
-		let emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+		let emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 		let messageRegex = /^.{120,1000}$/;
 
 		if (!nameRegex.test(name) || name.length <= 0) {
@@ -96,7 +96,7 @@ const ContactForm = () => {
 
 	return (
 		<div className='home__contactForm wrapp'>
-			<CustomTitle>Skontaktuj się z nami</CustomTitle>
+			<CustomTitle error={error}>Skontaktuj się z nami</CustomTitle>
 			{status === "success" && (
 				<span className='success'>
 					Wiadomość została wysłana!<br></br>Wkrótce się skontaktujemy.

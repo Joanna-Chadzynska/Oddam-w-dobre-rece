@@ -2,6 +2,8 @@ import React from "react";
 import { FormInfoBanner } from "../../Layouts";
 
 const StepFour = ({
+	address,
+	collectionDate,
 	currentStep,
 	handleChange,
 	nextButton,
@@ -29,6 +31,7 @@ const StepFour = ({
 										type='text'
 										name='address'
 										id='street'
+										value={address.street}
 										onChange={handleChange}
 									/>
 								</div>
@@ -39,6 +42,7 @@ const StepFour = ({
 										type='text'
 										name='address'
 										id='city'
+										value={address.city}
 										onChange={handleChange}
 									/>
 								</div>
@@ -50,6 +54,7 @@ const StepFour = ({
 										pattern='[0-9]{2}\-[0-9]{3}'
 										name='address'
 										id='postcode'
+										value={address.postCode}
 										onChange={handleChange}
 									/>
 								</div>
@@ -61,6 +66,7 @@ const StepFour = ({
 										pattern='[0-9]{3}-[0-9]{2}-[0-9]{3}'
 										name='address'
 										id='phone'
+										value={address.phone}
 										onChange={handleChange}
 									/>
 								</div>
@@ -75,6 +81,7 @@ const StepFour = ({
 										type='date'
 										name='collectionDate'
 										id='date'
+										value={collectionDate.date}
 										onChange={handleChange}
 									/>
 								</div>
@@ -85,6 +92,7 @@ const StepFour = ({
 										type='time'
 										name='collectionDate'
 										id='hour'
+										value={collectionDate.time}
 										onChange={handleChange}
 									/>
 								</div>
@@ -96,6 +104,7 @@ const StepFour = ({
 										id='note'
 										cols='30'
 										rows='5'
+										value={collectionDate.note}
 										onChange={handleChange}
 									/>
 								</div>

@@ -1,7 +1,13 @@
 import React, { useState } from "react";
 import { FormInfoBanner } from "../../Layouts";
 
-const StepTwo = ({ currentStep, handleChange, previousButton, nextButton }) => {
+const StepTwo = ({
+	bags,
+	currentStep,
+	handleChange,
+	previousButton,
+	nextButton
+}) => {
 	const [isArrowUp, setArrowUp] = useState(false);
 
 	const changeArrow = () => {
@@ -28,8 +34,9 @@ const StepTwo = ({ currentStep, handleChange, previousButton, nextButton }) => {
 							onClick={changeArrow}
 							className={isArrowUp ? "arrowUp" : null}
 							onChange={handleChange}
-							name='step-two'>
-							<option style={{ display: "none" }}>— wybierz —</option>
+							name='step-two'
+							value={bags}>
+							<option hidden>— wybierz —</option>
 							<option value='1'>1</option>
 							<option value='2'>2</option>
 							<option value='3'>3</option>
