@@ -5,7 +5,6 @@ import StepThree from "./StepThree";
 import StepFour from "./StepFour";
 import Summary from "./Summary";
 import ThankYou from "./ThankYou";
-// import { FormInfoBanner } from "../../Layouts";
 
 const FormSteps = () => {
 	const [currentStep, setCurrentStep] = useState(1);
@@ -26,14 +25,41 @@ const FormSteps = () => {
 		note: ""
 	});
 
+	const [errors, setErrors] = useState({
+		type: "",
+		bags: "",
+		localization: "",
+		helpGroups: "",
+		address: {
+			street: "",
+			city: "",
+			postCode: "",
+			phone: ""
+		},
+		collectionDate: {
+			date: "",
+			time: "",
+			note: ""
+		}
+	});
+
 	const [form, setForm] = useState({
 		type: "",
 		bags: "",
 		localization: "",
 		helpGroups: [],
 		localizationSpecific: "",
-		address: {},
-		collectionDate: {}
+		address: {
+			street: "",
+			city: "",
+			postCode: "",
+			phone: ""
+		},
+		collectionDate: {
+			date: "",
+			time: "",
+			note: ""
+		}
 	});
 
 	const handleChange = (e) => {
@@ -62,7 +88,9 @@ const FormSteps = () => {
 			} else if (e.target.id === "postcode") {
 				address.postCode = e.target.value;
 			} else if (e.target.id === "phone") {
-				address.phone = e.target.value;
+				if (e.target.value.length <= 9) {
+					address.phone = e.target.value;
+				}
 			}
 			setAddress({ ...address });
 		} else if (e.target.name === "collectionDate") {
@@ -77,11 +105,119 @@ const FormSteps = () => {
 		}
 	};
 
+	const validate = () => {
+		let isValid = true;
+		let regexPostalCode = /^([0-9]{2})(-[0-9]{3})?$/;
+
+		if (!type) {
+			isValid = false;
+			errors.type = "Zaznacz co chcesz oddać!";
+		} else {
+			errors.type = "";
+			form.type = type;
+		}
+
+		if (!bags) {
+			isValid = false;
+			errors.bags = "Podaj liczbę worków do oddania!";
+		} else {
+			errors.bags = "";
+			form.bags = bags;
+		}
+
+		if (!localization) {
+			isValid = false;
+			errors.localization = "Wybierz lub podaj lokalizację!";
+		} else {
+			errors.localization = "";
+			form.localization = localization;
+			form.localizationSpecific = localizationSpecific;
+		}
+
+		// if (!localizationSpecific) {
+		// 	isValid = false;
+		// 	errors.localization = "Wybierz lub podaj lokalizację!";
+		// } else {
+		// 	errors.localization = "";
+		// 	form.localizationSpecific = localizationSpecific;
+		// }
+
+		if (helpGroups.length <= 0) {
+			isValid = false;
+			errors.helpGroups = "Wybierz komu chcesz oddać rzeczy!";
+		} else {
+			errors.helpGroups = "";
+			form.helpGroups = helpGroups;
+		}
+
+		if (address.street.length < 2) {
+			isValid = false;
+			errors.address.street = "Nazwa ulicy musi mieć conajmniej 2 znaki!";
+		} else {
+			errors.address.street = "";
+			form.address.street = address.street;
+		}
+
+		if (address.city.length < 2) {
+			isValid = false;
+			errors.address.city = "Nazwa miasta musi mieć conajmniej 2 znaki!";
+		} else {
+			errors.address.city = "";
+			form.address.city = address.city;
+		}
+
+		if (!regexPostalCode.test(address.postCode)) {
+			isValid = false;
+			errors.address.postCode = "Nieprawidłowy format kodu pocztowego!";
+		} else {
+			errors.address.postCode = "";
+			form.address.postCode = address.postCode;
+		}
+
+		if (address.phone.length < 9) {
+			isValid = false;
+			errors.address.phone = "Numer telefonu jest za krótki i nie jest liczbą";
+		} else {
+			errors.address.phone = "";
+			form.address.phone = address.phone;
+		}
+
+		if (!collectionDate.date) {
+			isValid = false;
+			errors.collectionDate.date = "Wybierz datę odbioru rzeczy przez kuriera!";
+		} else {
+			errors.collectionDate.date = "";
+			form.collectionDate.date = collectionDate.date;
+		}
+
+		if (!collectionDate.time) {
+			isValid = false;
+			errors.collectionDate.time =
+				"Wybierz godzinę odbioru rzeczy przez kuriera!";
+		} else {
+			errors.collectionDate.time = "";
+			form.collectionDate.time = collectionDate.time;
+		}
+
+		if (!collectionDate.note) {
+			errors.collectionDate.note = "Uzupełnij pole!";
+		} else {
+			form.collectionDate.note = collectionDate.note;
+		}
+
+		setErrors({ ...errors });
+		setForm({ ...form });
+
+		return isValid;
+	};
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		console.log(
-			`szczegóły formularza krok1: ${type} \n krok2: ${bags} \n krok3: ${localization} ${helpGroups} ${localizationSpecific} \n krok4: ${address} ${collectionDate}`
-		);
+		if (validate()) {
+			console.log(form);
+		} else {
+			console.log(errors);
+		}
 	};
 
 	const _next = () => {
