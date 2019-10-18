@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { FormInfoBanner } from "../../Layouts";
 
-const StepTwo = ({ currentStep, handleChange, bags }) => {
+const StepTwo = ({ currentStep, handleChange, previousButton, nextButton }) => {
 	const [isArrowUp, setArrowUp] = useState(false);
 
 	const changeArrow = () => {
 		setArrowUp(!isArrowUp);
 	};
+
+	if (currentStep !== 2) {
+		return null;
+	}
 
 	return (
 		<div className='form__step form__wrapper'>
@@ -34,6 +38,9 @@ const StepTwo = ({ currentStep, handleChange, bags }) => {
 						</select>
 					</div>
 				</div>
+
+				{previousButton()}
+				{nextButton()}
 			</div>
 		</div>
 	);

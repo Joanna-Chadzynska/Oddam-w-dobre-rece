@@ -1,7 +1,11 @@
 import React from "react";
 import { FormInfoBanner } from "../../Layouts";
 
-const StepOne = ({ currentStep, handleChange, type }) => {
+const StepOne = ({ currentStep, handleChange, nextButton, type }) => {
+	if (currentStep !== 1) {
+		return null;
+	}
+
 	return (
 		<div className='form__step form__wrapper'>
 			<FormInfoBanner>
@@ -23,6 +27,7 @@ const StepOne = ({ currentStep, handleChange, type }) => {
 								id='clothes-ok'
 								value='good clothes'
 								onChange={handleChange}
+								checked={type === "good clothes" ? true : false}
 							/>
 							<label htmlFor='clothes-ok'>
 								ubrania, które nadają się do ponownego użycia
@@ -35,6 +40,7 @@ const StepOne = ({ currentStep, handleChange, type }) => {
 								id='clothes-trash'
 								value='bad clothes'
 								onChange={handleChange}
+								checked={type === "bad clothes" ? true : false}
 							/>
 							<label htmlFor='clothes-trash'>ubrania do wyrzucenia</label>
 						</div>
@@ -45,6 +51,7 @@ const StepOne = ({ currentStep, handleChange, type }) => {
 								id='toys'
 								value='toys'
 								onChange={handleChange}
+								checked={type === "toys" ? true : false}
 							/>
 							<label htmlFor='toys'>zabawki</label>
 						</div>
@@ -55,6 +62,7 @@ const StepOne = ({ currentStep, handleChange, type }) => {
 								id='books'
 								value='books'
 								onChange={handleChange}
+								checked={type === "books" ? true : false}
 							/>
 							<label htmlFor='books'>książki</label>
 						</div>
@@ -65,11 +73,14 @@ const StepOne = ({ currentStep, handleChange, type }) => {
 								id='other'
 								value='other'
 								onChange={handleChange}
+								checked={type === "other" ? true : false}
 							/>
 							<label htmlFor='other'>inne</label>
 						</div>
 					</div>
 				</div>
+
+				{nextButton()}
 			</div>
 		</div>
 	);

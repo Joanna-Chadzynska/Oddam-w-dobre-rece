@@ -4,9 +4,8 @@ import { FormInfoBanner } from "../../Layouts";
 const StepThree = ({
 	currentStep,
 	handleChange,
-	localization,
-	helpGroups,
-	localizationSpecific
+	nextButton,
+	previousButton
 }) => {
 	const [isArrowUp, setArrowUp] = useState(false);
 	// const [isChecked, setChecked] = useState(false);
@@ -14,6 +13,11 @@ const StepThree = ({
 	const changeArrow = () => {
 		setArrowUp(!isArrowUp);
 	};
+
+	if (currentStep !== 3) {
+		return null;
+	}
+
 	return (
 		<div className='form__step form__wrapper'>
 			<FormInfoBanner>
@@ -95,6 +99,8 @@ const StepThree = ({
 						</div>
 					</div>
 				</div>
+				{previousButton()}
+				{nextButton()}
 			</div>
 		</div>
 	);

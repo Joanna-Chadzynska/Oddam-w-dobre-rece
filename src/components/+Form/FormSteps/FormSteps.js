@@ -38,7 +38,9 @@ const FormSteps = () => {
 
 	const handleChange = (e) => {
 		if (e.target.name === "step-one") {
-			setType(e.target.value);
+			if (e.target.checked) {
+				setType(e.target.value);
+			}
 		} else if (e.target.name === "step-two") {
 			setBags(e.target.value);
 		} else if (e.target.name === "localization") {
@@ -75,7 +77,15 @@ const FormSteps = () => {
 		}
 	};
 
-	console.log(collectionDate);
+	// console.log(
+	// 	type,
+	// 	bags,
+	// 	localization,
+	// 	helpGroups,
+	// 	localizationSpecific,
+	// 	address
+	// );
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		console.log(
@@ -85,15 +95,32 @@ const FormSteps = () => {
 
 	const _next = () => {
 		let nextStep = currentStep;
-		nextStep = currentStep >= 2 ? 3 : nextStep + 1;
+		nextStep = nextStep >= 2 ? nextStep + 1 : nextStep + 1;
 
 		setCurrentStep(nextStep);
 	};
 
 	const _prev = () => {
 		let prevStep = currentStep;
-		prevStep = prevStep <= 1 ? 1 : prevStep;
+		prevStep = prevStep <= 1 ? 1 : prevStep - 1;
+
 		setCurrentStep(prevStep);
+	};
+
+	const previousButton = () => {
+		if (currentStep !== 1) {
+			return <button onClick={_prev}>Wstecz</button>;
+		}
+
+		return null;
+	};
+
+	const nextButton = () => {
+		if (currentStep < 5) {
+			return <button onClick={_next}>Dalej</button>;
+		}
+
+		return null;
 	};
 
 	return (
@@ -103,26 +130,33 @@ const FormSteps = () => {
 					currentStep={currentStep}
 					handleChange={handleChange}
 					type={type}
+					nextButton={nextButton}
+					previousButton={previousButton}
 				/>
 				<StepTwo
+					bags={bags}
 					currentStep={currentStep}
 					handleChange={handleChange}
-					bags={bags}
+					nextButton={nextButton}
+					previousButton={previousButton}
 				/>
 				<StepThree
 					currentStep={currentStep}
 					handleChange={handleChange}
-					localization={localization}
-					helpGroups={helpGroups}
-					localizationSpecific={localizationSpecific}
+					nextButton={nextButton}
+					previousButton={previousButton}
 				/>
 				<StepFour
 					currentStep={currentStep}
 					handleChange={handleChange}
-					address={address}
-					collectionDate={collectionDate}
+					nextButton={nextButton}
+					previousButton={previousButton}
 				/>
-				<Summary currentStep={currentStep} handleChange={handleChange} />
+				<Summary
+					currentStep={currentStep}
+					form={form}
+					previousButton={previousButton}
+				/>
 
 				<ThankYou currentStep={currentStep} handleChange={handleChange} />
 			</form>

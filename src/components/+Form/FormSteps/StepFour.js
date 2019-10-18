@@ -1,7 +1,16 @@
 import React from "react";
 import { FormInfoBanner } from "../../Layouts";
 
-const StepFour = ({ currentStep, handleChange }) => {
+const StepFour = ({
+	currentStep,
+	handleChange,
+	nextButton,
+	previousButton
+}) => {
+	if (currentStep !== 4) {
+		return null;
+	}
+
 	return (
 		<div className='form__step form__wrapper'>
 			<FormInfoBanner>Podaj adres oraz termin odbioru rzeczy.</FormInfoBanner>
@@ -94,6 +103,8 @@ const StepFour = ({ currentStep, handleChange }) => {
 						</div>
 					</div>
 				</div>
+				{previousButton()}
+				{nextButton()}
 			</div>
 		</div>
 	);
