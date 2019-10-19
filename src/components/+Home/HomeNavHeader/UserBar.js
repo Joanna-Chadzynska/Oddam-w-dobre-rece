@@ -9,7 +9,10 @@ const UserBar = ({ currentUser }) => {
 				{currentUser !== null ? (
 					<>
 						<li className='nav__userBar-hello'>
-							<span>Cześć {currentUser.email}!</span>
+							<span>
+								Cześć &nbsp;
+								{currentUser.email}!
+							</span>
 						</li>
 						<li>
 							<Link to='/oddaj-rzeczy'>Oddaj rzeczy</Link>

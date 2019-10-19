@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { setCurrentUser } from "./redux/user/actions";
 import { selectOrganizationsForPreview } from "./redux/organizations/organizations.selectors";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./components/+Home";
@@ -22,10 +23,11 @@ class App extends React.Component {
 			currentUser: null
 		};
 	}
-
 	unsubscribeFromAuth = null;
 
 	componentDidMount() {
+		const { setCurrentUser } = this.props;
+
 		this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
 			// this.setState({ currentUser: user });
 			// createUserProfileDocument(user);
@@ -75,9 +77,15 @@ const mapState = (state) => {
 	return {
 		collectionArray: selectOrganizationsForPreview,
 		organizations: state.organizations
+		// currentUser: state.userReducer.currentUser
 	};
 };
+
+const mapDispatch = (dispatch) => ({
+	setCurrentUser: (user) => dispatch(setCurrentUser(user))
+});
+
 export default connect(
 	mapState,
-	null
+	mapDispatch
 )(App);

@@ -77,7 +77,7 @@ const Register = ({ history }) => {
 				setPassword("");
 				setConfirmPassword("");
 			} catch (error) {
-				console.log("err");
+				// console.log("err");
 			}
 
 			setDisplayName("");
