@@ -52,15 +52,25 @@ export const addCollectionsAndDocuments = async (
 	objectsToAdd
 ) => {
 	const collectionRef = firestore.collection(collectionKey);
-	// console.log(objectsToAdd.locales.forEach((el) => console.log(el)));
+
 	const batch = firestore.batch();
 	objectsToAdd.organizations.forEach((obj) => {
 		const newDocRef = collectionRef.doc();
-
 		batch.set(newDocRef, obj);
 	});
 
 	return await batch.commit();
+};
+
+//
+
+export const getCurrentUser = () => {
+	return new Promise((resolve, reject) => {
+		const unsubscribe = auth.onAuthStateChanged((userAuth) => {
+			unsubscribe();
+			resolve(userAuth);
+		}, reject);
+	});
 };
 
 // sign in with google

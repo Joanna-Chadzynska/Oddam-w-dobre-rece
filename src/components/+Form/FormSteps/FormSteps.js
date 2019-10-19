@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import { addForm } from "../../../redux/forms/actions";
+
 import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
 import StepThree from "./StepThree";
@@ -8,7 +9,7 @@ import StepFour from "./StepFour";
 import Summary from "./Summary";
 import ThankYou from "./ThankYou";
 
-const FormSteps = ({ addForm }) => {
+const FormSteps = ({ addForm, currentUser, history }) => {
 	const [currentStep, setCurrentStep] = useState(1);
 	const [type, setType] = useState("");
 	const [bags, setBags] = useState("");
@@ -136,14 +137,6 @@ const FormSteps = ({ addForm }) => {
 			form.localizationSpecific = localizationSpecific;
 		}
 
-		// if (!localizationSpecific) {
-		// 	isValid = false;
-		// 	errors.localization = "Wybierz lub podaj lokalizację!";
-		// } else {
-		// 	errors.localization = "";
-		// 	form.localizationSpecific = localizationSpecific;
-		// }
-
 		if (helpGroups.length <= 0) {
 			isValid = false;
 			errors.helpGroups = "Wybierz komu chcesz oddać rzeczy!";
@@ -215,8 +208,9 @@ const FormSteps = ({ addForm }) => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
+		const currentUserId = currentUser.currentUser.id;
+		// addCollectionsAndDocuments(auth.currentUser, "form", form);
 		if (validate()) {
-			console.log(form);
 			addForm(form);
 		} else {
 			console.log(errors);
@@ -305,12 +299,18 @@ const FormSteps = ({ addForm }) => {
 	);
 };
 
+const mapState = (state) => {
+	return {
+		currentUser: state.userReducer.currentUser
+	};
+};
+
 const mapDispatch = (dispatch) => {
 	return {
 		addForm: (item) => dispatch(addForm(item))
 	};
 };
 export default connect(
-	null,
+	mapState,
 	mapDispatch
 )(FormSteps);

@@ -1,7 +1,7 @@
 import { ADD_FORM } from "./actionTypes";
 
 const initState = {
-	form: []
+	forms: []
 };
 
 export const forms = (state = initState, action) => {
@@ -9,7 +9,7 @@ export const forms = (state = initState, action) => {
 		case ADD_FORM:
 			return {
 				...state,
-				form: action.payload
+				forms: action.payload
 			};
 
 		default:

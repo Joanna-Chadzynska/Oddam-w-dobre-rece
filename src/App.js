@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { setCurrentUser } from "./redux/user/actions";
+import { setCurrentUser, checkUserSession } from "./redux/user/actions";
 import { selectOrganizationsForPreview } from "./redux/organizations/organizations.selectors";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./components/+Home";
@@ -12,8 +12,8 @@ import NotFound from "./components/+NotFound";
 import MainMenu from "./components/MainMenu";
 import {
 	auth,
-	createUserProfileDocument
-	// addCollectionsAndDocuments
+	createUserProfileDocument,
+	addCollectionsAndDocuments
 } from "./firebase/firebase.utils";
 
 class App extends React.Component {
@@ -26,11 +26,11 @@ class App extends React.Component {
 	unsubscribeFromAuth = null;
 
 	componentDidMount() {
-		const { setCurrentUser } = this.props;
+		const { setCurrentUser, forms } = this.props;
 
 		this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
 			// this.setState({ currentUser: user });
-			// createUserProfileDocument(user);
+
 			if (userAuth) {
 				const userRef = await createUserProfileDocument(userAuth);
 
@@ -42,12 +42,22 @@ class App extends React.Component {
 							...snapShot.data()
 						}
 					});
+					setCurrentUser({
+						currentUser: {
+							id: snapShot.id,
+							...snapShot.data()
+						}
+					});
 				});
 			}
 
 			this.setState({ currentUser: userAuth });
-			// addCollectionsAndDocuments("organizations", this.props.organizations);
+			setCurrentUser(userAuth);
+
+			// addCollectionsAndDocuments(userAuth, "forms", forms);
 		});
+
+		console.log();
 	}
 
 	componentWillUnmount() {
@@ -64,7 +74,11 @@ class App extends React.Component {
 						<Route path='/logowanie' component={Login} />
 						<Route path='/rejestracja' component={Register} />
 						<Route path='/wylogowano' component={Logout} />
-						<Route path='/oddaj-rzeczy' component={Form} />
+						<Route
+							path='/oddaj-rzeczy'
+							component={Form}
+							currentUser={this.state.currentUser}
+						/>
 						<Route path='*' component={NotFound} />
 					</Switch>
 				</Router>
@@ -76,13 +90,16 @@ class App extends React.Component {
 const mapState = (state) => {
 	return {
 		collectionArray: selectOrganizationsForPreview,
-		organizations: state.organizations
+		organizations: state.organizations,
+		forms: state.forms.forms
+
 		// currentUser: state.userReducer.currentUser
 	};
 };
 
 const mapDispatch = (dispatch) => ({
-	setCurrentUser: (user) => dispatch(setCurrentUser(user))
+	setCurrentUser: (user) => dispatch(setCurrentUser(user)),
+	checkUserSession: () => dispatch(checkUserSession())
 });
 
 export default connect(

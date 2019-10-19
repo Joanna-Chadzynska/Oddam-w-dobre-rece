@@ -3,11 +3,11 @@ import FormHeader from "./FormHeader";
 import { FormSteps } from "./FormSteps";
 // import HomeContact from "../+Home/HomeContact";
 
-const Form = () => {
+const Form = ({ history }) => {
 	return (
 		<div className='form'>
 			<FormHeader />
-			<FormSteps />
+			<FormSteps history={history} />
 			{/* <HomeContact /> */}
 		</div>
 	);
