@@ -1,5 +1,5 @@
 import React from "react";
-import { FormInfoBanner } from "../../Layouts";
+import { FormInfoBanner, ErrorInfoForm } from "../../Layouts";
 
 const StepOne = ({ currentStep, handleChange, nextButton, type }) => {
 	if (currentStep !== 1) {
@@ -15,7 +15,8 @@ const StepOne = ({ currentStep, handleChange, nextButton, type }) => {
 
 			<div className='form__form'>
 				<p>Krok {currentStep}/4</p>
-
+				<br />
+				{!type ? <ErrorInfoForm>Zaznacz jedno pole!</ErrorInfoForm> : <br />}
 				<div className='form__group'>
 					<h1>Zaznacz co chcesz oddać: </h1>
 

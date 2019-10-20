@@ -6,6 +6,7 @@ import Wrapper from "./Wrapper";
 import pagination from "./Pagination";
 import Copyright from "./Copyright";
 import ErrorInfo from "./ErrorInfo";
+import ErrorInfoForm from "./ErrorInfoForm";
 import StepsDiamonds from "./StepsDiamons";
 import FormInfoBanner from "./FormInfoBanner";
 
@@ -18,6 +19,7 @@ export {
 	pagination,
 	Copyright,
 	ErrorInfo,
+	ErrorInfoForm,
 	StepsDiamonds,
 	FormInfoBanner
 };

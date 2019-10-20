@@ -196,7 +196,6 @@ const FormSteps = ({ addForm, currentUser, history }) => {
 		}
 
 		if (!collectionDate.note) {
-			errors.collectionDate.note = "Uzupełnij pole!";
 		} else {
 			form.collectionDate.note = collectionDate.note;
 		}
@@ -215,7 +214,7 @@ const FormSteps = ({ addForm, currentUser, history }) => {
 			addForm(form);
 			setFormValid(true);
 		} else {
-			console.log(errors);
+			return errors;
 		}
 	};
 
@@ -285,11 +284,13 @@ const FormSteps = ({ addForm, currentUser, history }) => {
 				/>
 				<StepFour
 					currentStep={currentStep}
+					errors={errors.address.postCode}
 					handleChange={handleChange}
 					nextButton={nextButton}
 					previousButton={previousButton}
 					address={address}
 					collectionDate={collectionDate}
+					isFormValid={isFormValid}
 				/>
 				<Summary
 					currentStep={currentStep}
@@ -305,7 +306,7 @@ const FormSteps = ({ addForm, currentUser, history }) => {
 					isFormValid={isFormValid}
 				/>
 
-				<ThankYou currentStep={currentStep} isFormValid={isFormValid} />
+				<ThankYou currentStep={currentStep} />
 			</form>
 		</div>
 	);

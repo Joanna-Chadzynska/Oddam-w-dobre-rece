@@ -263,6 +263,12 @@
 				border: 1px solid $color-gray-dark;
 				padding: 5px 10px;
 			}
+
+			input[type="number"]::-webkit-inner-spin-button,
+			input[type="number"]::-webkit-outer-spin-button {
+				-webkit-appearance: none;
+				margin: 0;
+			}
 		}
 	}
 }
@@ -271,9 +277,14 @@
 .form__thank-you {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	position: absolute;
-	top: 50%;
-	transform: translateY(-50%);
+	position: relative;
+	height: 80vh;
+
+	.form__thank-you--title {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+	}
 }
 
 // buttons: next and prev
@@ -357,4 +368,10 @@
 		grid-template-columns: 40% 60%;
 		grid-gap: 3rem;
 	}
+}
+
+// error message
+.form--error {
+	color: red;
+	font-weight: 600;
 }

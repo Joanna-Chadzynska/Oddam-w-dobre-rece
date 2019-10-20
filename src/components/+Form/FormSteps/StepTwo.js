@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FormInfoBanner } from "../../Layouts";
+import { FormInfoBanner, ErrorInfoForm } from "../../Layouts";
 
 const StepTwo = ({
 	bags,
@@ -26,6 +26,8 @@ const StepTwo = ({
 			</FormInfoBanner>
 			<div className='form__form'>
 				<p>Krok {currentStep}</p>
+				<br />
+				{!bags ? <ErrorInfoForm>Podaj liczbę worków!</ErrorInfoForm> : <br />}
 				<div className='form__group'>
 					<h1>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h1>
 					<div className='form__step-two select'>

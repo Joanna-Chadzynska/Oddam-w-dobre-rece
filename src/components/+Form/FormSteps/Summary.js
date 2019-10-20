@@ -1,4 +1,5 @@
 import React from "react";
+import { ErrorInfoForm } from "../../Layouts";
 import tshirt from "../../../assets/Icon-1.svg";
 import arrows from "../../../assets/Icon-4.svg";
 
@@ -83,6 +84,10 @@ const Summary = ({
 							</div>
 						</div>
 					</div>
+
+					{!isFormValid && (
+						<ErrorInfoForm>Popraw lub uzupełnij pola!</ErrorInfoForm>
+					)}
 				</div>
 				<div className='form__summary-btns'>
 					{previousButton()}

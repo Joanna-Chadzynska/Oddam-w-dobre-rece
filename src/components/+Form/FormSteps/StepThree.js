@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { FormInfoBanner } from "../../Layouts";
+import { FormInfoBanner, ErrorInfoForm } from "../../Layouts";
 
 const StepThree = ({
 	currentStep,
@@ -20,6 +20,16 @@ const StepThree = ({
 		return null;
 	}
 
+	const errorsList = () => {
+		if (!localization && !localizationSpecific) {
+			return <ErrorInfoForm>Wybierz lub podaj lokalizację!</ErrorInfoForm>;
+		} else if (helpGroups.length <= 0) {
+			return <ErrorInfoForm>Wybierz komu chcesz pomóc!</ErrorInfoForm>;
+		} else {
+			return <br />;
+		}
+	};
+
 	return (
 		<div className='form__step form__wrapper'>
 			<FormInfoBanner>
@@ -30,6 +40,8 @@ const StepThree = ({
 
 			<div className='form__form'>
 				<p>Krok {currentStep}</p>
+				<br />
+				{errorsList()}
 				<div className='form__group'>
 					<h1>Lokalizacja</h1>
 
