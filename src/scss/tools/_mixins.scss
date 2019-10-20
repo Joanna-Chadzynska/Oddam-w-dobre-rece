@@ -44,22 +44,39 @@
 }
 
 @mixin select {
+	.select {
+		background-color: transparent;
+		position: relative;
+		display: block;
+		font-weight: 300;
+		line-height: 3;
+		overflow: hidden;
+		padding-bottom: 1rem;
+		width: 18rem;
+		height: 3rem;
+	}
+
 	select {
 		appearance: none;
+		background: url("../../assets/Icon-Arrow-Down.svg") no-repeat 98.5% !important;
+		background-color: transparent;
 		border: 0.75px solid #000000;
 		cursor: pointer;
 		display: inline-block;
-		background: url("../../assets/Icon-Arrow-Down.svg") transparent no-repeat
-			98.5% !important;
-		user-select: none;
-		width: 18rem;
-		height: 3rem;
+		font-size: 1.5em;
+		outline: 0;
+		width: 30%;
+		height: 100%;
 		padding: 10px 15px;
 	}
 
+	option {
+		font-weight: 300;
+	}
+
 	select.arrowUp {
-		background: url("../../assets/Icon-Arrow-Up.svg") transparent no-repeat
-			98.5% !important;
+		background: url("../../assets/Icon-Arrow-Up.svg") no-repeat 98.5% !important;
+		background-color: transparent;
 		// transform: rotate(-180deg);
 	}
 }

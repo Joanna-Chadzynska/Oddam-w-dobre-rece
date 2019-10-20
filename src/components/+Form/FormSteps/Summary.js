@@ -1,7 +1,6 @@
 import React from "react";
 import tshirt from "../../../assets/Icon-1.svg";
 import arrows from "../../../assets/Icon-4.svg";
-import ThankYou from "./ThankYou";
 
 const Summary = ({
 	currentStep,

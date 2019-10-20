@@ -7,6 +7,10 @@
 	height: 70vh;
 	margin-bottom: 2rem;
 
+	@include media($xxl) {
+		height: 64vh;
+	}
+
 	.form__hero {
 		background-image: url("../../assets/Form-Hero-Image.jpg");
 		background-position: right;
@@ -92,11 +96,10 @@
 
 // form steps main
 .form__steps-main {
-	height: 100vh;
+	min-height: 100vh;
 	z-index: 1;
 	.form__step {
 		.form__form {
-			height: 80vh;
 			background-image: url("../../assets//Background-Form.jpg");
 			background-repeat: no-repeat;
 			background-position: center center;
@@ -104,6 +107,10 @@
 			position: relative;
 			padding-left: 8.875rem;
 			padding-right: 10rem;
+
+			@include media($xxl) {
+				z-index: 1;
+			}
 
 			.form__summary-btns {
 				position: absolute;
@@ -122,6 +129,11 @@
 	flex-direction: column;
 	// justify-content: space-around;
 	height: 60vh;
+
+	@include media($xxl) {
+		// height: 55vh;
+	}
+
 	h1 {
 		font-size: 2.25em;
 		font-weight: 600;
@@ -236,7 +248,7 @@
 	.container {
 		width: 60%;
 		display: grid;
-		grid-gap: 9rem;
+		grid-gap: 6rem;
 		grid-template-columns: 1fr 1fr;
 
 		.form__inputBox {
@@ -286,6 +298,14 @@
 }
 
 // Summary
+
+.form__summary {
+	height: 80vh;
+
+	@include media($xxl) {
+		height: 100vh;
+	}
+}
 .form__summary-donate {
 	font-size: 1.5em;
 
@@ -296,9 +316,12 @@
 	&--icon {
 		display: flex;
 		align-items: center;
+		height: 3.125rem;
 
 		img {
+			display: inline-block;
 			margin-right: 1rem;
+			height: 100%;
 		}
 	}
 }
@@ -307,6 +330,16 @@
 	display: flex;
 	justify-content: space-between;
 	width: 50%;
+
+	@include media($xl) {
+		width: 70%;
+	}
+
+	.form__address {
+		@include media($xl) {
+			margin-right: 3rem;
+		}
+	}
 
 	p {
 		font-weight: 600;
@@ -321,7 +354,7 @@
 		width: 100%;
 		margin-bottom: 1rem;
 		display: grid;
-		grid-template-columns: 30% 70%;
+		grid-template-columns: 40% 60%;
 		grid-gap: 3rem;
 	}
 }

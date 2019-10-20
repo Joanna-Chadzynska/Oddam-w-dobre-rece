@@ -28,7 +28,7 @@ const StepTwo = ({
 				<p>Krok {currentStep}</p>
 				<div className='form__group'>
 					<h1>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h1>
-					<div className='form__step-two'>
+					<div className='form__step-two select'>
 						<label>Liczba 60l worków:</label>
 						<select
 							onClick={changeArrow}
@@ -37,11 +37,21 @@ const StepTwo = ({
 							name='step-two'
 							value={bags}>
 							<option hidden>— wybierz —</option>
-							<option value='1'>1</option>
-							<option value='2'>2</option>
-							<option value='3'>3</option>
-							<option value='4'>4</option>
-							<option value='5'>5</option>
+							<option value='1' className='option-style'>
+								1
+							</option>
+							<option value='2' className='option-style'>
+								2
+							</option>
+							<option value='3' className='option-style'>
+								3
+							</option>
+							<option value='4' className='option-style'>
+								4
+							</option>
+							<option value='5' className='option-style'>
+								5
+							</option>
 						</select>
 					</div>
 				</div>

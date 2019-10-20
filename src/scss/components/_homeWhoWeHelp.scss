@@ -38,6 +38,7 @@
 		h2 {
 			font-size: 1.625rem;
 			margin-bottom: 0.5rem;
+			line-height: 1.5;
 		}
 		p {
 			font-size: 1.125rem;
@@ -65,6 +66,12 @@
 		width: 2.5rem;
 		height: 3rem;
 		text-align: center;
+		transition: 0.3s;
+
+		&:hover {
+			color: $color-yellow;
+			border-color: $color-yellow;
+		}
 
 		&.active {
 			border: 1px solid #707070;

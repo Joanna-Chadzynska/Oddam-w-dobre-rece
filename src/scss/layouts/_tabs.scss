@@ -15,9 +15,14 @@
 	height: 4rem;
 	width: 12rem;
 	word-break: normal;
+	transition: 0.3s;
 
 	&:first-child {
 		line-height: 4rem;
+	}
+
+	&:hover {
+		color: $color-yellow;
 	}
 }
 

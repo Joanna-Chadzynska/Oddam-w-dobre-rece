@@ -34,7 +34,7 @@ const StepThree = ({
 					<h1>Lokalizacja</h1>
 
 					<div className='form__step-three'>
-						<div className='form__location'>
+						<div className='form__location select'>
 							<select
 								onClick={changeArrow}
 								className={isArrowUp ? "arrowUp" : null}
