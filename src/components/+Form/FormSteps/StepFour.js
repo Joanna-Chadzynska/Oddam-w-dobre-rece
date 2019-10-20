@@ -51,7 +51,7 @@ const StepFour = ({
 									<label htmlFor='postcode'>Kod pocztowy</label>
 									<input
 										type='text'
-										pattern='[0-9]{2}\-[0-9]{3}'
+										// pattern='[0-9]{2}\-[0-9]{3}'
 										name='address'
 										id='postcode'
 										value={address.postCode}

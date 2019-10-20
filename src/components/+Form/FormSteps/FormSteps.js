@@ -10,6 +10,7 @@ import Summary from "./Summary";
 import ThankYou from "./ThankYou";
 
 const FormSteps = ({ addForm, currentUser, history }) => {
+	const [isFormValid, setFormValid] = useState(false);
 	const [currentStep, setCurrentStep] = useState(1);
 	const [type, setType] = useState("");
 	const [bags, setBags] = useState("");
@@ -208,10 +209,11 @@ const FormSteps = ({ addForm, currentUser, history }) => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		const currentUserId = currentUser.currentUser.id;
+		// const currentUserId = currentUser.currentUser.id;
 		// addCollectionsAndDocuments(auth.currentUser, "form", form);
 		if (validate()) {
 			addForm(form);
+			setFormValid(true);
 		} else {
 			console.log(errors);
 		}
@@ -233,15 +235,23 @@ const FormSteps = ({ addForm, currentUser, history }) => {
 
 	const previousButton = () => {
 		if (currentStep !== 1) {
-			return <button onClick={_prev}>Wstecz</button>;
+			return (
+				<button onClick={_prev} className='btn-prev'>
+					Wstecz
+				</button>
+			);
 		}
 
 		return null;
 	};
 
 	const nextButton = () => {
-		if (currentStep < 5) {
-			return <button onClick={_next}>Dalej</button>;
+		if (currentStep < 6) {
+			return (
+				<button onClick={_next} className='btn-next'>
+					Dalej
+				</button>
+			);
 		}
 
 		return null;
@@ -284,6 +294,7 @@ const FormSteps = ({ addForm, currentUser, history }) => {
 				<Summary
 					currentStep={currentStep}
 					previousButton={previousButton}
+					next={_next}
 					type={type}
 					bags={bags}
 					localization={localization}
@@ -291,9 +302,10 @@ const FormSteps = ({ addForm, currentUser, history }) => {
 					helpGroups={helpGroups}
 					address={address}
 					collectionDate={collectionDate}
+					isFormValid={isFormValid}
 				/>
 
-				<ThankYou currentStep={currentStep} />
+				<ThankYou currentStep={currentStep} isFormValid={isFormValid} />
 			</form>
 		</div>
 	);

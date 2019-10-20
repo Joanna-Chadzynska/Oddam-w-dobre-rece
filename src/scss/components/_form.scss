@@ -96,7 +96,7 @@
 	z-index: 1;
 	.form__step {
 		.form__form {
-			min-height: 80vh;
+			height: 80vh;
 			background-image: url("../../assets//Background-Form.jpg");
 			background-repeat: no-repeat;
 			background-position: center center;
@@ -104,6 +104,11 @@
 			position: relative;
 			padding-left: 8.875rem;
 			padding-right: 10rem;
+
+			.form__summary-btns {
+				position: absolute;
+				bottom: 1rem;
+			}
 
 			p {
 				padding-top: 2.25rem;
@@ -113,6 +118,10 @@
 }
 
 .form__group {
+	display: flex;
+	flex-direction: column;
+	// justify-content: space-around;
+	height: 60vh;
 	h1 {
 		font-size: 2.25em;
 		font-weight: 600;
@@ -253,4 +262,66 @@
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
+}
+
+// buttons: next and prev
+
+.btn-next,
+.btn-prev,
+.btn-confirm {
+	background-color: transparent;
+	border: 0.75px solid $color-gray-dark;
+	font-size: 1.5em;
+	font-weight: 300;
+	justify-self: flex-end;
+	padding: 1.25rem 3.75rem;
+	margin-bottom: 3.125rem;
+	margin-right: 3.125rem;
+	transition: 0.3s;
+
+	&:hover {
+		border-color: $color-yellow;
+		transform: scale(0.9);
+	}
+}
+
+// Summary
+.form__summary-donate {
+	font-size: 1.5em;
+
+	p {
+		font-weight: 600;
+	}
+
+	&--icon {
+		display: flex;
+		align-items: center;
+
+		img {
+			margin-right: 1rem;
+		}
+	}
+}
+
+.form__summary-container {
+	display: flex;
+	justify-content: space-between;
+	width: 50%;
+
+	p {
+		font-weight: 600;
+		font-size: 1.5em;
+	}
+
+	span {
+		line-height: 1.4;
+	}
+
+	.form__inputBox {
+		width: 100%;
+		margin-bottom: 1rem;
+		display: grid;
+		grid-template-columns: 30% 70%;
+		grid-gap: 3rem;
+	}
 }

@@ -12,8 +12,8 @@ import NotFound from "./components/+NotFound";
 import MainMenu from "./components/MainMenu";
 import {
 	auth,
-	createUserProfileDocument,
-	addCollectionsAndDocuments
+	createUserProfileDocument
+	// addCollectionsAndDocuments
 } from "./firebase/firebase.utils";
 
 class App extends React.Component {
@@ -26,7 +26,7 @@ class App extends React.Component {
 	unsubscribeFromAuth = null;
 
 	componentDidMount() {
-		const { setCurrentUser, forms } = this.props;
+		const { setCurrentUser } = this.props;
 
 		this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
 			// this.setState({ currentUser: user });
@@ -56,8 +56,6 @@ class App extends React.Component {
 
 			// addCollectionsAndDocuments(userAuth, "forms", forms);
 		});
-
-		console.log();
 	}
 
 	componentWillUnmount() {
