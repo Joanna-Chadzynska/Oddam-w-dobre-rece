@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const ActionButtons = ({ currentUser }) => {
-	console.log(currentUser);
 	const { t } = useTranslation();
 	return (
 		<div className='home__mainBox-btns'>
