@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { connect } from "react-redux";
 import { setCurrentUser, checkUserSession } from "./redux/user/actions";
 import { selectOrganizationsForPreview } from "./redux/organizations/organizations.selectors";
@@ -61,21 +61,23 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className='app'>
-				<Router>
-					<MainMenu currentUser={this.state.currentUser} />
-					<Switch>
-						<Route exact path='/' component={Home} />
-						<Route path='/logowanie' component={Login} />
-						<Route path='/rejestracja' component={Register} />
-						<Route path='/wylogowano' component={Logout} />
-						<Route
-							path='/oddaj-rzeczy'
-							component={Form}
-							currentUser={this.state.currentUser}
-						/>
-						<Route path='*' component={NotFound} />
-					</Switch>
-				</Router>
+				<Suspense fallback={<div>loading</div>}>
+					<Router>
+						<MainMenu currentUser={this.state.currentUser} />
+						<Switch>
+							<Route exact path='/' component={Home} />
+							<Route path='/logowanie' component={Login} />
+							<Route path='/rejestracja' component={Register} />
+							<Route path='/wylogowano' component={Logout} />
+							<Route
+								path='/oddaj-rzeczy'
+								component={Form}
+								currentUser={this.state.currentUser}
+							/>
+							<Route path='*' component={NotFound} />
+						</Switch>
+					</Router>
+				</Suspense>
 			</div>
 		);
 	}

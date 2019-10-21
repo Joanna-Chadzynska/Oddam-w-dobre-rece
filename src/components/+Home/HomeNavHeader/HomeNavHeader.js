@@ -1,8 +1,10 @@
 import React from "react";
 import { CustomTitle } from "../../Layouts";
 import ActionButtons from "./ActionButtons";
+import { useTranslation } from "react-i18next";
 
 const HomeNavHeader = () => {
+	const { t } = useTranslation();
 	return (
 		<div className='home__navHeader'>
 			<div className='home__hero'></div>
@@ -10,9 +12,9 @@ const HomeNavHeader = () => {
 			<div className='home__navPanel'>
 				<div className='home__mainBox'>
 					<CustomTitle>
-						Zacznij pomagać!
+						{t("home.header.title-1")}
 						<br />
-						Oddaj niechciane rzeczy w zaufane ręce
+						{t("home.header.title-2")}
 					</CustomTitle>
 					<ActionButtons />
 				</div>

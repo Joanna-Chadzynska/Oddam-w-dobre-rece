@@ -1,0 +1,29 @@
+{
+	"userbar": {
+		"hello": "Hello",
+		"oddaj": "Give your stuff back",
+		"logout": "Logout",
+		"login": "Login",
+		"konto": "Create account"
+	},
+
+	"mainMenu": {
+		"start": "Start",
+		"steps": "What is about?",
+		"aboutus": "About us",
+		"whohelp": "Foundation and organisations",
+		"contact": "Contact"
+	},
+
+	"home": {
+		"header": {
+			"title-1": "Start helping!",
+			"title-2": "Put unwanted things into trustworthy hands"
+		},
+		"action": {
+			"btnOne-1": "Give",
+			"btnOne-2": "Stuff",
+			"btnTwo": "Organize a collection"
+		}
+	}
+}

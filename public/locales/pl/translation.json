@@ -1,0 +1,29 @@
+{
+	"userbar": {
+		"hello": "Cześć",
+		"oddaj": "Oddaj rzeczy",
+		"logout": "Wyloguj",
+		"login": "Zaloguj się",
+		"konto": "Załóż konto"
+	},
+
+	"mainMenu": {
+		"start": "Start",
+		"steps": "O co chodzi?",
+		"aboutus": "O nas",
+		"whohelp": "Fundacja i organizacje",
+		"contact": "Kontakt"
+	},
+
+	"home": {
+		"header": {
+			"title-1": "Zacznij pomagać!",
+			"title-2": "Oddaj niechciane rzeczy w zaufane ręce"
+		},
+		"action": {
+			"btnOne-1": "oddaj",
+			"btnOne-2": "rzeczy",
+			"btnTwo": "Zorganizuj zbiórkę"
+		}
+	}
+}
