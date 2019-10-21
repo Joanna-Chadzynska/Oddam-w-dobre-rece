@@ -10,11 +10,7 @@ import Register from "./components/+Register";
 import Form from "./components/+Form";
 import NotFound from "./components/+NotFound";
 import MainMenu from "./components/MainMenu";
-import {
-	auth,
-	createUserProfileDocument
-	// addCollectionsAndDocuments
-} from "./firebase/firebase.utils";
+import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
 
 class App extends React.Component {
 	constructor() {
@@ -54,7 +50,7 @@ class App extends React.Component {
 			this.setState({ currentUser: userAuth });
 			setCurrentUser(userAuth);
 
-			// addCollectionsAndDocuments(userAuth, "forms", forms);
+			// addCollectionsAndDocuments("forms", this.props.forms);
 		});
 	}
 

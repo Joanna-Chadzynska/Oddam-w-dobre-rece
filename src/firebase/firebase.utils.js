@@ -52,25 +52,19 @@ export const addCollectionsAndDocuments = async (
 	objectsToAdd
 ) => {
 	const collectionRef = firestore.collection(collectionKey);
-
 	const batch = firestore.batch();
-	objectsToAdd.organizations.forEach((obj) => {
-		const newDocRef = collectionRef.doc();
-		batch.set(newDocRef, obj);
-	});
+
+	if (objectsToAdd === undefined) {
+		return;
+	} else {
+		objectsToAdd.forEach((obj) => {
+			const newDocRef = collectionRef.doc();
+
+			batch.set(newDocRef, obj);
+		});
+	}
 
 	return await batch.commit();
-};
-
-//
-
-export const getCurrentUser = () => {
-	return new Promise((resolve, reject) => {
-		const unsubscribe = auth.onAuthStateChanged((userAuth) => {
-			unsubscribe();
-			resolve(userAuth);
-		}, reject);
-	});
 };
 
 // sign in with google

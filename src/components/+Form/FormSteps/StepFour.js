@@ -37,8 +37,6 @@ const StepFour = ({
 		}
 	};
 
-	console.log(isFormValid, console.log(errors));
-
 	return (
 		<div className='form__step form__wrapper'>
 			<FormInfoBanner>Podaj adres oraz termin odbioru rzeczy.</FormInfoBanner>

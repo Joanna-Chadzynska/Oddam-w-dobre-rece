@@ -1,6 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { addForm } from "../../../redux/forms/actions";
+import {
+	addFormCollectionWithUser,
+	addCollectionsAndDocuments,
+	auth
+} from "../../../firebase/firebase.utils";
 
 import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
@@ -63,7 +68,9 @@ const FormSteps = ({ addForm, currentUser, history }) => {
 			date: "",
 			time: "",
 			note: ""
-		}
+		},
+		user: "",
+		createdAt: new Date()
 	});
 
 	const handleChange = (e) => {
@@ -200,6 +207,8 @@ const FormSteps = ({ addForm, currentUser, history }) => {
 			form.collectionDate.note = collectionDate.note;
 		}
 
+		form.user = currentUser;
+
 		setErrors({ ...errors });
 		setForm({ ...form });
 
@@ -208,11 +217,15 @@ const FormSteps = ({ addForm, currentUser, history }) => {
 
 	const handleSubmit = (e) => {
 		e.preventDefault();
-		// const currentUserId = currentUser.currentUser.id;
-		// addCollectionsAndDocuments(auth.currentUser, "form", form);
+
 		if (validate()) {
 			addForm(form);
 			setFormValid(true);
+			auth.onAuthStateChanged(async (userAuth) => {
+				if (userAuth) {
+					addCollectionsAndDocuments("forms", [form]);
+				}
+			});
 		} else {
 			return errors;
 		}
