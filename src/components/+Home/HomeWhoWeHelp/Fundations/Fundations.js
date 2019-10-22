@@ -2,38 +2,38 @@ import React, { useState } from "react";
 import { CustomDescription, pagination } from "../../../Layouts";
 import Fundation from "./Fundation";
 import db from "../../../../database/db.json";
+import { useTranslation } from "react-i18next";
 
 const Fundations = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const fundations = db.foundations;
+	const { t } = useTranslation();
+	const [currentPage, setCurrentPage] = useState(1);
+	const fundations = db.foundations;
 
-  const indexOfLast = currentPage * 3;
+	const indexOfLast = currentPage * 3;
 
-  const indexOfFirst = indexOfLast - 3;
+	const indexOfFirst = indexOfLast - 3;
 
-  const setPageNumber = (i) => {
-    setCurrentPage(i);
-  };
+	const setPageNumber = (i) => {
+		setCurrentPage(i);
+	};
 
-  return (
-    <div className='home__fundtations'>
-      <CustomDescription>
-        W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi
-        współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego
-        potrzebują.
-      </CustomDescription>
-      <div className='home__orgList'>
-        <ul>
-          {fundations.slice(indexOfFirst, indexOfLast).map((fundation) => (
-            <Fundation key={fundation.id} fundation={fundation} />
-          ))}
-        </ul>
-        <ul className='home__orgList-pagination'>
-          {pagination(fundations, currentPage, setPageNumber)}
-        </ul>
-      </div>
-    </div>
-  );
+	return (
+		<div className='home__fundtations'>
+			<CustomDescription>
+				{t("home.whoWeHelp.fundation.desc")}
+			</CustomDescription>
+			<div className='home__orgList'>
+				<ul>
+					{fundations.slice(indexOfFirst, indexOfLast).map((fundation) => (
+						<Fundation key={fundation.id} fundation={fundation} />
+					))}
+				</ul>
+				<ul className='home__orgList-pagination'>
+					{pagination(fundations, currentPage, setPageNumber)}
+				</ul>
+			</div>
+		</div>
+	);
 };
 
 export default Fundations;

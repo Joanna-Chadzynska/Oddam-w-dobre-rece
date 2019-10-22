@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { CustomTitle, ErrorInfo } from "../../Layouts";
+import { useTranslation } from "react-i18next";
 
 const ContactForm = () => {
+	const { t } = useTranslation();
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
 	const [message, setMessage] = useState("");
@@ -96,16 +98,18 @@ const ContactForm = () => {
 
 	return (
 		<div className='home__contactForm wrapp'>
-			<CustomTitle error={error}>Skontaktuj się z nami</CustomTitle>
+			<CustomTitle error={error}>{t("home.contactUs.mainTitle")}</CustomTitle>
 			{status === "success" && (
 				<span className='success'>
-					Wiadomość została wysłana!<br></br>Wkrótce się skontaktujemy.
+					{t("home.contactUs.msgSucc-1")}
+					<br></br>
+					{t("home.contactUs.msgSucc-2")}
 				</span>
 			)}
 			<div className='home__contact-box'>
 				<form noValidate onSubmit={handleSubmit}>
 					<p>
-						<label htmlFor='name'>Wpisz swoje imię</label>
+						<label htmlFor='name'>{t("home.contactUs.inputName")}</label>
 						<input
 							type='text'
 							name='name'
@@ -114,11 +118,13 @@ const ContactForm = () => {
 							onChange={handleChange}
 							className={errors.name ? "error" : null}
 						/>
-						{errors.name && <ErrorInfo>{errors.name}</ErrorInfo>}
+						{errors.name && (
+							<ErrorInfo>{t("home.contactUs.msgErr-name")}</ErrorInfo>
+						)}
 					</p>
 
 					<p>
-						<label htmlFor='email'>Wpisz swój email</label>
+						<label htmlFor='email'>{t("home.contactUs.inputEmail")}</label>
 						<input
 							type='email'
 							name='email'
@@ -127,11 +133,13 @@ const ContactForm = () => {
 							onChange={handleChange}
 							className={errors.email ? "error" : null}
 						/>
-						{errors.email && <ErrorInfo>{errors.email}</ErrorInfo>}
+						{errors.email && (
+							<ErrorInfo>{t("home.contactUs.msgErr-email")}</ErrorInfo>
+						)}
 					</p>
 
 					<p className='home__form-full'>
-						<label htmlFor='message'>Wpisz swoją wiadomość</label>
+						<label htmlFor='message'>{t("home.contactUs.textarea")}</label>
 						<textarea
 							name='message'
 							cols='30'
@@ -141,11 +149,13 @@ const ContactForm = () => {
 							onChange={handleChange}
 							className={errors.message ? "error" : null}
 						/>
-						{errors.message && <ErrorInfo>{errors.message}</ErrorInfo>}
+						{errors.message && (
+							<ErrorInfo>{t("home.contactUs.msgErr-textarea")}</ErrorInfo>
+						)}
 					</p>
 					<br />
 					<p>
-						<button type='submit'>Wyślij</button>
+						<button type='submit'>{t("home.contactUs.btnSend")}</button>
 					</p>
 				</form>
 			</div>

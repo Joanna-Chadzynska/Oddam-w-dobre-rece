@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { CustomTitle, ErrorInfo } from "../Layouts";
-
 import { auth } from "../../firebase/firebase.utils";
+import { useTranslation } from "react-i18next";
 
 const Login = ({ history }) => {
+	const { t } = useTranslation();
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
 	const [errors, setErrors] = useState({
@@ -65,10 +66,10 @@ const Login = ({ history }) => {
 	return (
 		<div className='login'>
 			<div className='login__container'>
-				<CustomTitle>Zaloguj się</CustomTitle>
+				<CustomTitle>{t("login.mainTitle")}</CustomTitle>
 				<form className='form-box' onSubmit={handleSubmit} noValidate>
 					<div className='inputs-box'>
-						<label htmlFor='email'>Email</label>
+						<label htmlFor='email'>{t("login.email")}</label>
 						<input
 							type='email'
 							name='email'
@@ -77,10 +78,12 @@ const Login = ({ history }) => {
 							onChange={handleChange}
 							className={errors.email ? "error" : null}
 						/>
-						{errors.email && <ErrorInfo>{errors.email}</ErrorInfo>}
+						{errors.email && (
+							<ErrorInfo>{t("home.contactUs.msgErr-email")}</ErrorInfo>
+						)}
 						<br />
 						<br />
-						<label htmlFor='password'>Hasło</label>
+						<label htmlFor='password'>{t("login.haslo")}</label>
 						<input
 							type='password'
 							name='password'
@@ -88,11 +91,13 @@ const Login = ({ history }) => {
 							value={password}
 							onChange={handleChange}
 						/>
-						{errors.password && <ErrorInfo>{errors.password}</ErrorInfo>}
+						{errors.password && (
+							<ErrorInfo>{t("login.msgErr-password")}</ErrorInfo>
+						)}
 					</div>
 					<div className='buttons-box'>
-						<Link to='/rejestracja'>Załóż konto</Link>
-						<button type='submit'>Zaloguj się</button>
+						<Link to='/rejestracja'>{t("userbar.konto")}</Link>
+						<button type='submit'>{t("userbar.login")}</button>
 						{/* <button onClick={signInWithGoogle}>login with google</button> */}
 					</div>
 				</form>

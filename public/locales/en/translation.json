@@ -2,9 +2,9 @@
 	"userbar": {
 		"hello": "Hello",
 		"oddaj": "Give your stuff back",
-		"logout": "Logout",
-		"login": "Login",
-		"konto": "Create account"
+		"logout": "Sign Out",
+		"login": "Sign In",
+		"konto": "Sign Up"
 	},
 
 	"mainMenu": {
@@ -20,10 +20,73 @@
 			"title-1": "Start helping!",
 			"title-2": "Put unwanted things into trustworthy hands"
 		},
+
 		"action": {
 			"btnOne-1": "Give",
 			"btnOne-2": "Stuff",
 			"btnTwo": "Organize a collection"
+		},
+
+		"threeColumns": {
+			"titleOne": "returned bags",
+			"titleTwo": "supported organisations",
+			"titleThree": "organised collections"
+		},
+
+		"simpleSteps": {
+			"mainTitle": "Just 4 simple steps",
+			"stepOne-1": "Choose things",
+			"stepOne-2": "clothing, toys, equipment and other items",
+			"stepTwo-1": "Pack them",
+			"stepTwo-2": "use the garbage bags",
+			"stepThree-1": "Decide who you want to help",
+			"stepThree-2": "Choose a trusted place",
+			"stepFour-1": "ZOrder a courier",
+			"stepFour-2": "the courier will arrive at a convenient time"
+		},
+
+		"whoWeHelp": {
+			"mainTitle": "Who do we help?",
+			"labelOne": "Foundations",
+			"labelTwo": "Non-Governmental Organisations",
+			"labelThree": "Local collections",
+			"fundation": {
+				"desc": "In our database you will find a list of verified foundations with which we cooperate. You can check what they do, who they help and what they need."
+			}
+		},
+
+		"contactUs": {
+			"mainTitle": "Contact us",
+			"msgSucc-1": "Message has been sent!",
+			"msgSucc-2": "We'll contact you soon.",
+			"inputName": "Enter your name",
+			"inputEmail": "Enter your email address",
+			"textarea": "Enter your message",
+			"msgErr-name": "The name is incorrect!",
+			"msgErr-email": "The email address you entered is incorrect!",
+			"msgErr-textarea": "The message must be at least 120 characters long!",
+			"btnSend": "Send"
 		}
+	},
+
+	"logout": {
+		"title-1": "Logging out was",
+		"title-2": "successful!",
+		"link": "Home page"
+	},
+
+	"login": {
+		"mainTitle": "Sign in",
+		"email": "Email",
+		"haslo": "Password",
+		"msgErr-password": "Password is too short!",
+		"createAccount": "Create account"
+	},
+
+	"register": {
+		"mainTitle": "Sign Up",
+		"name": "Name",
+		"repeatpassword": "Repeat password",
+		"msgErr-confirmPassword": "The passwords must be identical!"
 	}
 }

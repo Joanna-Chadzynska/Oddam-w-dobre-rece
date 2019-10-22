@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { CustomTitle, ErrorInfo } from "../Layouts";
 import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
+import { useTranslation } from "react-i18next";
 
 const Register = ({ history }) => {
+	const [unsubscribe, setUnsubscribe] = useState(null);
+	const { t } = useTranslation();
 	const [displayName, setDisplayName] = useState("");
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -72,6 +75,7 @@ const Register = ({ history }) => {
 
 				await createUserProfileDocument(user, { displayName });
 
+				history.push("/");
 				setDisplayName("");
 				setEmail("");
 				setPassword("");
@@ -79,12 +83,6 @@ const Register = ({ history }) => {
 			} catch (error) {
 				// console.log("err");
 			}
-
-			setDisplayName("");
-			setEmail("");
-			setPassword("");
-			setConfirmPassword("");
-			history.push("/");
 		} else {
 			return errors;
 		}
@@ -102,13 +100,17 @@ const Register = ({ history }) => {
 		}
 	};
 
+	useEffect(() => {
+		setUnsubscribe(unsubscribe);
+	}, [unsubscribe]);
+
 	return (
 		<div className='login'>
 			<div className='login__container'>
-				<CustomTitle>Załóż konto</CustomTitle>
+				<CustomTitle>{t("register.mainTitle")}</CustomTitle>
 				<form className='form-box' onSubmit={handleSubmit}>
 					<div className='inputs-box'>
-						<label htmlFor='name'>Imię</label>
+						<label htmlFor='name'>{t("register.name")}</label>
 						<input
 							type='text'
 							name='name'
@@ -116,10 +118,12 @@ const Register = ({ history }) => {
 							value={displayName}
 							onChange={handleChange}
 						/>
-						{errors.displayName && <ErrorInfo>{errors.displayName}</ErrorInfo>}
+						{errors.displayName && (
+							<ErrorInfo>{t("home.contactUs.msgErr-name")}</ErrorInfo>
+						)}
 						<br />
 						<br />
-						<label htmlFor='email'>Email</label>
+						<label htmlFor='email'>{t("login.email")}</label>
 						<input
 							type='email'
 							name='email'
@@ -127,10 +131,12 @@ const Register = ({ history }) => {
 							value={email}
 							onChange={handleChange}
 						/>
-						{errors.email && <ErrorInfo>{errors.email}</ErrorInfo>}
+						{errors.email && (
+							<ErrorInfo>{t("home.contactUs.msgErr-email")}</ErrorInfo>
+						)}
 						<br />
 						<br />
-						<label htmlFor='password'>Hasło</label>
+						<label htmlFor='password'>{t("login.haslo")}</label>
 						<input
 							type='password'
 							name='password'
@@ -138,10 +144,12 @@ const Register = ({ history }) => {
 							value={password}
 							onChange={handleChange}
 						/>
-						{errors.password && <ErrorInfo>{errors.password}</ErrorInfo>}
+						{errors.password && (
+							<ErrorInfo>{t("login.msgErr-password")}</ErrorInfo>
+						)}
 						<br />
 						<br />
-						<label htmlFor='password2'>Powtórz hasło</label>
+						<label htmlFor='password2'>{t("register.repeatpassword")}</label>
 						<input
 							type='password'
 							name='password2'
@@ -150,12 +158,12 @@ const Register = ({ history }) => {
 							onChange={handleChange}
 						/>
 						{password !== confirmPassword && (
-							<ErrorInfo>{errors.confirmPassword}</ErrorInfo>
+							<ErrorInfo>{t("register.msgErr-confirmPassword")}</ErrorInfo>
 						)}
 					</div>
 					<div className='buttons-box'>
-						<Link to='/logowanie'>Zaloguj się</Link>
-						<button type='submit'>Załóż konto</button>
+						<Link to='/logowanie'>{t("userbar.login")}</Link>
+						<button type='submit'>{t("userbar.konto")}</button>
 					</div>
 				</form>
 			</div>

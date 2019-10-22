@@ -20,10 +20,73 @@
 			"title-1": "Zacznij pomagać!",
 			"title-2": "Oddaj niechciane rzeczy w zaufane ręce"
 		},
+
 		"action": {
 			"btnOne-1": "oddaj",
 			"btnOne-2": "rzeczy",
 			"btnTwo": "Zorganizuj zbiórkę"
+		},
+
+		"threeColumns": {
+			"titleOne": "zwróconych worków",
+			"titleTwo": "wspartych organizacji",
+			"titleThree": "zorganizowanych zbiórek"
+		},
+
+		"simpleSteps": {
+			"mainTitle": "Wystarczą 4 proste kroki",
+			"stepOne-1": "Wybierz rzeczy",
+			"stepOne-2": "ubrania, zabawki, sprzęt i inne",
+			"stepTwo-1": "Spakuj je",
+			"stepTwo-2": "skorzystaj z worków na śmieci",
+			"stepThree-1": "Zdecyduj komu chcesz pomóc",
+			"stepThree-2": "wybierz zaufane miejsce",
+			"stepFour-1": "Zamów kuriera",
+			"stepFour-2": "kurier przyjedzie w dogodnym terminie"
+		},
+
+		"whoWeHelp": {
+			"mainTitle": "Komu pomagamy?",
+			"labelOne": "Fundacjom",
+			"labelTwo": "Organizacjom pozarządowym",
+			"labelThree": "Lokalnym zbiórkom",
+			"fundation": {
+				"desc": "W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują."
+			}
+		},
+
+		"contactUs": {
+			"mainTitle": "Skontaktuj się z nami",
+			"msgSucc-1": "Wiadomość została wysłana!",
+			"msgSucc-2": "Wkrótce się skontaktujemy.",
+			"inputName": "Wpisz swoje imię",
+			"inputEmail": "Wpisz swój email",
+			"textarea": "Wpisz swoją wiadomość",
+			"msgErr-name": "Podane imię jest nieprawidłowe!",
+			"msgErr-email": "Podany email jest nieprawidłowy!",
+			"msgErr-textarea": "Wiadomość musi mieć conajmniej 120 znaków!",
+			"btnSend": "Wyślij"
 		}
+	},
+
+	"logout": {
+		"title-1": "Wylogowanie nastąpiło",
+		"title-2": "pomyślnie!",
+		"link": "Strona główna"
+	},
+
+	"login": {
+		"mainTitle": "Zaloguj się",
+		"email": "Email",
+		"haslo": "Hasło",
+		"msgErr-password": "Podane hasło jest za krótkie!",
+		"createAccount": "Załóż konto"
+	},
+
+	"register": {
+		"mainTitle": "Załóż konto",
+		"name": "Imię",
+		"repeatpassword": "Powtórz hasło",
+		"msgErr-confirmPassword": "Podane hasła muszą być identyczne!"
 	}
 }
