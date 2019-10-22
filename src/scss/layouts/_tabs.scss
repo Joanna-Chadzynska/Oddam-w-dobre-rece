@@ -13,9 +13,13 @@
 	padding: 1rem 2rem;
 	text-align: center;
 	height: 4rem;
-	width: 12rem;
+	width: 14rem;
 	word-break: normal;
 	transition: 0.3s;
+
+	&:nth-child(3) {
+		line-height: 4rem;
+	}
 
 	&:first-child {
 		line-height: 4rem;
