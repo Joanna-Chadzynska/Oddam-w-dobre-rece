@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FormInfoBanner, ErrorInfoForm } from "../../Layouts";
+import { useTranslation } from "react-i18next";
 
 const StepThree = ({
 	currentStep,
@@ -10,6 +11,8 @@ const StepThree = ({
 	helpGroups,
 	localizationSpecific
 }) => {
+	const { t } = useTranslation();
+
 	const [isArrowUp, setArrowUp] = useState(false);
 
 	const changeArrow = () => {
@@ -22,9 +25,13 @@ const StepThree = ({
 
 	const errorsList = () => {
 		if (!localization && !localizationSpecific) {
-			return <ErrorInfoForm>Wybierz lub podaj lokalizację!</ErrorInfoForm>;
+			return (
+				<ErrorInfoForm>{t("form.stepThree.msgErr-location")}</ErrorInfoForm>
+			);
 		} else if (helpGroups.length <= 0) {
-			return <ErrorInfoForm>Wybierz komu chcesz pomóc!</ErrorInfoForm>;
+			return (
+				<ErrorInfoForm>{t("form.stepThree.msgErr-helpGroup")}</ErrorInfoForm>
+			);
 		} else {
 			return <br />;
 		}
@@ -32,18 +39,16 @@ const StepThree = ({
 
 	return (
 		<div className='form__step form__wrapper'>
-			<FormInfoBanner>
-				Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w
-				wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądź
-				celu ich pomocy.
-			</FormInfoBanner>
+			<FormInfoBanner>{t("form.info.stepThree")}</FormInfoBanner>
 
 			<div className='form__form'>
-				<p>Krok {currentStep}</p>
+				<p>
+					{t("form.info.step")} {currentStep}/4
+				</p>
 				<br />
 				{errorsList()}
 				<div className='form__group'>
-					<h1>Lokalizacja</h1>
+					<h1>{t("form.stepThree.mainTitle")}</h1>
 
 					<div className='form__step-three'>
 						<div className='form__location select'>
@@ -53,7 +58,7 @@ const StepThree = ({
 								name='localization'
 								onChange={handleChange}
 								value={localization}>
-								<option hidden>— wybierz —</option>
+								<option hidden>— {t("form.stepTwo.select")} —</option>
 								<option value='Poznań'>Poznań</option>
 								<option value='Warszawa'>Warszawa</option>
 								<option value='Kraków'>Kraków</option>
@@ -62,7 +67,7 @@ const StepThree = ({
 							</select>
 						</div>
 						<div className='form__help-groups'>
-							<p>Komu chcesz pomóc?</p>
+							<p>{t("form.stepThree.helpTitle")}</p>
 							<input
 								type='checkbox'
 								name='helpGroups'
@@ -71,7 +76,7 @@ const StepThree = ({
 								onChange={handleChange}
 								checked={helpGroups.includes("dzieciom") ? true : false}
 							/>
-							<label htmlFor='kids'>dzieciom</label>
+							<label htmlFor='kids'>{t("form.stepThree.label-1")}</label>
 							<input
 								type='checkbox'
 								name='helpGroups'
@@ -80,7 +85,7 @@ const StepThree = ({
 								onChange={handleChange}
 								checked={helpGroups.includes("samotnym matkom") ? true : false}
 							/>
-							<label htmlFor='single-moms'>samotnym matkom</label>
+							<label htmlFor='single-moms'>{t("form.stepThree.label-2")}</label>
 							<input
 								type='checkbox'
 								name='helpGroups'
@@ -89,7 +94,7 @@ const StepThree = ({
 								onChange={handleChange}
 								checked={helpGroups.includes("bezdomnym") ? true : false}
 							/>
-							<label htmlFor='homeless'>bezdomnym</label>
+							<label htmlFor='homeless'>{t("form.stepThree.label-3")}</label>
 							<input
 								type='checkbox'
 								name='helpGroups'
@@ -98,7 +103,7 @@ const StepThree = ({
 								onChange={handleChange}
 								checked={helpGroups.includes("niepełnosprawnym") ? true : false}
 							/>
-							<label htmlFor='disabled'>niepełnosprawnym</label>
+							<label htmlFor='disabled'>{t("form.stepThree.label-4")}</label>
 							<input
 								type='checkbox'
 								name='helpGroups'
@@ -107,10 +112,10 @@ const StepThree = ({
 								onChange={handleChange}
 								checked={helpGroups.includes("osobom starszym") ? true : false}
 							/>
-							<label htmlFor='seniors'>osobom starszym</label>
+							<label htmlFor='seniors'>{t("form.stepThree.label-5")}</label>
 						</div>
 						<div className='form__localizaton-specific'>
-							<p>Wpisz nazwę konkretnej organizacji (opcjonalnie)</p>
+							<p>{t("form.stepThree.specificLocalTitle")}</p>
 							<input
 								type='text'
 								name='localizationSpecific'

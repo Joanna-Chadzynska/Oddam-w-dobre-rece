@@ -1,5 +1,6 @@
 import React from "react";
 import { FormInfoBanner, ErrorInfoForm, ErrorInfo } from "../../Layouts";
+import { useTranslation } from "react-i18next";
 
 const StepFour = ({
 	address,
@@ -11,26 +12,32 @@ const StepFour = ({
 	previousButton,
 	isFormValid
 }) => {
+	const { t } = useTranslation();
+
 	if (currentStep !== 4) {
 		return null;
 	}
 
 	const errorsList = () => {
 		if (!address.street) {
-			return <ErrorInfoForm>Podaj nazwę ulicy!</ErrorInfoForm>;
+			return (
+				<ErrorInfoForm>{t("form.stepFour.errors.street-1")}</ErrorInfoForm>
+			);
 		} else if (!address.city) {
-			return <ErrorInfoForm>Podaj nazwę miasta!</ErrorInfoForm>;
+			return <ErrorInfoForm>{t("form.stepFour.errors.city-1")}</ErrorInfoForm>;
 		} else if (!address.postCode) {
-			return <ErrorInfoForm>Podaj kod pocztowy!</ErrorInfoForm>;
+			return (
+				<ErrorInfoForm>{t("form.stepFour.errors.postcode-1")}</ErrorInfoForm>
+			);
 		} else if (!address.phone) {
-			return <ErrorInfoForm>Podaj numer telefonu!</ErrorInfoForm>;
+			return <ErrorInfoForm>{t("form.stepFour.errors.phone-1")}</ErrorInfoForm>;
 		} else if (!collectionDate.date) {
-			return <ErrorInfoForm>Podaj datę odbioru!</ErrorInfoForm>;
+			return <ErrorInfoForm>{t("form.stepFour.errors.date-1")}</ErrorInfoForm>;
 		} else if (!collectionDate.time) {
-			return <ErrorInfoForm>Podaj godzinę odbioru!</ErrorInfoForm>;
+			return <ErrorInfoForm>{t("form.stepFour.time-1")}</ErrorInfoForm>;
 		} else if (!isFormValid) {
 			return (
-				<ErrorInfoForm>Nieprawidłowy format kodu pocztowego!</ErrorInfoForm>
+				<ErrorInfoForm>{t("form.stepFour.errors.postcode-2")}</ErrorInfoForm>
 			);
 		} else {
 			return <br />;
@@ -39,20 +46,24 @@ const StepFour = ({
 
 	return (
 		<div className='form__step form__wrapper'>
-			<FormInfoBanner>Podaj adres oraz termin odbioru rzeczy.</FormInfoBanner>
+			<FormInfoBanner>{t("form.info.stepFour")}</FormInfoBanner>
 			<div className='form__form'>
-				<p>Krok {currentStep}</p>
+				<p>
+					{t("form.info.step")} {currentStep}/4
+				</p>
 				<br />
 				{errorsList()}
 				<div className='form__group'>
-					<h1>Podaj adres oraz termin odbioru rzeczy przez kuriera</h1>
+					<h1>{t("form.stepFour.mainTitle")}</h1>
 					<div className='form__step-four'>
 						<div className='container'>
 							<div className='form__address'>
-								<p>Adres odbioru:</p>
+								<p>{t("form.stepFour.addressTitle")}:</p>
 
 								<div className='form__inputBox'>
-									<label htmlFor='street'>Ulica</label>
+									<label htmlFor='street'>
+										{t("form.stepFour.address.street")}
+									</label>
 									<input
 										type='text'
 										name='address'
@@ -61,12 +72,14 @@ const StepFour = ({
 										onChange={handleChange}
 									/>
 									{address.street.length < 2 && (
-										<ErrorInfo>Podana nazwa jest za krótka!</ErrorInfo>
+										<ErrorInfo>{t("form.stepFour.errors.street-2")}</ErrorInfo>
 									)}
 								</div>
 
 								<div className='form__inputBox'>
-									<label htmlFor='city'>Miasto</label>
+									<label htmlFor='city'>
+										{t("form.stepFour.address.city")}
+									</label>
 									<input
 										type='text'
 										name='address'
@@ -75,12 +88,14 @@ const StepFour = ({
 										onChange={handleChange}
 									/>
 									{address.city.length < 2 && (
-										<ErrorInfo>Podana nazwa jest za krótka!</ErrorInfo>
+										<ErrorInfo>{t("form.stepFour.errors.city-2")}</ErrorInfo>
 									)}
 								</div>
 
 								<div className='form__inputBox'>
-									<label htmlFor='postcode'>Kod pocztowy</label>
+									<label htmlFor='postcode'>
+										{t("form.stepFour.address.postcode")}
+									</label>
 									<input
 										type='text'
 										pattern='[0-9]{2}-[0-9]{3}'
@@ -95,7 +110,9 @@ const StepFour = ({
 								</div>
 
 								<div className='form__inputBox'>
-									<label htmlFor='phone'>Numer telefonu</label>
+									<label htmlFor='phone'>
+										{t("form.stepFour.address.phone")}
+									</label>
 									<input
 										type='number'
 										name='address'
@@ -104,16 +121,16 @@ const StepFour = ({
 										onChange={handleChange}
 									/>
 									{address.phone.length < 9 && (
-										<ErrorInfo>Podany numer telefonu jest za krótki!</ErrorInfo>
+										<ErrorInfo>{t("form.stepFour.errors.phone-2")}</ErrorInfo>
 									)}
 								</div>
 							</div>
 
 							<div className='form__collection-date'>
-								<p>Termin odbioru:</p>
+								<p>{t("form.stepFour.pickupTitle")}:</p>
 
 								<div className='form__inputBox'>
-									<label htmlFor='date'>Data</label>
+									<label htmlFor='date'>{t("form.stepFour.pickup.date")}</label>
 									<input
 										type='date'
 										name='collectionDate'
@@ -124,7 +141,7 @@ const StepFour = ({
 								</div>
 
 								<div className='form__inputBox'>
-									<label htmlFor='hour'>Godzina</label>
+									<label htmlFor='hour'>{t("form.stepFour.pickup.time")}</label>
 									<input
 										type='time'
 										name='collectionDate'
@@ -135,7 +152,9 @@ const StepFour = ({
 								</div>
 
 								<div className='form__inputBox'>
-									<label htmlFor='suggestions'>Uwagi do kuriera</label>
+									<label htmlFor='suggestions'>
+										{t("form.stepFour.pickup.note")}
+									</label>
 									<textarea
 										name='collectionDate'
 										id='note'

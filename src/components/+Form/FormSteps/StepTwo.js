@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FormInfoBanner, ErrorInfoForm } from "../../Layouts";
+import { useTranslation } from "react-i18next";
 
 const StepTwo = ({
 	bags,
@@ -8,6 +9,8 @@ const StepTwo = ({
 	previousButton,
 	nextButton
 }) => {
+	const { t } = useTranslation();
+
 	const [isArrowUp, setArrowUp] = useState(false);
 
 	const changeArrow = () => {
@@ -20,25 +23,28 @@ const StepTwo = ({
 
 	return (
 		<div className='form__step form__wrapper'>
-			<FormInfoBanner>
-				Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak
-				poprawnie spakować rzeczy znajdziesz TUTAJ.
-			</FormInfoBanner>
+			<FormInfoBanner>{t("form.info.stepTwo")}</FormInfoBanner>
 			<div className='form__form'>
-				<p>Krok {currentStep}</p>
+				<p>
+					{t("form.info.step")} {currentStep}/4
+				</p>
 				<br />
-				{!bags ? <ErrorInfoForm>Podaj liczbę worków!</ErrorInfoForm> : <br />}
+				{!bags ? (
+					<ErrorInfoForm>{t("form.stepTwo.msgErr-bags")}</ErrorInfoForm>
+				) : (
+					<br />
+				)}
 				<div className='form__group'>
-					<h1>Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:</h1>
+					<h1>{t("form.stepTwo.mainTitle")}:</h1>
 					<div className='form__step-two select'>
-						<label>Liczba 60l worków:</label>
+						<label>{t("form.stepTwo.label-select")}:</label>
 						<select
 							onClick={changeArrow}
 							className={isArrowUp ? "arrowUp" : null}
 							onChange={handleChange}
 							name='step-two'
 							value={bags}>
-							<option hidden>— wybierz —</option>
+							<option hidden>— {t("form.stepTwo.select")} —</option>
 							<option value='1' className='option-style'>
 								1
 							</option>

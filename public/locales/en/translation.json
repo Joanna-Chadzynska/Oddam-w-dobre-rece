@@ -88,5 +88,107 @@
 		"name": "Name",
 		"repeatpassword": "Repeat password",
 		"msgErr-confirmPassword": "The passwords must be identical!"
+	},
+
+	"form": {
+		"header": {
+			"mainTitle-1": "Give back things you don't want anymore",
+			"mainTitle-2": "to those in need",
+			"simpleSteps": {
+				"one-1": "Choose",
+				"one-2": "things",
+				"two-1": "Pack them",
+				"two-2": "in bags",
+				"three-1": "Choose",
+				"three-2": "a foundation",
+				"four-1": "Order",
+				"four-2": "courier"
+			}
+		},
+
+		"buttons": {
+			"next": "Next",
+			"prev": "Back",
+			"confirm": "Confirm"
+		},
+
+		"info": {
+			"banner-title": "Important!",
+			"stepOne": "Complete the details of your items. Thanks to this we will know who is the best to pass them on to.",
+			"stepTwo": "Pack all items to be returned in 60l bags. You can find detailed instructions on how to properly pack things HERE.",
+			"stepThree": "If you know who you want to help, you can enter the name of this organization in the search engine. You can also filter organizations by their location or by the purpose of their help.",
+			"stepFour": "Give us your address and the date of pickup.",
+			"step": "Step"
+		},
+
+		"stepOne": {
+			"mainTitle": "Select what you want to return",
+			"label-1": "clothes that can be used again",
+			"label-2": "clothes to throw away",
+			"label-3": "toys",
+			"label-4": "books",
+			"label-5": "others",
+			"msgErr-select": "Check one box!"
+		},
+
+		"stepTwo": {
+			"mainTitle": "Enter the number of 60l bags you have packed your items into",
+			"msgErr-bags": "Enter the number of bags!",
+			"label-select": "Number of 60l bags",
+			"select": "select"
+		},
+
+		"stepThree": {
+			"mainTitle": "Location",
+			"helpTitle": "Who do you want to help?",
+			"specificLocalTitle": "Enter the name of the specific organisation (optional)",
+			"label-1": "children",
+			"label-2": "single mothers",
+			"label-3": "homeless",
+			"label-4": "disabled people",
+			"label-5": "elderly people",
+			"msgErr-location": "Select or enter a location!",
+			"msgErr-helpGroup": "Select who you want to help!"
+		},
+
+		"stepFour": {
+			"mainTitle": "Enter the address and date of picking up the items by the courier",
+			"addressTitle": "Pickup Address",
+			"pickupTitle": "Pickup Date",
+
+			"address": {
+				"street": "Street",
+				"city": "City",
+				"postcode": "Postcode",
+				"phone": "Phone number"
+			},
+
+			"pickup": {
+				"date": "Date",
+				"time": "Time",
+				"note": "Notes to the courier"
+			},
+
+			"errors": {
+				"street-1": "Enter the street name!",
+				"street-2": "The street name is too short!",
+				"city-1": "Enter the city name!",
+				"city-2": "The city name is too short!",
+				"postcode-1": "Enter zip code!",
+				"postcode-2": "Invalid zip code format!",
+				"phone-1": "Enter your phone number!",
+				"phone-2": "The telephone number is too short!",
+				"date-1": "Enter the pickup date!",
+				"time-1": "Enter the pickup time!"
+			}
+		},
+
+		"summary": {
+			"mainTitle": "Summary of Your donations",
+			"giveTitle": "You give",
+			"bags": "bags",
+			"location": "for location",
+			"errors": "Correct or complete the fields!"
+		}
 	}
 }

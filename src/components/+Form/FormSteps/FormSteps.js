@@ -5,6 +5,7 @@ import {
 	addCollectionsAndDocuments,
 	auth
 } from "../../../firebase/firebase.utils";
+import { useTranslation } from "react-i18next";
 
 import StepOne from "./StepOne";
 import StepTwo from "./StepTwo";
@@ -14,6 +15,8 @@ import Summary from "./Summary";
 import ThankYou from "./ThankYou";
 
 const FormSteps = ({ addForm, currentUser, history }) => {
+	const { t } = useTranslation();
+
 	const [isFormValid, setFormValid] = useState(false);
 	const [currentStep, setCurrentStep] = useState(1);
 	const [type, setType] = useState("");
@@ -248,7 +251,7 @@ const FormSteps = ({ addForm, currentUser, history }) => {
 		if (currentStep !== 1) {
 			return (
 				<button onClick={_prev} className='btn-prev'>
-					Wstecz
+					{t("form.buttons.prev")}
 				</button>
 			);
 		}
@@ -260,7 +263,7 @@ const FormSteps = ({ addForm, currentUser, history }) => {
 		if (currentStep < 6) {
 			return (
 				<button onClick={_next} className='btn-next'>
-					Dalej
+					{t("form.buttons.next")}
 				</button>
 			);
 		}

@@ -1,24 +1,30 @@
 import React from "react";
 import { FormInfoBanner, ErrorInfoForm } from "../../Layouts";
+import { useTranslation } from "react-i18next";
 
 const StepOne = ({ currentStep, handleChange, nextButton, type }) => {
+	const { t } = useTranslation();
+
 	if (currentStep !== 1) {
 		return null;
 	}
 
 	return (
 		<div className='form__step form__wrapper'>
-			<FormInfoBanner>
-				Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy
-				wiedzieć komu najlepiej je przekazać.
-			</FormInfoBanner>
+			<FormInfoBanner>{t("form.info.stepOne")}</FormInfoBanner>
 
 			<div className='form__form'>
-				<p>Krok {currentStep}/4</p>
+				<p>
+					{t("form.info.step")} {currentStep}/4
+				</p>
 				<br />
-				{!type ? <ErrorInfoForm>Zaznacz jedno pole!</ErrorInfoForm> : <br />}
+				{!type ? (
+					<ErrorInfoForm>{t("form.stepOne.msgErr-select")}</ErrorInfoForm>
+				) : (
+					<br />
+				)}
 				<div className='form__group'>
-					<h1>Zaznacz co chcesz oddać: </h1>
+					<h1>{t("form.stepOne.mainTitle")}: </h1>
 
 					<div className='form__step-one'>
 						<div className='form__step-one--input'>
@@ -30,9 +36,7 @@ const StepOne = ({ currentStep, handleChange, nextButton, type }) => {
 								onChange={handleChange}
 								checked={type === "ubrania w dobrym stanie" ? true : false}
 							/>
-							<label htmlFor='clothes-ok'>
-								ubrania, które nadają się do ponownego użycia
-							</label>
+							<label htmlFor='clothes-ok'>{t("form.stepOne.label-1")}</label>
 						</div>
 						<div className='form__step-one--input'>
 							<input
@@ -43,7 +47,7 @@ const StepOne = ({ currentStep, handleChange, nextButton, type }) => {
 								onChange={handleChange}
 								checked={type === "ubrania w złym stanie" ? true : false}
 							/>
-							<label htmlFor='clothes-trash'>ubrania do wyrzucenia</label>
+							<label htmlFor='clothes-trash'>{t("form.stepOne.label-2")}</label>
 						</div>
 						<div className='form__step-one--input'>
 							<input
@@ -54,7 +58,7 @@ const StepOne = ({ currentStep, handleChange, nextButton, type }) => {
 								onChange={handleChange}
 								checked={type === "zabawki" ? true : false}
 							/>
-							<label htmlFor='toys'>zabawki</label>
+							<label htmlFor='toys'>{t("form.stepOne.label-3")}</label>
 						</div>
 						<div className='form__step-one--input'>
 							<input
@@ -65,7 +69,7 @@ const StepOne = ({ currentStep, handleChange, nextButton, type }) => {
 								onChange={handleChange}
 								checked={type === "książki" ? true : false}
 							/>
-							<label htmlFor='books'>książki</label>
+							<label htmlFor='books'>{t("form.stepOne.label-4")}</label>
 						</div>
 						<div className='form__step-one--input'>
 							<input
@@ -76,7 +80,7 @@ const StepOne = ({ currentStep, handleChange, nextButton, type }) => {
 								onChange={handleChange}
 								checked={type === "inne" ? true : false}
 							/>
-							<label htmlFor='other'>inne</label>
+							<label htmlFor='other'>{t("form.stepOne.label-5")}</label>
 						</div>
 					</div>
 				</div>

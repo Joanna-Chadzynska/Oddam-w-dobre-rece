@@ -88,5 +88,107 @@
 		"name": "Imię",
 		"repeatpassword": "Powtórz hasło",
 		"msgErr-confirmPassword": "Podane hasła muszą być identyczne!"
+	},
+
+	"form": {
+		"header": {
+			"mainTitle-1": "Oddaj rzeczy, których już nie chcesz",
+			"mainTitle-2": "potrzebującym",
+			"simpleSteps": {
+				"one-1": "Wybierz",
+				"one-2": "rzeczy",
+				"two-1": "Spakuj je",
+				"two-2": "w worki",
+				"three-1": "Wybierz",
+				"three-2": "fundację",
+				"four-1": "Zamów",
+				"four-2": "kuriera"
+			}
+		},
+
+		"buttons": {
+			"next": "Dalej",
+			"prev": "Wstecz",
+			"confirm": "Potwierdzam"
+		},
+
+		"info": {
+			"banner-title": "Ważne!",
+			"stepOne": "Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu najlepiej je przekazać.",
+			"stepTwo": "Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ.",
+			"stepThree": "Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądź celu ich pomocy.",
+			"stepFour": "Podaj adres oraz termin odbioru rzeczy.",
+			"step": "Krok"
+		},
+
+		"stepOne": {
+			"mainTitle": "Zaznacz co chcesz oddać",
+			"label-1": "ubrania, które nadają się do ponownego użycia",
+			"label-2": "ubrania do wyrzucenia",
+			"label-3": "zabawki",
+			"label-4": "książki",
+			"label-5": "inne",
+			"msgErr-select": "Zaznacz jedno pole!"
+		},
+
+		"stepTwo": {
+			"mainTitle": "Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy",
+			"msgErr-bags": "Podaj liczbę worków!",
+			"label-select": "Liczba 60l worków",
+			"select": "wybierz"
+		},
+
+		"stepThree": {
+			"mainTitle": "Lokalizacja",
+			"helpTitle": "Komu chcesz pomóc?",
+			"specificLocalTitle": "Wpisz nazwę konkretnej organizacji (opcjonalnie)",
+			"label-1": "dzieciom",
+			"label-2": "samotnym matkom",
+			"label-3": "bezdomnym",
+			"label-4": "niepełnosprawnym",
+			"label-5": "osobom starszym",
+			"msgErr-location": "Wybierz lub podaj lokalizację!",
+			"msgErr-helpGroup": "Wybierz komu chcesz pomóc!"
+		},
+
+		"stepFour": {
+			"mainTitle": "Podaj adres oraz termin odbioru rzeczy przez kuriera",
+			"addressTitle": "Adres odbioru",
+			"pickupTitle": "Termin odbioru",
+
+			"address": {
+				"street": "Ulica",
+				"city": "Miasto",
+				"postcode": "Kod pocztowy",
+				"phone": "Numer telefonu"
+			},
+
+			"pickup": {
+				"date": "Data",
+				"time": "Godzina",
+				"note": "Uwagi do kuriera"
+			},
+
+			"errors": {
+				"street-1": "Podaj nazwę ulicy!",
+				"street-2": "Nazwa ulicy jest za krótka!",
+				"city-1": "Podaj nazwę miasta!",
+				"city-2": "Nazwa miasta jest za krótka!",
+				"postcode-1": "Podaj kod pocztowy!",
+				"postcode-2": "Nieprawidłowy format kodu pocztowego!",
+				"phone-1": "Podaj numer telefonu!",
+				"phone-2": "Podany numer telefonu jest za krótki!",
+				"date-1": "Podaj datę odbioru!",
+				"time-1": "Podaj godzinę odbioru!"
+			}
+		},
+
+		"summary": {
+			"mainTitle": "Podsumowanie Twojej darowizny",
+			"giveTitle": "Oddajesz",
+			"bags": "worki",
+			"location": "dla lokalizacji",
+			"errors": "Popraw lub uzupełnij pola!"
+		}
 	}
 }
