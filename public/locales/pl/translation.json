@@ -189,6 +189,12 @@
 			"bags": "worki",
 			"location": "dla lokalizacji",
 			"errors": "Popraw lub uzupełnij pola!"
+		},
+
+		"thankYou": {
+			"title-1": "Dziękujemy za przesłanie formularza.",
+			"title-2": "Na maila prześlemy wszelkie",
+			"title-3": "informacje o odbiorze."
 		}
 	}
 }

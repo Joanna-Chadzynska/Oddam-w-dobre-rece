@@ -1,11 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { CustomTitle, ErrorInfo } from "../Layouts";
 import { auth, createUserProfileDocument } from "../../firebase/firebase.utils";
 import { useTranslation } from "react-i18next";
 
 const Register = ({ history }) => {
-	const [unsubscribe, setUnsubscribe] = useState(null);
+	// const isMounted = useRef(null);
+	// const [isLoading, setIsLoading] = useState(false);
+
 	const { t } = useTranslation();
 	const [displayName, setDisplayName] = useState("");
 	const [email, setEmail] = useState("");
@@ -17,6 +19,31 @@ const Register = ({ history }) => {
 		password: "",
 		confirmPassword: ""
 	});
+
+	// useEffect(() => {
+	// 	let didCancel = false;
+	// 	const submit = async () => {
+	// 		try {
+	// 			const result = await handleSubmit();
+
+	// 			if (!didCancel) {
+	// 				await handleSubmit();
+	// 			}
+	// 		} catch {
+	// 			console.log("error");
+	// 		}
+	// 	};
+
+	// 	submit();
+
+	// 	return () => {
+	// 		didCancel = true;
+	// 	};
+	// }, [handleSubmit]);
+
+	// if (!isLoading) {
+	// 	return null;
+	// }
 
 	const validate = () => {
 		let isValid = true;
@@ -61,6 +88,7 @@ const Register = ({ history }) => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+
 		if (validate()) {
 			if (password !== confirmPassword) {
 				alert("passwords dont match");
@@ -99,10 +127,6 @@ const Register = ({ history }) => {
 			setConfirmPassword(e.target.value);
 		}
 	};
-
-	useEffect(() => {
-		setUnsubscribe(unsubscribe);
-	}, [unsubscribe]);
 
 	return (
 		<div className='login'>

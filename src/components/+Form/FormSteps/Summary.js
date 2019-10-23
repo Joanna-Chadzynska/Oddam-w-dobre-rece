@@ -97,7 +97,7 @@ const Summary = ({
 					<button
 						type='submit'
 						className='btn-confirm'
-						onClick={isFormValid ? next : null}>
+						onClick={isFormValid ? next() : null}>
 						{t("form.buttons.confirm")}
 					</button>
 				</div>

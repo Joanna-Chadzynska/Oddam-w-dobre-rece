@@ -189,6 +189,12 @@
 			"bags": "bags",
 			"location": "for location",
 			"errors": "Correct or complete the fields!"
+		},
+
+		"thankYou": {
+			"title-1": "Thank you for sending us the form.",
+			"title-2": "We will send by e-mail",
+			"title-3": "about pickup information."
 		}
 	}
 }
