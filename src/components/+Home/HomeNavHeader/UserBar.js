@@ -19,6 +19,9 @@ const UserBar = ({ currentUser }) => {
 						<li>
 							<button onClick={() => changeLanguage("en")}>en</button>
 						</li>
+						<li>
+							<button onClick={() => changeLanguage("ru")}>ru</button>
+						</li>
 						<li className='nav__userBar-hello'>
 							<span>
 								{t("userbar.hello")} &nbsp;
@@ -41,6 +44,9 @@ const UserBar = ({ currentUser }) => {
 						</li>
 						<li>
 							<button onClick={() => changeLanguage("en")}>en</button>
+						</li>
+						<li>
+							<button onClick={() => changeLanguage("ru")}>ru</button>
 						</li>
 						<li>
 							<Link to='/logowanie'>{t("userbar.login")}</Link>

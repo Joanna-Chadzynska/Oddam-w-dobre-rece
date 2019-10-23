@@ -5,7 +5,7 @@ import { initReactI18next } from "react-i18next";
 
 const fallbackLng = ["pl"];
 
-const availableLanguages = ["pl", "en"];
+const availableLanguages = ["pl", "en", "ru"];
 
 i18n
 	.use(Backend)

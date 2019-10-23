@@ -1,6 +1,8 @@
 import firebase from "firebase/app";
 import "firebase/firestore";
 import "firebase/auth";
+// var admin = require("firebase-admin");
+// console.log(admin);
 
 const config = {
 	apiKey: "AIzaSyDJBrlcEwrxPOQufSgD-vq3q-JYeu62lNw",
@@ -44,6 +46,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 firebase.initializeApp(config);
 
 export const auth = firebase.auth();
+
 export const firestore = firebase.firestore();
 
 // add databese with organizations
@@ -72,5 +75,27 @@ const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: "select_account" });
 
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
+
+//
+// function listAllUsers(nextPageToken) {
+// 	// List batch of users, 1000 at a time.
+// 	admin
+// 		.auth()
+// 		.listUsers(1000, nextPageToken)
+// 		.then(function(listUsersResult) {
+// 			listUsersResult.users.forEach(function(userRecord) {
+// 				console.log("user", userRecord.toJSON());
+// 			});
+// 			if (listUsersResult.pageToken) {
+// 				// List next batch of users.
+// 				listAllUsers(listUsersResult.pageToken);
+// 			}
+// 		})
+// 		.catch(function(error) {
+// 			console.log("Error listing users:", error);
+// 		});
+// }
+// // Start listing users from the beginning, 1000 at a time.
+// listAllUsers();
 
 export default firebase;
