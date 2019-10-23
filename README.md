@@ -1,6 +1,46 @@
+# Oddam w dobre ręce
+
+> Portfolio Lab project
+
+## Table of contents
+
+- [General info](#general-info)
+- [Screenshots](#screenshots)
+- [Technologies](#technologies)
+- [Setup](#setup)
+- [Features](#features)
+- [Status](#status)
+- [Contact](#contact)
+
+## General info
+
+The aim of the project is to create a place where everyone will be able to give unnecessary things to trusted institutions.
+The project will be a **website** with a simple form that will make it easier for users to give things back.
+
+## Screenshots
+
+![HomePage Header](./images/HomePageHeader.png)
+![HomePage AboutUs](./images/HomePageAboutUs.png)
+![HomePage Contact](./images/HomePageContact.png)
+![Form Header](./images/FormHeader.png)
+![Form Sapmle](./images/FormSample-1.png)
+
+## Technologies
+
+- JavaScript
+- React - version 16.10.2
+- Redux - version 4.0.4
+- React i18next - version 17.3.0
+- Sass
+- HTML
+- CSS
+- Firebase
+
+## Setup
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+### Available Scripts
 
 In the project directory, you can run:
 
@@ -22,47 +62,30 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 Builds the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Code Examples
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Show examples of usage:
+`put-your-code-here`
 
-### `npm run eject`
+## Features
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+List of features ready and TODOs for future development
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Home Page and Form layout
+- Login, registration, logging out with authentication using Firebase
+- Form - validation and adding to Firebase
+- Internationalization (Polish, English)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To-do list:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Mobile version
+- Administration Panel
+- Internationalization (Russian)
 
-## Learn More
+## Status
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Project is: _in progress_
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Contact
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Created by Joanna Chądzyńska joanna.chadzynska20@gmail.com - feel free to contact me!
