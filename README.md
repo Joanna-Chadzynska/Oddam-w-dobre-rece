@@ -81,6 +81,7 @@ To-do list:
 - Mobile version
 - Administration Panel
 - Internationalization (Russian)
+- Optimisation
 
 ## Status
 
