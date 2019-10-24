@@ -6,8 +6,7 @@ const HomeThreeColumns = () => {
 	const { t } = useTranslation();
 	return (
 		<div className='home__threeColumns'>
-			{/* <Wrapper> */}
-			<div className='home__threeColumns-box'>
+			<div className='home__threeColumns-box wrapper'>
 				<div className='home__column'>
 					<h1>10</h1>
 					<p>{t("home.threeColumns.titleOne")}</p>
@@ -33,7 +32,6 @@ const HomeThreeColumns = () => {
 					</span>
 				</div>
 			</div>
-			{/* </Wrapper> */}
 		</div>
 	);
 };

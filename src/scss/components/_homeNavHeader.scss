@@ -3,7 +3,6 @@
 	grid-template-columns: 1fr 1fr;
 	height: 70vh;
 	margin-top: 2rem;
-	margin-right: 5rem;
 
 	.home__hero {
 		background: transparent url("../../assets/Home-Hero-Image.jpg") 0% 0%
@@ -19,7 +18,7 @@
 		bottom: 0;
 		z-index: -1;
 
-		@include media($xxl) {
+		@include media(xxl) {
 			height: 94vh;
 		}
 	}
@@ -43,8 +42,8 @@
 
 .home__nav {
 	margin-top: 2.25rem;
-	padding-right: 7rem;
 	z-index: 1;
+
 	.nav-userBar ul {
 		@include navButtons();
 
@@ -60,11 +59,11 @@
 			color: $color-gray-dark;
 			font-size: 1.5em;
 
-			@include media($xxl) {
+			@include media(xxl) {
 				font-size: 1.125em;
 			}
 
-			@include media($xl) {
+			@include media(xl) {
 				font-size: 1em;
 			}
 
@@ -86,11 +85,11 @@
 		margin-bottom: 1rem;
 		text-align: center;
 
-		@include media($xxl) {
+		@include media(xxl) {
 			font-size: 2em;
 		}
 
-		@include media($xl) {
+		@include media(xl) {
 			font-size: 1.5em;
 		}
 
@@ -134,12 +133,12 @@
 			transform: scale(0.9);
 		}
 
-		@include media($xl) {
+		@include media(xl) {
 			width: 15rem;
 			height: 7rem;
 		}
 
-		@include media($lg) {
+		@include media(lg) {
 			width: 11rem;
 			height: 6rem;
 		}
@@ -157,16 +156,16 @@
 			left: 50%;
 			transform: translate(-50%, -50%);
 
-			@include media($xxl) {
-				font-size: 2em;
-			}
-			@include media($xl) {
-				font-size: 1.75em;
-			}
+			// @include media(xxl) {
+			// 	font-size: 2em;
+			// }
+			// @include media(xl) {
+			// 	font-size: 1.75em;
+			// }
 
-			@include media($lg) {
-				font-size: 1.5em;
-			}
+			// @include media(lg) {
+			// 	font-size: 1.5em;
+			// }
 		}
 	}
 }

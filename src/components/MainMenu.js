@@ -5,7 +5,7 @@ import Menu from "./+Home/HomeNavHeader/Menu";
 
 const MainMenu = ({ currentUser }) => {
 	return (
-		<div className='home__nav'>
+		<div className='home__nav wrapper'>
 			<UserBar currentUser={currentUser} />
 			<br />
 			<Menu />

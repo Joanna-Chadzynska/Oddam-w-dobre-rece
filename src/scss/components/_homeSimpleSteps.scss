@@ -1,71 +1,61 @@
 .home__simpleSteps {
-	min-height: 55vh;
-	margin-bottom: 5rem;
-	margin-top: 3.5rem;
-	min-width: 100%;
+	height: 65vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-evenly;
 
 	.home__steps {
 		background-color: $color-gray-light;
-		display: grid;
-		grid-template-columns: repeat(4, 1fr);
-		grid-gap: 5rem;
-		margin-bottom: 2rem;
-		min-height: 30vh;
-		padding: 2rem 8rem;
-		text-align: center;
+	}
+}
 
-		.home__step {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
+.home__steps--content {
+	height: 30vh;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	justify-items: center;
+	text-align: center;
+	width: 80%;
+	margin: 0 auto;
 
-			.home__icon {
-				width: 50%;
-				height: 50%;
-				padding: 0;
-				padding-bottom: 10px;
-				position: relative;
-				left: 50%;
-				margin: 15px 0;
-				transform: translateX(-50%);
+	.home__step {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 100%;
 
-				&:hover {
-					// transform: rotate(10deg);
-					// fill: $color-yellow;
+		.home__icon {
+			padding: 0;
+			padding-bottom: 10px;
+			position: relative;
+			left: 50%;
+			margin: 15px 0;
+			transform: translateX(-50%);
 
-					fill: red;
-				}
-
-				@include media($xxl) {
-					width: 65%;
-					height: 65%;
-				}
-				@include media($xl) {
-					width: 100%;
-					height: 100%;
-					padding-bottom: 12px;
-				}
+			img {
+				width: 100%;
+				height: 100%;
 			}
+		}
 
-			span,
-			p {
-				color: $color-gray-dark;
-			}
+		span,
+		p {
+			color: $color-gray-dark;
+		}
 
-			span {
-				display: block;
-				font-size: 1.125em;
-				margin-bottom: 0.5rem;
-			}
+		span {
+			display: block;
+			font-size: 1.125em;
+			margin-bottom: 0.5rem;
+		}
 
-			hr {
-				width: 70px;
-			}
+		hr {
+			width: 70px;
+		}
 
-			p {
-				font-size: 1em;
-				margin-top: 0.5rem;
-			}
+		p {
+			font-size: 1em;
+			margin-top: 0.5rem;
 		}
 	}
 }

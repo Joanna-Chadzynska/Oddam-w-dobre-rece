@@ -1,6 +1,30 @@
-$xxl: 1800px;
-$xl: 1200px;
-$lg: 992px;
-$md: 768px;
-$sm: 576px;
-$xs: 375px;
+// $xxl: 1800px;
+// $xl: 1200px;
+// $lg: 992px;
+// $md: 768px;
+// $sm: 576px;
+// $xs: 375px;
+
+$breakpoints: (
+	xxl: (
+		max-width: 1800px
+	),
+	xl: (
+		max-width: 1600px
+	),
+	lg: (
+		max-width: 1400px
+	),
+	md: (
+		max-width: 1024px
+	),
+	sm: (
+		max-width: 768px
+	),
+	xs: (
+		max-width: 414px
+	),
+	xxs: (
+		max-width: 320px
+	)
+);

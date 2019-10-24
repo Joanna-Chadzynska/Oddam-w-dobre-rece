@@ -22,24 +22,30 @@
 				color: $color-black;
 			}
 
-			@include media($xxl) {
+			@include media(xxl) {
 				padding: 10px;
 			}
 
-			@include media($xl) {
+			@include media(xl) {
 				padding: 5px;
 			}
 
-			@include media($lg) {
+			@include media(lg) {
 				padding: 5px;
 			}
 		}
 	}
 }
 
-@mixin media($size) {
-	@media (max-width: $size - 1) {
-		@content;
+@mixin media($breakpoint) {
+	$size: map-get($breakpoints, $breakpoint);
+
+	@if ($size) {
+		@media #{$size} {
+			@content;
+		}
+	} @else {
+		@error '"#{$breakpoint}" - nie ma takiej wielkości';
 	}
 }
 

@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 const HomeWhoWeHelp = () => {
 	const { t } = useTranslation();
 	return (
-		<div className='home__whoWeHelp' id='who-we-help'>
+		<div className='home__whoWeHelp wrapper' id='who-we-help'>
 			<CustomTitle>{t("home.whoWeHelp.mainTitle")}</CustomTitle>
 			<div className='home__helping'>
 				<Tabs>

@@ -7,7 +7,7 @@
 	height: 70vh;
 	margin-bottom: 2rem;
 
-	@include media($xxl) {
+	@include media(xxl) {
 		height: 64vh;
 	}
 
@@ -57,7 +57,7 @@
 		border: 1px solid $color-gray-dark;
 		transform: rotate(45deg);
 
-		@include media($xl) {
+		@include media(xl) {
 			width: 7.5rem;
 			height: 7.5rem;
 		}
@@ -68,7 +68,7 @@
 			height: 101%;
 			position: relative;
 
-			@include media($xl) {
+			@include media(xl) {
 				width: 107%;
 				height: 107%;
 			}
@@ -108,7 +108,7 @@
 			padding-left: 8.875rem;
 			padding-right: 10rem;
 
-			@include media($xxl) {
+			@include media(xxl) {
 				z-index: 1;
 			}
 
@@ -130,7 +130,7 @@
 	// justify-content: space-around;
 	height: 60vh;
 
-	@include media($xxl) {
+	@include media(xxl) {
 		// height: 55vh;
 	}
 
@@ -313,7 +313,7 @@
 .form__summary {
 	height: 80vh;
 
-	@include media($xxl) {
+	@include media(xxl) {
 		height: 100vh;
 	}
 }
@@ -342,12 +342,12 @@
 	justify-content: space-between;
 	width: 50%;
 
-	@include media($xl) {
+	@include media(xl) {
 		width: 70%;
 	}
 
 	.form__address {
-		@include media($xl) {
+		@include media(xl) {
 			margin-right: 3rem;
 		}
 	}

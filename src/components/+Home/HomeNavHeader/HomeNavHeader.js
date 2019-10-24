@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next";
 const HomeNavHeader = () => {
 	const { t } = useTranslation();
 	return (
-		<div className='home__navHeader'>
+		<div className='home__navHeader wrapper'>
 			<div className='home__hero'></div>
 			<br />
 			<div className='home__navPanel'>

@@ -1,39 +1,62 @@
 .home__aboutUs {
-  min-height: 65vh;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+	background-color: $color-gray-light;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	max-height: 100vh;
 
-  .home__description-box {
-    background-color: $color-gray-light;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 7rem;
-    text-align: center;
+	.home__description-box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		// height: 100%;
+		text-align: center;
+		margin: 0 auto;
+		width: 80%;
 
-    .home__desc {
-      color: $color-gray-dark;
-      font-size: 1.5em;
-      line-height: 2em;
-      letter-spacing: -0.6px;
-      margin-bottom: 2.5rem;
-    }
+		@include media(lg) {
+		}
 
-    .home__signature {
-      background-image: url("../../assets/Signature.svg");
-      background-repeat: no-repeat;
-      background-position: top right;
-      width: 100%;
-      padding-bottom: 8rem;
-    }
-  }
+		.home__desc {
+			color: $color-gray-dark;
+			font-size: 1.5em;
+			line-height: 1.5;
+			letter-spacing: -0.6px;
 
-  .home__banner {
-    background-image: url("../../assets/People.jpg");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    overflow: hidden;
-  }
+			@include media(lg) {
+				line-height: 1.4;
+			}
+		}
+
+		.home__signature {
+			align-self: flex-end;
+
+			img {
+				max-width: 100%;
+				height: auto;
+
+				@include media(xxl) {
+					max-width: 80%;
+				}
+
+				@include media(xl) {
+					max-width: 75%;
+				}
+
+				@include media(lg) {
+					max-width: 65%;
+				}
+			}
+		}
+	}
+
+	.home__banner {
+		margin: 0 auto;
+		min-width: 100%;
+
+		img {
+			display: inline-block;
+			width: 100%;
+			height: auto;
+		}
+	}
 }

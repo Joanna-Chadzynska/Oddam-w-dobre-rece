@@ -1,19 +1,17 @@
 .home__threeColumns {
-	min-height: 24vh;
+	height: 30vh;
 	background-color: $color-yellow;
-	padding: 3rem 25rem;
-
-	@include media($xxl) {
-		padding: 3rem 10rem;
-	}
 }
 
 .home__threeColumns-box {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-gap: 7em;
+	height: 100%;
 	text-align: center;
-	min-width: 100%;
+	justify-items: center;
+	align-items: center;
+	width: 90%;
 
 	.home__column {
 		display: flex;

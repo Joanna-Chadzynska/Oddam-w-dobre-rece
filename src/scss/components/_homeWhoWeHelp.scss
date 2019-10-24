@@ -1,9 +1,9 @@
 .home__whoWeHelp {
 	min-height: 55vh;
-	margin-top: 4.375rem;
-	padding: 0 10rem;
+	width: 80%;
+	margin-top: 3rem;
 
-	@include media($xl) {
+	@include media(xl) {
 		padding: 0 5rem;
 	}
 }
@@ -11,10 +11,10 @@
 .home__orgList ul {
 	height: 27vh;
 
-	@include media($xxl) {
+	@include media(xxl) {
 		height: 33vh;
 	}
-	@include media($xl) {
+	@include media(xl) {
 		height: 36vh;
 	}
 }
