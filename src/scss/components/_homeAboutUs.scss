@@ -2,28 +2,43 @@
 	background-color: $color-gray-light;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	max-height: 100vh;
 
 	.home__description-box {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		// height: 100%;
-		text-align: center;
+		height: 100%;
 		margin: 0 auto;
+		text-align: center;
 		width: 80%;
 
-		@include media(lg) {
+		@include media(md) {
+			width: 90%;
 		}
 
 		.home__desc {
 			color: $color-gray-dark;
 			font-size: 1.5em;
-			line-height: 1.5;
+			line-height: 2;
 			letter-spacing: -0.6px;
+			margin-bottom: 2rem;
+
+			@include media(xl) {
+				line-height: 1.4;
+				font-size: 1.25em;
+				margin-bottom: 1rem;
+			}
 
 			@include media(lg) {
-				line-height: 1.4;
+				line-height: 1.3;
+				font-size: 1.25em;
+				margin-bottom: 1rem;
+			}
+
+			@include media(md) {
+				line-height: 1.2;
+				font-size: 1em;
+				margin-bottom: 0.5rem;
 			}
 		}
 
@@ -38,12 +53,16 @@
 					max-width: 80%;
 				}
 
-				@include media(xl) {
-					max-width: 75%;
-				}
+				// @include media(xl) {
+				// 	max-width: 60%;
+				// }
 
 				@include media(lg) {
 					max-width: 65%;
+				}
+
+				@include media(md) {
+					max-width: 50%;
 				}
 			}
 		}

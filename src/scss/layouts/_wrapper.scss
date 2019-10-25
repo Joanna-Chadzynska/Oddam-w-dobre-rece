@@ -2,4 +2,8 @@
 	margin: 0 auto;
 	max-width: calc(100vw - 10rem);
 	width: 100%;
+
+	@include media(md) {
+		max-width: calc(100vw - 6rem);
+	}
 }

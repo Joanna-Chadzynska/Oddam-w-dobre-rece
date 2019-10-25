@@ -1,8 +1,9 @@
 .home__simpleSteps {
-	height: 65vh;
+	height: 67vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
+	margin-bottom: 3rem;
 
 	.home__steps {
 		background-color: $color-gray-light;
@@ -13,24 +14,45 @@
 	height: 30vh;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 1rem;
 	justify-items: center;
+	align-items: center;
 	text-align: center;
 	width: 80%;
 	margin: 0 auto;
 
+	@include media(xl) {
+		width: 90%;
+	}
+
+	@include media(md) {
+		width: 100%;
+	}
+
 	.home__step {
 		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		height: 100%;
+		justify-content: space-evenly;
+		height: 80%;
+
+		@include media(xl) {
+			width: 85%;
+		}
+
+		@include media(lg) {
+			width: 90%;
+		}
 
 		.home__icon {
 			padding: 0;
-			padding-bottom: 10px;
 			position: relative;
 			left: 50%;
 			margin: 15px 0;
 			transform: translateX(-50%);
+
+			// @include media(xxl) {
+			// 	padding-bottom: 5px;
+			// }
 
 			img {
 				width: 100%;

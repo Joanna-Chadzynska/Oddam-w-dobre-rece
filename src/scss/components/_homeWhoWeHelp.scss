@@ -9,13 +9,10 @@
 }
 
 .home__orgList ul {
-	height: 27vh;
+	height: 33vh;
 
-	@include media(xxl) {
-		height: 33vh;
-	}
 	@include media(xl) {
-		height: 36vh;
+		height: 35vh;
 	}
 }
 
@@ -39,15 +36,29 @@
 			font-size: 1.625rem;
 			margin-bottom: 0.5rem;
 			line-height: 1.5;
+
+			@include media(lg) {
+				font-size: 1.5em;
+			}
 		}
+
 		p {
 			font-size: 1.125rem;
 			font-style: italic;
+
+			@include media(lg) {
+				font-size: 1em;
+			}
 		}
 	}
 
 	span {
 		font-size: 1.125rem;
+		text-align: right;
+
+		@include media(lg) {
+			font-size: 1em;
+		}
 	}
 }
 

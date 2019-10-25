@@ -19,6 +19,10 @@
 
 	&:nth-child(3) {
 		line-height: 4rem;
+
+		@include media(lg) {
+			line-height: 1;
+		}
 	}
 
 	&:first-child {

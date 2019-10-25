@@ -1,6 +1,11 @@
 .home__threeColumns {
-	height: 30vh;
+	height: 40vh;
 	background-color: $color-yellow;
+	margin-bottom: 3rem;
+
+	@include media(md) {
+		height: 30vh;
+	}
 }
 
 .home__threeColumns-box {
@@ -13,16 +18,45 @@
 	align-items: center;
 	width: 90%;
 
+	@include media(xxl) {
+		width: 90%;
+	}
+	@include media(xxl) {
+		grid-gap: 3em;
+	}
+
 	.home__column {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		// padding: 1rem 2rem;
+		width: 50%;
+
+		@include media(xxl) {
+			width: 90%;
+		}
+
+		@include media(xl) {
+			width: 100%;
+		}
+
+		@include media(md) {
+			padding: 0;
+		}
 
 		h1 {
 			color: $color-gray-dark;
 			font-size: 5.625em;
 			font-weight: 300;
 			padding-bottom: 1.5rem;
+
+			@include media(xl) {
+				font-size: 5em;
+			}
+
+			@include media(md) {
+				font-size: 4.5em;
+			}
 		}
 
 		p {
@@ -31,6 +65,14 @@
 			letter-spacing: -0.36px;
 			padding-bottom: 1rem;
 			text-transform: uppercase;
+
+			@include media(xl) {
+				font-size: 0.875em;
+			}
+
+			@include media(md) {
+				line-height: 1.4;
+			}
 		}
 
 		span {
@@ -41,6 +83,11 @@
 			line-height: 1.3;
 			letter-spacing: -0.36px;
 			text-align: center;
+
+			@include media(xl) {
+				font-size: 0.875em;
+				line-height: 1.2;
+			}
 		}
 	}
 }

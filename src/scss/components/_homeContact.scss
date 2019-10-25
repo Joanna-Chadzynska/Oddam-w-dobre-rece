@@ -10,6 +10,16 @@
 		padding-right: 0;
 	}
 
+	@include media(lg) {
+		grid-template-columns: 1fr 1fr;
+		min-height: 80vh;
+	}
+
+	@include media(md) {
+		min-height: 50vh;
+		grid-template-columns: 40% 60%;
+	}
+
 	.home__bg {
 		background-image: url("../../assets/Background-Contact-Form.jpg");
 		background-repeat: no-repeat;
@@ -30,6 +40,13 @@
 
 		@include media(xl) {
 			background-position: -50px;
+		}
+
+		@include media(lg) {
+			background-position: -90px;
+		}
+		@include media(md) {
+			background-position: -150px;
 		}
 	}
 }
