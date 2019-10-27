@@ -6,6 +6,10 @@
 	@include media(md) {
 		height: 30vh;
 	}
+
+	@include media(sm) {
+		display: none;
+	}
 }
 
 .home__threeColumns-box {

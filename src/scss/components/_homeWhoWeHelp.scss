@@ -8,6 +8,12 @@
 	}
 }
 
+.home__orgList {
+	@include media(sm) {
+		display: none;
+	}
+}
+
 .home__orgList ul {
 	height: 33vh;
 
