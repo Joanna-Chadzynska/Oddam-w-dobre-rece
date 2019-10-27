@@ -1,39 +1,39 @@
 import React, { useState } from "react";
 import Local from "./Local";
 import { CustomDescription, pagination } from "../../../Layouts";
+import { useTranslation } from "react-i18next";
 import db from "../../../../database/db.json";
 
 const LocalCollections = () => {
-  const [currentPage, setCurrentPage] = useState(1);
-  const locales = db.locales;
+	const { t } = useTranslation();
 
-  const indexOfLast = currentPage * 3;
+	const [currentPage, setCurrentPage] = useState(1);
 
-  const indexOfFirst = indexOfLast - 3;
+	const locales = db.locales;
 
-  const setPageNumber = (i) => {
-    setCurrentPage(i);
-  };
+	const indexOfLast = currentPage * 3;
 
-  return (
-    <div className='home__locals'>
-      <CustomDescription>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation.
-      </CustomDescription>
-      <div className='home__orgList'>
-        <ul>
-          {locales.slice(indexOfFirst, indexOfLast).map((local) => (
-            <Local key={local.id} local={local} />
-          ))}
-        </ul>
-        <ul className='home__orgList-pagination'>
-          {pagination(locales, currentPage, setPageNumber)}
-        </ul>
-      </div>
-    </div>
-  );
+	const indexOfFirst = indexOfLast - 3;
+
+	const setPageNumber = (i) => {
+		setCurrentPage(i);
+	};
+
+	return (
+		<div className='home__locals'>
+			<CustomDescription>{t("home.whoWeHelp.local.desc")}</CustomDescription>
+			<div className='home__orgList'>
+				<ul>
+					{locales.slice(indexOfFirst, indexOfLast).map((local) => (
+						<Local key={local.id} local={local} />
+					))}
+				</ul>
+				<ul className='home__orgList-pagination'>
+					{pagination(locales, currentPage, setPageNumber)}
+				</ul>
+			</div>
+		</div>
+	);
 };
 
 export default LocalCollections;

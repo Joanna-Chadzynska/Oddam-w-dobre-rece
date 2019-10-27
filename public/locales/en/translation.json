@@ -52,6 +52,12 @@
 			"labelThree": "Local collections",
 			"fundation": {
 				"desc": "In our database you will find a list of verified foundations with which we cooperate. You can check what they do, who they help and what they need."
+			},
+			"org": {
+				"desc": "We also help all non-governmental and charity organizations that are not foundations. These are our Partners who will make good use of the things that get to them."
+			},
+			"local": {
+				"desc": "We support local collections organized by individual people who care about the good of the community in which they live. You can organize such a collection yourself and help those who are closest to you."
 			}
 		},
 

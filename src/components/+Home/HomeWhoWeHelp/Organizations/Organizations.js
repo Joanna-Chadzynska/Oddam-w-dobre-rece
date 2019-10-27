@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import Organization from "./Organization";
 import { CustomDescription, pagination } from "../../../Layouts";
+import { useTranslation } from "react-i18next";
 import db from "../../../../database/db.json";
 
 const Organizations = () => {
+	const { t } = useTranslation();
+
 	const [currentPage, setCurrentPage] = useState(1);
+
 	const organizations = db.goverments;
 
 	const indexOfLast = currentPage * 3;
@@ -17,11 +21,7 @@ const Organizations = () => {
 
 	return (
 		<div className='home__organizations'>
-			<CustomDescription>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-				veniam, quis nostrud exercitation.
-			</CustomDescription>
+			<CustomDescription>{t("home.whoWeHelp.org.desc")}</CustomDescription>
 			<div className='home__orgList'>
 				<ul>
 					{organizations
