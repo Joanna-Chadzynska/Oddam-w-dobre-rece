@@ -11,4 +11,9 @@
 	@include media(md) {
 		font-size: 1.125em;
 	}
+
+	@include media(sm) {
+		width: auto;
+		font-size: 1em;
+	}
 }

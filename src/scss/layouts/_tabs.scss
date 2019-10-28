@@ -2,6 +2,10 @@
 	display: flex;
 	justify-content: center;
 	min-height: 10vh;
+
+	@include media(sm) {
+		padding: 0 1rem;
+	}
 }
 
 .tab-list-item {
@@ -20,9 +24,9 @@
 	@include media(sm) {
 		border: none;
 		font-size: 1em;
-		padding: 0;
-		width: 6rem;
-		height: 6rem;
+		padding: 10px 20px;
+		width: 8rem;
+		height: 3rem;
 	}
 
 	&:nth-child(3) {
@@ -33,8 +37,19 @@
 		}
 	}
 
+	&:nth-child(2) {
+		@include media(sm) {
+			// overflow: hidden;
+			// white-space: nowrap;
+			// text-overflow: ellipsis;
+		}
+	}
+
 	&:first-child {
 		line-height: 4rem;
+		@include media(sm) {
+			line-height: 3rem;
+		}
 	}
 
 	&:hover {
@@ -49,15 +64,10 @@
 	transition: 0.3s;
 
 	@include media(sm) {
-		border-radius: 50%;
-		margin-bottom: 0;
+		margin-bottom: 2rem;
 	}
 
 	&:hover {
 		border-color: $color-yellow;
-
-		@include media(sm) {
-			border-color: red;
-		}
 	}
 }

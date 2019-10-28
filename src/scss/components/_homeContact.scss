@@ -20,6 +20,11 @@
 		grid-template-columns: 40% 60%;
 	}
 
+	@include media(sm) {
+		grid-template-columns: 1fr;
+		padding-right: 0;
+	}
+
 	.home__bg {
 		background-image: url("../../assets/Background-Contact-Form.jpg");
 		background-repeat: no-repeat;
@@ -45,8 +50,14 @@
 		@include media(lg) {
 			background-position: -90px;
 		}
+
 		@include media(md) {
 			background-position: -150px;
+		}
+
+		@include media(sm) {
+			// background-position: -150px;
+			display: none;
 		}
 	}
 }
@@ -60,6 +71,10 @@
 
 	@include media(xxl) {
 		margin-top: 7rem;
+	}
+
+	@include media(sm) {
+		margin-top: 4rem;
 	}
 }
 
@@ -155,6 +170,12 @@
 	justify-content: flex-end;
 	grid-column: 1 / 3;
 
+	@include media(sm) {
+		flex-direction: row;
+		margin: 0 auto;
+		margin-bottom: 1rem;
+	}
+
 	.copyright {
 		color: $color-gray-dark;
 		display: block;
@@ -166,17 +187,29 @@
 		display: flex;
 		margin-right: 5rem;
 
+		@include media(sm) {
+			margin-right: 0;
+		}
+
 		.icon {
 			background-repeat: no-repeat;
 			background-size: contain;
 			width: 1.875rem;
 			height: 1.875rem;
 			padding-bottom: 1.375rem;
+
+			@include media(sm) {
+				padding-bottom: 0;
+			}
 		}
 
 		.facebook {
 			background-image: url("../../assets/Facebook.svg");
 			margin-right: 1rem;
+
+			@include media(sm) {
+				margin: 0 1rem;
+			}
 		}
 
 		.instagram {

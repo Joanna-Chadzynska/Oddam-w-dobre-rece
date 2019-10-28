@@ -12,7 +12,13 @@ const Menu = () => {
 	return (
 		<div className='nav-menu container'>
 			<Burger toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
-			{window.outerWidth > 426 ? <MenuLinks /> : isMenuOpen && <MenuLinks />}
+			{window.outerWidth > 426 ? (
+				<MenuLinks />
+			) : (
+				isMenuOpen && (
+					<MenuLinks isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+				)
+			)}
 		</div>
 	);
 };

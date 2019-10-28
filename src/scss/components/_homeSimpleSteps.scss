@@ -43,6 +43,11 @@
 			width: 90%;
 		}
 
+		@include media(sm) {
+			justify-content: space-between;
+			height: 75%;
+		}
+
 		.home__icon {
 			padding: 0;
 			position: relative;
@@ -53,6 +58,10 @@
 			// @include media(xxl) {
 			// 	padding-bottom: 5px;
 			// }
+
+			@include media(sm) {
+				margin: 0;
+			}
 
 			img {
 				width: 100%;
@@ -69,6 +78,10 @@
 			display: block;
 			font-size: 1.125em;
 			margin-bottom: 0.5rem;
+
+			@include media(sm) {
+				font-size: 0.7em;
+			}
 		}
 
 		hr {
@@ -78,6 +91,13 @@
 		p {
 			font-size: 1em;
 			margin-top: 0.5rem;
+		}
+
+		@include media(sm) {
+			p,
+			hr {
+				display: none;
+			}
 		}
 	}
 }

@@ -6,6 +6,10 @@
 	@include media(xl) {
 		padding: 0 5rem;
 	}
+
+	@include media(sm) {
+		padding: 0;
+	}
 }
 
 .home__orgList {

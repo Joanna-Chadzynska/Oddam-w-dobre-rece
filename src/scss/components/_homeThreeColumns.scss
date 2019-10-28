@@ -6,10 +6,6 @@
 	@include media(md) {
 		height: 30vh;
 	}
-
-	@include media(sm) {
-		display: none;
-	}
 }
 
 .home__threeColumns-box {
@@ -61,6 +57,10 @@
 			@include media(md) {
 				font-size: 4.5em;
 			}
+
+			@include media(sm) {
+				font-size: 3em;
+			}
 		}
 
 		p {
@@ -77,6 +77,10 @@
 			@include media(md) {
 				line-height: 1.4;
 			}
+
+			@include media(sm) {
+				font-size: 0.7em;
+			}
 		}
 
 		span {
@@ -91,6 +95,10 @@
 			@include media(xl) {
 				font-size: 0.875em;
 				line-height: 1.2;
+			}
+
+			@include media(sm) {
+				display: none;
 			}
 		}
 	}

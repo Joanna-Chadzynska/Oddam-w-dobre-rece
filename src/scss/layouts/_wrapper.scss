@@ -6,4 +6,8 @@
 	@include media(md) {
 		max-width: calc(100vw - 6rem);
 	}
+
+	@include media(sm) {
+		max-width: calc(100vw - 2rem);
+	}
 }

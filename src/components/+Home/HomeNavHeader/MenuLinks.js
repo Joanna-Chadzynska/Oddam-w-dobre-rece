@@ -9,30 +9,32 @@ const options = {
 	duration: 500
 };
 
-const MenuLinks = () => {
+const MenuLinks = ({ isMenuOpen, toggleMenu }) => {
 	const { t } = useTranslation();
 	return (
 		<ul className='nav__menu--links'>
 			<li>
-				<NavLink to='/'>{t("mainMenu.start")}</NavLink>
+				<NavLink to='/' onClick={toggleMenu}>
+					{t("mainMenu.start")}
+				</NavLink>
 			</li>
 			<li>
-				<Link to='simple-steps' {...options} tabIndex='0'>
+				<Link to='simple-steps' {...options} tabIndex='0' onClick={toggleMenu}>
 					{t("mainMenu.steps")}
 				</Link>
 			</li>
 			<li>
-				<Link to='about-us' {...options} tabIndex='0'>
+				<Link to='about-us' {...options} tabIndex='0' onClick={toggleMenu}>
 					{t("mainMenu.aboutus")}
 				</Link>
 			</li>
 			<li>
-				<Link to='who-we-help' {...options} tabIndex='0'>
+				<Link to='who-we-help' {...options} tabIndex='0' onClick={toggleMenu}>
 					{t("mainMenu.whohelp")}
 				</Link>
 			</li>
 			<li>
-				<Link to='contact' {...options} tabIndex='0'>
+				<Link to='contact' {...options} tabIndex='0' onClick={toggleMenu}>
 					{t("mainMenu.contact")}
 				</Link>
 			</li>

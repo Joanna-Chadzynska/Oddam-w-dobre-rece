@@ -1,8 +1,13 @@
-@mixin navButtons {
+@mixin navLinksUser {
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
 	margin-bottom: 1rem;
+
+	@include media(sm) {
+		justify-content: flex-start;
+		margin-right: 3rem;
+	}
 
 	li {
 		text-align: center;
@@ -20,6 +25,89 @@
 			&:hover {
 				border-color: $color-yellow;
 				color: $color-black;
+			}
+
+			@include media(xxl) {
+				padding: 10px;
+			}
+
+			@include media(xl) {
+				padding: 5px;
+			}
+
+			@include media(lg) {
+				padding: 5px;
+			}
+
+			@include media(sm) {
+				font-size: 0.7em;
+			}
+		}
+	}
+}
+
+@mixin navLinksMenu {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-bottom: 1rem;
+
+	@include media(sm) {
+		flex-direction: column;
+		align-items: flex-end;
+		justify-content: space-between;
+		height: 50vh;
+		position: absolute;
+		left: 1rem;
+		right: 1rem;
+		z-index: 10;
+	}
+
+	li {
+		text-align: center;
+		padding-left: 1rem;
+
+		@include media(sm) {
+			background-color: $color-gray-light;
+			cursor: pointer;
+
+			height: 3rem;
+			padding-left: 0;
+			width: 100%;
+		}
+
+		&:hover {
+			@include media(sm) {
+				border-color: $color-yellow;
+				background-color: darken($color-gray-light, 10%);
+			}
+		}
+
+		a {
+			border: 0.75px solid transparent;
+			color: $color-gray-dark;
+			cursor: pointer;
+			font-size: 1.5em;
+			text-decoration: none;
+			padding: 10px 20px;
+			transition: 0.2s;
+
+			@include media(xxl) {
+				font-size: 1.125em;
+			}
+
+			@include media(xl) {
+				font-size: 1em;
+			}
+
+			@include media(sm) {
+				border: none;
+				height: 100%;
+				line-height: 3rem;
+			}
+
+			&:hover {
+				border-color: $color-gray-dark;
 			}
 
 			@include media(xxl) {

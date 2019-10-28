@@ -2,26 +2,17 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { auth } from "../../../firebase/firebase.utils";
+import LanguageButtons from "./LanguageButtons";
 
 const UserBar = ({ currentUser }) => {
-	const { t, i18n } = useTranslation();
-	const changeLanguage = (lng) => {
-		i18n.changeLanguage(lng);
-	};
+	const { t } = useTranslation();
+
 	return (
 		<div className='nav-userBar'>
 			<ul>
 				{currentUser !== null ? (
 					<>
-						<li>
-							<button onClick={() => changeLanguage("pl")}>pl</button>
-						</li>
-						<li>
-							<button onClick={() => changeLanguage("en")}>en</button>
-						</li>
-						<li>
-							<button onClick={() => changeLanguage("ru")}>ru</button>
-						</li>
+						<LanguageButtons />
 						<li className='nav__userBar-hello'>
 							<span>
 								{t("userbar.hello")} &nbsp;
@@ -39,15 +30,7 @@ const UserBar = ({ currentUser }) => {
 					</>
 				) : (
 					<>
-						<li>
-							<button onClick={() => changeLanguage("pl")}>pl</button>
-						</li>
-						<li>
-							<button onClick={() => changeLanguage("en")}>en</button>
-						</li>
-						<li>
-							<button onClick={() => changeLanguage("ru")}>ru</button>
-						</li>
+						<LanguageButtons />
 						<li>
 							<Link to='/logowanie'>{t("userbar.login")}</Link>
 						</li>

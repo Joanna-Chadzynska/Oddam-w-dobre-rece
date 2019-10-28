@@ -3,6 +3,11 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 
+	@include media(sm) {
+		grid-template-columns: none;
+		grid-template-rows: 1fr 1fr;
+	}
+
 	.home__description-box {
 		display: flex;
 		flex-direction: column;
