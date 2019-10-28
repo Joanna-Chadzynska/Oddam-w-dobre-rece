@@ -12,7 +12,7 @@
 
 	@include media(sm) {
 		grid-template-columns: 1fr;
-		height: 60vh;
+		height: 50vh;
 		margin-top: 0;
 	}
 
@@ -31,7 +31,17 @@
 		z-index: -1;
 
 		@include media(xxl) {
-			height: 94vh;
+			overflow: hidden;
+			top: -3.5rem;
+		}
+
+		@include media(sm) {
+			top: -17.5rem;
+		}
+
+		@include media(xs) {
+			top: -15.5rem;
+			left: -1rem;
 		}
 	}
 
@@ -74,6 +84,7 @@
 	@include media(sm) {
 		display: flex;
 		width: 100%;
+		margin-top: 1.5rem;
 	}
 
 	.nav-userBar ul {
@@ -143,6 +154,10 @@
 		margin: 0 auto;
 		justify-content: space-around;
 		width: 70%;
+	}
+
+	@include media(xs) {
+		width: 80%;
 	}
 
 	li {

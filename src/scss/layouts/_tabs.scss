@@ -29,6 +29,14 @@
 		height: 3rem;
 	}
 
+	@include media(xs) {
+		padding: 8px 12px;
+	}
+
+	@include media(xxs) {
+		padding: 5px 10px;
+	}
+
 	&:nth-child(3) {
 		line-height: 4rem;
 
@@ -47,6 +55,7 @@
 
 	&:first-child {
 		line-height: 4rem;
+
 		@include media(sm) {
 			line-height: 3rem;
 		}
