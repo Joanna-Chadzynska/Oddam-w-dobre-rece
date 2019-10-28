@@ -1,3 +1,3 @@
-import HomeSimpleSteps from "./HomeSimpleSteps";
+import HomeSimpleSteps from './HomeSimpleSteps';
 
 export default HomeSimpleSteps;

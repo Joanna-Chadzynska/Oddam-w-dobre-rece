@@ -1,3 +1,3 @@
-import FormSteps from "./FormSteps";
+import FormSteps from './FormSteps';
 
 export { FormSteps };

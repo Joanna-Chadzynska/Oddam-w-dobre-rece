@@ -1,3 +1,3 @@
-import HomeAboutUs from "./HomeAboutUs";
+import HomeAboutUs from './HomeAboutUs';
 
 export default HomeAboutUs;

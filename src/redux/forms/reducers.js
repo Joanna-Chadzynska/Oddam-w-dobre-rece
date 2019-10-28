@@ -1,18 +1,18 @@
-import { ADD_FORM } from "./actionTypes";
+import { ADD_FORM } from './actionTypes';
 
 const initState = {
-	forms: []
+  forms: [],
 };
 
 export const forms = (state = initState, action) => {
-	switch (action.type) {
-		case ADD_FORM:
-			return {
-				...state,
-				forms: action.payload
-			};
+  switch (action.type) {
+    case ADD_FORM:
+      return {
+        ...state,
+        forms: action.payload,
+      };
 
-		default:
-			return state;
-	}
+    default:
+      return state;
+  }
 };

@@ -1,3 +1,3 @@
-import HomeThreeColumns from "./HomeThreeColumns";
+import HomeThreeColumns from './HomeThreeColumns';
 
 export default HomeThreeColumns;

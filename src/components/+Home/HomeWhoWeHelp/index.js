@@ -1,3 +1,3 @@
-import HomeWhoWeHelp from "./HomeWhoWeHelp";
+import HomeWhoWeHelp from './HomeWhoWeHelp';
 
 export default HomeWhoWeHelp;

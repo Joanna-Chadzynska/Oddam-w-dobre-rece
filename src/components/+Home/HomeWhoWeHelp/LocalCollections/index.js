@@ -1,3 +1,3 @@
-import LocalCollections from "./LocalCollections";
+import LocalCollections from './LocalCollections';
 
 export default LocalCollections;

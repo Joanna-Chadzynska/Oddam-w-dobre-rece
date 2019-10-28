@@ -1,1 +1,1 @@
-export const ADD_FORM = "[forms] add form";
+export const ADD_FORM = '[forms] add form';

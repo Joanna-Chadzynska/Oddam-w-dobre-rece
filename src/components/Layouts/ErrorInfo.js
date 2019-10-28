@@ -1,7 +1,5 @@
-import React from "react";
+import React from 'react';
 
-const ErrorInfo = ({ children }) => {
-	return <span className='error'>{children}</span>;
-};
+const ErrorInfo = ({ children }) => <span className="error">{children}</span>;
 
 export default ErrorInfo;

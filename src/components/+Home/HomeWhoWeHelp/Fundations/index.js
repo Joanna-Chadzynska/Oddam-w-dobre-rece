@@ -1,3 +1,3 @@
-import Fundations from "./Fundations";
+import Fundations from './Fundations';
 
 export default Fundations;
