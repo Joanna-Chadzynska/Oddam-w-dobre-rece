@@ -127,6 +127,10 @@
 		@include media(sm) {
 			font-size: 1.25em;
 		}
+
+		@include media(xxs) {
+			font-size: 1em;
+		}
 	}
 }
 
@@ -158,6 +162,10 @@
 
 	@include media(xs) {
 		width: 80%;
+	}
+
+	@include media(xxs) {
+		width: 95%;
 	}
 
 	li {

@@ -102,7 +102,7 @@ const ContactForm = () => {
 			{status === "success" && (
 				<span className='success'>
 					{t("home.contactUs.msgSucc-1")}
-					<br></br>
+					<br className='form__br'></br>
 					{t("home.contactUs.msgSucc-2")}
 				</span>
 			)}

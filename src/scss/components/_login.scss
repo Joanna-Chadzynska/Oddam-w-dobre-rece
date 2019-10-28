@@ -12,7 +12,7 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		margin: 0 auto;
+		// margin: 0 auto;
 
 		.logout__link {
 			border: 0.75px solid transparent;
@@ -36,10 +36,26 @@
 
 .form-box {
 	width: 30vw;
+	margin: 0 auto;
 	// display: flex;
 	// flex-direction: column;
 
+	@include media(lg) {
+		width: 40vw;
+	}
+
+	@include media(md) {
+		width: 50vw;
+	}
+	@include media(sm) {
+		width: 70vw;
+	}
+	@include media(xxs) {
+		width: 80vw;
+	}
+
 	.inputs-box {
+		box-sizing: border-box;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
@@ -47,7 +63,25 @@
 		margin: 0 auto;
 		margin-bottom: 2.5rem;
 		padding: 2.5rem 4.125rem;
-		width: 50%;
+		width: 60%;
+
+		@include media(xxl) {
+			width: 75%;
+			padding: 2rem 3rem;
+		}
+
+		@include media(xl) {
+			width: 85%;
+		}
+
+		@include media(sm) {
+			width: 100%;
+			padding: 1.8rem 2.5rem;
+			margin-bottom: 1.5rem;
+		}
+
+		@include media(xs) {
+		}
 
 		label {
 			color: $color-gray-dark;
@@ -76,11 +110,9 @@
 		justify-content: space-between;
 		align-items: center;
 
-		// margin: 0 3rem;
-
-		// @include media($xxl) {
-		// 	margin: 0;
-		// }
+		@include media(xs) {
+			width: 100%;
+		}
 
 		a {
 			display: block;

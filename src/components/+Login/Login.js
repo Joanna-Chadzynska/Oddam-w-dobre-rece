@@ -65,7 +65,7 @@ const Login = ({ history }) => {
 
 	return (
 		<div className='login'>
-			<div className='login__container'>
+			<div className='login__container wrapper'>
 				<CustomTitle>{t("login.mainTitle")}</CustomTitle>
 				<form className='form-box' onSubmit={handleSubmit} noValidate>
 					<div className='inputs-box'>
