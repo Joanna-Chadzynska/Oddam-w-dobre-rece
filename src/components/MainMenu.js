@@ -1,14 +1,13 @@
-import React from 'react';
+import React from "react";
+import Menu from "./+Home/HomeNavHeader/Menu";
 
-import UserBar from './+Home/HomeNavHeader/UserBar';
-import Menu from './+Home/HomeNavHeader/Menu';
-
-const MainMenu = ({ currentUser }) => (
-  <div className="home__nav wrapper">
-    <UserBar currentUser={currentUser} />
-    <br />
-    <Menu />
-  </div>
+const MainMenu = () => (
+	<div className='home__nav wrapper'>
+		<br />
+		<br />
+		<br />
+		<Menu />
+	</div>
 );
 
 export default MainMenu;
