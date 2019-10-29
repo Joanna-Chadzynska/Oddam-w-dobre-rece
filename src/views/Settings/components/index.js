@@ -1,2 +1,4 @@
-export { default as Notifications } from './Notifications';
-export { default as Password } from './Password';
+import Notifications from "./Notifications";
+import Password from "./Password";
+
+export { Notifications, Password };

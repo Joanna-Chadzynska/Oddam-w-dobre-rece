@@ -1,2 +1,4 @@
-export { default as ProductCard } from './ProductCard';
-export { default as ProductsToolbar } from './ProductsToolbar';
+import ProductCard from "./ProductCard";
+import ProductsToolbar from "./ProductsToolbar";
+
+export { ProductCard, ProductsToolbar };

@@ -43,11 +43,10 @@ const Topbar = (props) => {
 							<NotificationsIcon />
 						</Badge>
 					</IconButton>
-					<IconButton className={classes.signOutButton} color='inherit'>
-						<InputIcon />
-					</IconButton>
+					<IconButton
+						className={classes.signOutButton}
+						color='inherit'></IconButton>
 				</Hidden>
-
 				<Userbar currentuser={props.currentuser} />
 				<Hidden lgUp>
 					<IconButton color='inherit' onClick={onSidebarOpen}>

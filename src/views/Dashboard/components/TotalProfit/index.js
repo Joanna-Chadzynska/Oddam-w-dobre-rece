@@ -1,1 +1,3 @@
-export { default } from './TotalProfit';
+import TotalProfit from "./TotalProfit";
+
+export default TotalProfit;

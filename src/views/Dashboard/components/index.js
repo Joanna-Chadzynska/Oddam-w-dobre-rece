@@ -1,8 +1,19 @@
-export { default as Budget } from './Budget';
-export { default as LatestOrders } from './LatestOrders';
-export { default as LatestProducts } from './LatestProducts';
-export { default as LatestSales } from './LatestSales';
-export { default as TasksProgress } from './TasksProgress';
-export { default as TotalProfit } from './TotalProfit';
-export { default as TotalUsers } from './TotalUsers';
-export { default as UsersByDevice } from './UsersByDevice';
+import Budget from "./Budget";
+import LatestOrders from "./LatestOrders";
+import LatestProducts from "./LatestProducts";
+import LatestSales from "./LatestSales";
+import TasksProgress from "./TasksProgress";
+import TotalProfit from "./TotalProfit";
+import TotalUsers from "./TotalUsers";
+import UsersByDevice from "./UsersByDevice";
+
+export {
+	Budget,
+	LatestOrders,
+	LatestProducts,
+	LatestSales,
+	TasksProgress,
+	TotalProfit,
+	TotalUsers,
+	UsersByDevice
+};

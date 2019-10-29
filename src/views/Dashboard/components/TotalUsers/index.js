@@ -1,1 +1,3 @@
-export { default } from './TotalUsers';
+import TotalUsers from "./TotalUsers";
+
+export default TotalUsers;

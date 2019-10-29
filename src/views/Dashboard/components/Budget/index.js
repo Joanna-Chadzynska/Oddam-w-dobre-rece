@@ -1,1 +1,3 @@
-export { default } from './Budget';
+import Budget from "./Budget";
+
+export default Budget;

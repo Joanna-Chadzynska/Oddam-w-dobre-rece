@@ -1,1 +1,3 @@
-export { default } from './TasksProgress';
+import TasksProgress from "./TasksProgress";
+
+export default TasksProgress;

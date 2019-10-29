@@ -3,6 +3,7 @@ import { Route } from "react-router-dom";
 
 const RouteWithLayout = (props) => {
 	const { layout: Layout, component: Component, ...rest } = props;
+
 	return (
 		<Route
 			{...rest}

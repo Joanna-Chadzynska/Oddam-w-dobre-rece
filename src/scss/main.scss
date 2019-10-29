@@ -21,7 +21,24 @@
 @import "./components/form";
 @import "./layouts/burger";
 
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	height: 100%;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
 body {
 	font-family: $font-base;
 	position: relative;
+	height: 100%;
+}
+
+#root {
+	height: 100%;
 }

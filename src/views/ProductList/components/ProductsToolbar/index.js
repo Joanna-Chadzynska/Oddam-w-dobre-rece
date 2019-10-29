@@ -1,1 +1,3 @@
-export { default } from './ProductsToolbar';
+import ProductsToolbar from "./ProductsToolbar";
+
+export default ProductsToolbar;

@@ -1,1 +1,3 @@
-export { default } from './UsersByDevice';
+import UsersByDevice from "./UsersByDevice";
+
+export default UsersByDevice;

@@ -1,1 +1,3 @@
-export { default } from './LatestOrders';
+import LatestOrders from "./LatestOrders";
+
+export default LatestOrders;

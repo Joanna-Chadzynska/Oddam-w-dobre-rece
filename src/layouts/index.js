@@ -1,2 +1,4 @@
-export { default as Main } from './Main';
-export { default as Minimal } from './Minimal';
+import Main from "./Main";
+import Minimal from "./Minimal";
+
+export { Main, Minimal };

@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { connect } from "react-redux";
 import { createBrowserHistory } from "history";
-import { Router } from "react-router-dom";
+import { Router, Route } from "react-router-dom";
 import { Chart } from "react-chartjs-2";
 import { chartjs } from "./helpers";
 import { ThemeProvider } from "@material-ui/styles";
@@ -83,9 +83,11 @@ class App extends React.Component {
 				<Suspense fallback={<div>loading</div>}>
 					<ThemeProvider theme={theme}>
 						<Router history={browserHistory}>
-							<MainMenu currentUser={this.state.currentUser} />
-							<Main currentUser={this.state.currentUser} />
-							<Routes currentUser={this.state.currentUser} />
+							<MainMenu />
+							<Main
+								currentUser={this.state.currentUser}
+								history={browserHistory}
+							/>
 						</Router>
 					</ThemeProvider>
 				</Suspense>

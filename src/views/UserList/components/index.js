@@ -1,2 +1,4 @@
-export { default as UsersTable } from './UsersTable';
-export { default as UsersToolbar } from './UsersToolbar';
+import UsersTable from "./UsersTable";
+import UsersToolbar from "./UsersToolbar";
+
+export { UsersTable, UsersToolbar };
