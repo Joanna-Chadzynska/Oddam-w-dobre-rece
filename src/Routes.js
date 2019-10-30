@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Switch, Redirect, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 // import { RouteWithLayout } from "./components";
 // import { Main, Minimal } from "./layouts";
 import {
@@ -10,8 +10,8 @@ import {
 	Icons as IconsView,
 	Account,
 	Settings,
-	SignUp,
-	SignIn,
+	// SignUp,
+	// SignIn,
 	NotFound,
 	Typography
 } from "./views";

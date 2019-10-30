@@ -1,21 +1,11 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
+
 import { auth } from "../../../../../firebase/firebase.utils";
 import LanguageButtons from "./LanguageButtons";
 import { makeStyles } from "@material-ui/styles";
-import {
-	AppBar,
-	Toolbar,
-	Badge,
-	Hidden,
-	IconButton,
-	Typography,
-	MenuItem,
-	Menu
-} from "@material-ui/core";
+import { IconButton, MenuItem } from "@material-ui/core";
 
 import { AccountCircle } from "@material-ui/icons";
 
