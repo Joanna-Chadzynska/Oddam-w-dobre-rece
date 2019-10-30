@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { connect } from "react-redux";
 import { createBrowserHistory } from "history";
-import { Router, Route } from "react-router-dom";
+import { Router } from "react-router-dom";
 import { Chart } from "react-chartjs-2";
 import { chartjs } from "./helpers";
 import { ThemeProvider } from "@material-ui/styles";
@@ -16,8 +16,6 @@ import { selectOrganizationsForPreview } from "./redux/organizations/organizatio
 import MainMenu from "./components/MainMenu";
 import Main from "./layouts/Main";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
-
-import Routes from "./Routes";
 
 const browserHistory = createBrowserHistory();
 

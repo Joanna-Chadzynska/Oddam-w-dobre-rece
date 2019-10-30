@@ -4,9 +4,6 @@ import clsx from "clsx";
 import { makeStyles, useTheme } from "@material-ui/styles";
 import { useMediaQuery } from "@material-ui/core";
 import { Sidebar, Topbar, Footer } from "./components";
-import Home from "../../components/+Home";
-import { Account } from "../../views";
-import { Switch, Redirect, Route } from "react-router-dom";
 import Routes from "../../Routes";
 
 const useStyles = makeStyles((theme) => ({
@@ -26,8 +23,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Main = (props) => {
-	const { children } = props;
-	const history = props.history.location.pathname;
+	const [isAdmin, setAdmin] = useState(false);
 	const classes = useStyles();
 	const theme = useTheme();
 	const isDesktop = useMediaQuery(theme.breakpoints.up("lg"), {
@@ -46,8 +42,6 @@ const Main = (props) => {
 
 	const shouldOpenSidebar = isDesktop ? true : openSidebar;
 
-	console.log(props);
-
 	return (
 		<div
 			className={clsx({
@@ -58,15 +52,19 @@ const Main = (props) => {
 				onSidebarOpen={handleSidebarOpen}
 				currentuser={props.currentUser}
 			/>
-			<Sidebar
-				onClose={handleSidebarClose}
-				open={shouldOpenSidebar}
-				variant={isDesktop ? "persistent" : "temporary"}
-			/>
+			{!isAdmin && (
+				<Sidebar
+					onClose={handleSidebarClose}
+					open={shouldOpenSidebar}
+					currentuser={props.currentUser}
+					variant={isDesktop ? "persistent" : "temporary"}
+				/>
+			)}
+
 			<main className={classes.content}>
 				{/* {routes()} */}
 				<Routes />
-				<Footer />
+				{/* <Footer /> */}
 			</main>
 		</div>
 	);
