@@ -41,7 +41,10 @@ const Main = (props) => {
 	};
 
 	const shouldOpenSidebar = isDesktop ? true : openSidebar;
-
+	if (props.currentUser !== null) {
+		// setAdmin(true);
+		console.log(props.currentUser.id);
+	}
 	return (
 		<div
 			className={clsx({
@@ -52,14 +55,15 @@ const Main = (props) => {
 				onSidebarOpen={handleSidebarOpen}
 				currentuser={props.currentUser}
 			/>
-			{!isAdmin && (
-				<Sidebar
-					onClose={handleSidebarClose}
-					open={shouldOpenSidebar}
-					currentuser={props.currentUser}
-					variant={isDesktop ? "persistent" : "temporary"}
-				/>
-			)}
+			{props.currentUser !== null &&
+				props.currentUser.id === "hkXfn2yHRLNDu0IZJSvGj8fqPCn2" && (
+					<Sidebar
+						onClose={handleSidebarClose}
+						open={shouldOpenSidebar}
+						currentuser={props.currentUser}
+						variant={isDesktop ? "persistent" : "temporary"}
+					/>
+				)}
 
 			<main className={classes.content}>
 				{/* {routes()} */}
