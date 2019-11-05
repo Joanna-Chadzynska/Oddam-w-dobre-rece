@@ -92,6 +92,23 @@ export const convertCollectionsSnapshotToMap = (collecions) => {
 	return transformCollecion;
 };
 
+// pobieranie uzytkowników
+
+export const getUsers = (collection) => {
+	const transformCollecion = collection.docs.map((doc) => {
+		const { displayName, email, createdAt } = doc.data();
+
+		return {
+			id: doc.id,
+			displayName,
+			email,
+			createdAt
+		};
+	});
+	// console.log(transformCollecion);
+	return transformCollecion;
+};
+
 //
 // function listAllUsers(nextPageToken) {
 // 	// List batch of users, 1000 at a time.

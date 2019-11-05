@@ -1,31 +1,57 @@
-import React, { useState } from 'react';
-import { makeStyles } from '@material-ui/styles';
+import React, { useState, useEffect } from "react";
+import { makeStyles } from "@material-ui/styles";
+import { UsersToolbar, UsersTable } from "./components";
+// import mockData from "./data";
+import { firestore, getUsers } from "../../firebase/firebase.utils";
 
-import { UsersToolbar, UsersTable } from './components';
-import mockData from './data';
-
-const useStyles = makeStyles(theme => ({
-  root: {
-    padding: theme.spacing(3)
-  },
-  content: {
-    marginTop: theme.spacing(2)
-  }
+const useStyles = makeStyles((theme) => ({
+	root: {
+		padding: theme.spacing(3)
+	},
+	content: {
+		marginTop: theme.spacing(2)
+	}
 }));
 
 const UserList = () => {
-  const classes = useStyles();
+	const classes = useStyles();
 
-  const [users] = useState(mockData);
+	// const [users] = useState(mockData);
+	const [users, setUsers] = useState([]);
+	const [filterUserValue, setFilterUserValue] = useState("");
+	const searchUser = (e) => {
+		setFilterUserValue(e.target.value);
+	};
 
-  return (
-    <div className={classes.root}>
-      <UsersToolbar />
-      <div className={classes.content}>
-        <UsersTable users={users} />
-      </div>
-    </div>
-  );
+	useEffect(() => {
+		const collectionRef = firestore.collection("users");
+		collectionRef.onSnapshot(async (snapshot) => {
+			// console.log(snapshot);
+			const collectionsMap = await getUsers(snapshot);
+			setUsers(collectionsMap);
+		});
+	}, []);
+
+	const filteredUsers = (users) => {
+		const newUsers = users.filter((user) =>
+			user.displayName.toLowerCase().includes(filterUserValue)
+		);
+		return newUsers;
+	};
+
+	console.log(filteredUsers(users));
+	return (
+		<div className={classes.root}>
+			<UsersToolbar
+				users={users}
+				searchUser={searchUser}
+				filteruservalue={filterUserValue}
+			/>
+			<div className={classes.content}>
+				<UsersTable users={users} filteruservalue={filterUserValue} />
+			</div>
+		</div>
+	);
 };
 
 export default UserList;

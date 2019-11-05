@@ -43,7 +43,6 @@ const useStyles = makeStyles((theme) => ({
 
 const UsersTable = (props) => {
 	const { className, users, ...rest } = props;
-
 	const classes = useStyles();
 
 	const [selectedUsers, setSelectedUsers] = useState([]);
@@ -136,17 +135,19 @@ const UsersTable = (props) => {
 										<TableCell>
 											<div className={classes.nameContainer}>
 												<Avatar className={classes.avatar} src={user.avatarUrl}>
-													{getInitials(user.name)}
+													{getInitials(user.displayName)}
 												</Avatar>
-												<Typography variant='body1'>{user.name}</Typography>
+												<Typography variant='body1'>
+													{user.displayName}
+												</Typography>
 											</div>
 										</TableCell>
 										<TableCell>{user.email}</TableCell>
-										<TableCell>
+										{/* <TableCell>
 											{user.address.city}, {user.address.state},{" "}
 											{user.address.country}
 										</TableCell>
-										<TableCell>{user.phone}</TableCell>
+										<TableCell>{user.phone}</TableCell> */}
 										<TableCell>
 											{moment(user.createdAt).format("DD/MM/YYYY")}
 										</TableCell>

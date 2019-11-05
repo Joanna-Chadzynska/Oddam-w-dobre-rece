@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const UsersToolbar = (props) => {
-	const { className, ...rest } = props;
+	const { className, users, searchUser, filteruservalue, ...rest } = props;
 
 	const classes = useStyles();
 
@@ -45,8 +45,11 @@ const UsersToolbar = (props) => {
 			</div>
 			<div className={classes.row}>
 				<SearchInput
+					users={users}
 					className={classes.searchInput}
 					placeholder='Search user'
+					searchUser={searchUser}
+					filteruservalue={filteruservalue}
 				/>
 			</div>
 		</div>
