@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import clsx from "clsx";
+import firebase from "../../../../firebase/firebase.utils";
 import PropTypes from "prop-types";
-import moment from "moment";
+// import moment from "moment";
+// import "moment-timezone";
+import moment from "moment-timezone";
+
 import PerfectScrollbar from "react-perfect-scrollbar";
 import { makeStyles } from "@material-ui/styles";
 import {
@@ -91,6 +95,17 @@ const UsersTable = (props) => {
 		setRowsPerPage(event.target.value);
 	};
 
+	const convertTimestamp = (timestamp) => {
+		const newDate = new Date(timestamp * 1000);
+		const dateWithTimezone = moment(newDate)
+			.tz("Europe/Warsaw")
+			.format("ddd, DD MMM YYYY, HH:mm:ss, Z");
+
+		return dateWithTimezone;
+	};
+
+	console.log(convertTimestamp(1572286373));
+
 	return (
 		<Card {...rest} className={clsx(classes.root, className)}>
 			<CardContent className={classes.content}>
@@ -149,7 +164,10 @@ const UsersTable = (props) => {
 										</TableCell>
 										<TableCell>{user.phone}</TableCell> */}
 										<TableCell>
-											{moment(user.createdAt).format("DD/MM/YYYY")}
+											{user.createdAt !== undefined
+												? convertTimestamp(user.createdAt.seconds)
+												: null}
+											{/* {moment(user.createdAt).format("DD/MM/YYYY HH:mm:ss")} */}
 										</TableCell>
 									</TableRow>
 								))}

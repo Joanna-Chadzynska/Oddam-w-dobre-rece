@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Main = (props) => {
-	const [isAdmin, setAdmin] = useState(false);
+	// const [isAdmin, setAdmin] = useState(false);
 	const classes = useStyles();
 	const theme = useTheme();
 	const isDesktop = useMediaQuery(theme.breakpoints.up("lg"), {
@@ -41,10 +41,7 @@ const Main = (props) => {
 	};
 
 	const shouldOpenSidebar = isDesktop ? true : openSidebar;
-	if (props.currentUser !== null) {
-		// setAdmin(true);
-		console.log(props.currentUser.id);
-	}
+
 	return (
 		<div
 			className={clsx({

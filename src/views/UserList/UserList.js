@@ -27,7 +27,7 @@ const UserList = () => {
 		const collectionRef = firestore.collection("users");
 		collectionRef.onSnapshot(async (snapshot) => {
 			// console.log(snapshot);
-			const collectionsMap = await getUsers(snapshot);
+			const collectionsMap = getUsers(snapshot);
 			setUsers(collectionsMap);
 		});
 	}, []);
@@ -39,7 +39,6 @@ const UserList = () => {
 		return newUsers;
 	};
 
-	console.log(filteredUsers(users));
 	return (
 		<div className={classes.root}>
 			<UsersToolbar
@@ -48,7 +47,10 @@ const UserList = () => {
 				filteruservalue={filterUserValue}
 			/>
 			<div className={classes.content}>
-				<UsersTable users={users} filteruservalue={filterUserValue} />
+				<UsersTable
+					users={!filterUserValue ? users : filteredUsers(users)}
+					filteruservalue={filterUserValue}
+				/>
 			</div>
 		</div>
 	);
