@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Sidebar = (props) => {
-	const { open, variant, onClose, className, ...rest } = props;
+	const { open, variant, onClose, className, currentuser, ...rest } = props;
 
 	const classes = useStyles();
 
@@ -80,6 +80,19 @@ const Sidebar = (props) => {
 		}
 	];
 
+	const userPages = [
+		{
+			title: "Account",
+			href: "/account",
+			icon: <AccountBoxIcon />
+		},
+		{
+			title: "Settings",
+			href: "/settings",
+			icon: <SettingsIcon />
+		}
+	];
+
 	return (
 		<Drawer
 			anchor='left'
@@ -90,7 +103,12 @@ const Sidebar = (props) => {
 			<div {...rest} className={clsx(classes.root, className)}>
 				<Profile currentuser={props.currentuser} />
 				<Divider className={classes.divider} />
-				<SidebarNav className={classes.nav} pages={pages} />
+				<SidebarNav
+					className={classes.nav}
+					pages={pages}
+					userpages={userPages}
+					currentuser={currentuser}
+				/>
 			</div>
 		</Drawer>
 	);

@@ -52,15 +52,14 @@ const Main = (props) => {
 				onSidebarOpen={handleSidebarOpen}
 				currentuser={props.currentUser}
 			/>
-			{props.currentUser !== null &&
-				props.currentUser.id === "hkXfn2yHRLNDu0IZJSvGj8fqPCn2" && (
-					<Sidebar
-						onClose={handleSidebarClose}
-						open={shouldOpenSidebar}
-						currentuser={props.currentUser}
-						variant={isDesktop ? "persistent" : "temporary"}
-					/>
-				)}
+			{props.currentUser !== null && (
+				<Sidebar
+					onClose={handleSidebarClose}
+					open={shouldOpenSidebar}
+					currentuser={props.currentUser}
+					variant={isDesktop ? "persistent" : "temporary"}
+				/>
+			)}
 
 			<main className={classes.content}>
 				{/* {routes()} */}
