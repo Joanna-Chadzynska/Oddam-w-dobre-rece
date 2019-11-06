@@ -12,8 +12,7 @@ import {
 	Settings,
 	// SignUp,
 	// SignIn,
-	NotFound,
-	Typography
+	NotFound
 } from "./views";
 
 import Home from "./components/+Home";
@@ -38,7 +37,7 @@ const Routes = ({ currentUser }) => {
 			<Route path='/dashboard' component={DashboardView} />
 			<Route path='/users' component={UsersList} />
 			<Route path='/products' component={ProductList} />
-			<Route path='/typography' component={Typography} />
+
 			<Route path='/icons' component={IconsView} />
 			<Route path='/account' component={Account} />
 			<Route path='/settings' component={Settings} />

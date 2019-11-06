@@ -55,7 +55,8 @@ const UsersTable = (props) => {
 		let selectedUsers;
 
 		if (event.target.checked) {
-			selectedUsers = users.map((user) => user.id);
+			// selectedUsers = users.map((user) => user.id);
+			selectedUsers = users;
 		} else {
 			selectedUsers = [];
 		}
