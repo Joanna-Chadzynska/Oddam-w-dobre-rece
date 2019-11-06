@@ -43,12 +43,6 @@ const Routes = ({ currentUser }) => {
 			<Route path='/settings' component={Settings} />
 			<Route component={NotFound} />
 
-			{/* <RouteWithLayout component={AccountView} path='/account' /> */}
-
-			{/* <Route path='/account' component={AccountView} />
-			<Route path='/account' component={AccountView} /> 
-			<Route path='/account' component={AccountView} /> */}
-
 			{/* <RouteWithLayout
 				component={SignUpView}
 				exact

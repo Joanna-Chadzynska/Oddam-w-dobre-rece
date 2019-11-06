@@ -2,7 +2,6 @@ import Dashboard from "./Dashboard";
 import Account from "./Account";
 import UsersList from "./UserList";
 import ProductList from "./ProductList";
-import Typography from "./Typography";
 import Settings from "./Settings";
 import Icons from "./Icons";
 import NotFound from "./NotFound";
@@ -16,7 +15,6 @@ export {
 	Icons,
 	UsersList,
 	ProductList,
-	Typography,
 	Settings,
 	NotFound
 };
