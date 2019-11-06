@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { makeStyles } from "@material-ui/styles";
 import { UsersToolbar, UsersTable } from "./components";
-// import mockData from "./data";
-import { firestore, getUsers } from "../../firebase/firebase.utils";
+import { connect } from "react-redux";
+import { getAllUsers } from "../../redux/user/actions";
+import Spinner from "../../components/Spinner";
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -13,24 +14,16 @@ const useStyles = makeStyles((theme) => ({
 	}
 }));
 
-const UserList = () => {
+const UserList = ({ users, getAllUsers, isLoading }) => {
 	const classes = useStyles();
-
-	// const [users] = useState(mockData);
-	const [users, setUsers] = useState([]);
 	const [filterUserValue, setFilterUserValue] = useState("");
 	const searchUser = (e) => {
 		setFilterUserValue(e.target.value);
 	};
 
 	useEffect(() => {
-		const collectionRef = firestore.collection("users");
-		collectionRef.onSnapshot(async (snapshot) => {
-			// console.log(snapshot);
-			const collectionsMap = getUsers(snapshot);
-			setUsers(collectionsMap);
-		});
-	}, []);
+		getAllUsers();
+	}, [getAllUsers]);
 
 	const filteredUsers = (users) => {
 		const newUsers = users.filter((user) =>
@@ -47,13 +40,28 @@ const UserList = () => {
 				filteruservalue={filterUserValue}
 			/>
 			<div className={classes.content}>
-				<UsersTable
-					users={!filterUserValue ? users : filteredUsers(users)}
-					filteruservalue={filterUserValue}
-				/>
+				{isLoading ? (
+					<Spinner />
+				) : (
+					<UsersTable
+						users={!filterUserValue ? users : filteredUsers(users)}
+						filteruservalue={filterUserValue}
+					/>
+				)}
 			</div>
 		</div>
 	);
 };
 
-export default UserList;
+const mapState = (state) => ({
+	users: state.userReducer.users,
+	isLoading: state.userReducer.isLoading
+});
+const mapDispatch = (dispatch) => ({
+	getAllUsers: () => dispatch(getAllUsers())
+});
+
+export default connect(
+	mapState,
+	mapDispatch
+)(UserList);

@@ -47,7 +47,8 @@
 		"reselect": "^4.0.0",
 		"underscore": "^1.9.1",
 		"uuid": "^3.3.3",
-		"validate.js": "^0.13.1"
+		"validate.js": "^0.13.1",
+		"xlsx": "^0.15.1"
 	},
 	"scripts": {
 		"start": "react-scripts start",

@@ -3,8 +3,9 @@ import PropTypes from "prop-types";
 import clsx from "clsx";
 import { makeStyles } from "@material-ui/styles";
 import { Button } from "@material-ui/core";
-
+import exportToExcel from "./exportToExcel";
 import SearchInput from "../../../../components/SearchInput";
+import moment from "moment-timezone";
 
 const useStyles = makeStyles((theme) => ({
 	root: {},
@@ -30,7 +31,23 @@ const useStyles = makeStyles((theme) => ({
 
 const UsersToolbar = (props) => {
 	const { className, users, searchUser, filteruservalue, ...rest } = props;
+	const convertTimestamp = (timestamp) => {
+		const newDate = new Date(timestamp * 1000);
+		const dateWithTimezone = moment(newDate)
+			.tz("Europe/Warsaw")
+			.format("ddd, DD MMM YYYY, HH:mm:ss, Z");
 
+		return dateWithTimezone;
+	};
+	const dataToExport = users.map(
+		(user) =>
+			user.createdAt !== undefined && {
+				id: user.id,
+				email: user.email,
+				name: user.displayName,
+				createdAt: convertTimestamp(user.createdAt.seconds)
+			}
+	);
 	const classes = useStyles();
 
 	return (
@@ -38,7 +55,11 @@ const UsersToolbar = (props) => {
 			<div className={classes.row}>
 				<span className={classes.spacer} />
 				<Button className={classes.importButton}>Import</Button>
-				<Button className={classes.exportButton}>Export</Button>
+				<Button
+					className={classes.exportButton}
+					onClick={() => exportToExcel(dataToExport)}>
+					Export
+				</Button>
 				<Button color='primary' variant='contained'>
 					Add user
 				</Button>

@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import clsx from "clsx";
-import firebase from "../../../../firebase/firebase.utils";
 import PropTypes from "prop-types";
-// import moment from "moment";
-// import "moment-timezone";
 import moment from "moment-timezone";
-
 import PerfectScrollbar from "react-perfect-scrollbar";
 import { makeStyles } from "@material-ui/styles";
 import {
@@ -103,8 +99,6 @@ const UsersTable = (props) => {
 
 		return dateWithTimezone;
 	};
-
-	console.log(convertTimestamp(1572286373));
 
 	return (
 		<Card {...rest} className={clsx(classes.root, className)}>
