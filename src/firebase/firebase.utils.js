@@ -108,6 +108,36 @@ export const getUsers = (collection) => {
 	// console.log(transformCollecion);
 	return transformCollecion;
 };
+export const getForms = (collection) => {
+	const transformCollecion = collection.docs.map((doc) => {
+		const {
+			address,
+			bags,
+			collectionDate,
+			helpGroups,
+			localization,
+			localizationSpecific,
+			type,
+			user,
+			createdAt
+		} = doc.data();
+
+		return {
+			id: doc.id,
+			address,
+			bags,
+			collectionDate,
+			helpGroups,
+			localization,
+			localizationSpecific,
+			type,
+			user,
+			createdAt
+		};
+	});
+
+	return transformCollecion;
+};
 
 //
 // function listAllUsers(nextPageToken) {

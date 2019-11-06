@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
+import { getAllForms } from "../../../../redux/forms/actions";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import moment from "moment-timezone";
@@ -42,12 +44,23 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const UsersTable = (props) => {
-	const { className, users, ...rest } = props;
+	const { className, users, userForms, getAllForms, ...rest } = props;
 	const classes = useStyles();
 
 	const [selectedUsers, setSelectedUsers] = useState([]);
 	const [rowsPerPage, setRowsPerPage] = useState(10);
 	const [page, setPage] = useState(0);
+
+	useEffect(() => {
+		getAllForms();
+	}, [getAllForms]);
+
+	const getUserFormsNumber = (id) => {
+		const formsNumber = userForms.filter(
+			(forms) => forms.user.currentUser.id === id
+		).length;
+		return formsNumber;
+	};
 
 	const handleSelectAll = (event) => {
 		const { users } = props;
@@ -123,7 +136,8 @@ const UsersTable = (props) => {
 									<TableCell>Name</TableCell>
 									<TableCell>Email</TableCell>
 									<TableCell>Location</TableCell>
-									<TableCell>Phone</TableCell>
+									<TableCell>Forms</TableCell>
+									{/* <TableCell>Phone</TableCell> */}
 									<TableCell>Registration date</TableCell>
 								</TableRow>
 							</TableHead>
@@ -162,8 +176,8 @@ const UsersTable = (props) => {
 											{user.createdAt !== undefined
 												? convertTimestamp(user.createdAt.seconds)
 												: null}
-											{/* {moment(user.createdAt).format("DD/MM/YYYY HH:mm:ss")} */}
 										</TableCell>
+										<TableCell>{getUserFormsNumber(user.id)}</TableCell>
 									</TableRow>
 								))}
 							</TableBody>
@@ -191,4 +205,14 @@ UsersTable.propTypes = {
 	users: PropTypes.array.isRequired
 };
 
-export default UsersTable;
+const mapState = (state) => ({
+	userForms: state.forms.userForms
+});
+
+const mapDispatch = (dispatch) => ({
+	getAllForms: (userID) => dispatch(getAllForms(userID))
+});
+export default connect(
+	mapState,
+	mapDispatch
+)(UsersTable);
