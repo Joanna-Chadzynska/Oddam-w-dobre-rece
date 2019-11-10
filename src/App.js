@@ -77,7 +77,7 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<div className='app'>
+			<div className='app '>
 				<Suspense fallback={<div>loading</div>}>
 					<ThemeProvider theme={theme}>
 						<Router history={browserHistory}>

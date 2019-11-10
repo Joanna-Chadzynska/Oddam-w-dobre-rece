@@ -25,14 +25,14 @@
 		height: 88vh;
 		width: 50%;
 		position: absolute;
-		top: -3.5rem;
-		left: -2rem;
+		top: 0;
+		left: 0;
 		bottom: 0;
 		z-index: -1;
 
 		@include media(xxl) {
 			overflow: hidden;
-			top: -3.5rem;
+			top: 1rem;
 		}
 
 		@include media(sm) {
