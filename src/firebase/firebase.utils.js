@@ -104,6 +104,8 @@ export const getUsers = (collection) => {
 			email,
 			createdAt
 		};
+
+		console.log("");
 	});
 	// console.log(transformCollecion);
 	return transformCollecion;
