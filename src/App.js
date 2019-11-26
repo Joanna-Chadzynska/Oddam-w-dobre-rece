@@ -5,6 +5,7 @@ import { Router } from "react-router-dom";
 import { Chart } from "react-chartjs-2";
 import { chartjs } from "./helpers";
 import { ThemeProvider } from "@material-ui/styles";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import validate from "validate.js";
 import validators from "./common/validators";
 
@@ -82,6 +83,7 @@ class App extends React.Component {
 					<ThemeProvider theme={theme}>
 						<Router history={browserHistory}>
 							<MainMenu />
+							<button onClick={this.toggleDarkTheme}>toggle theme</button>
 							<Main
 								currentUser={this.state.currentUser}
 								history={browserHistory}
